@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treatment Information – Dr Aodhan Docherty</title>
+<meta name="description" content="Important information about cosmetic dental procedures at Dr Aodhan Docherty's Circular Quay clinic. Risks, considerations, and what to know before treatment.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://draodhan.com.au/treatment-information">
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','439427055594933');fbq('track','PageView');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Mulish:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#18181A;--mid:#4A4A50;--lite:#8A8A92;--sand:#F7F3EE;--sand2:#EDE7DE;--white:#FDFCFA;--gold:#A8864A;--gold2:#C4A46E;--line:#DDD7CF}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Mulish',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 1.1rem;background:rgba(253,252,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-brand{font-family:'Playfair Display',serif;font-size:0.85rem;color:var(--ink)}
+.nav-brand b{color:var(--gold);font-weight:400}
+.nav-bk{background:var(--ink);color:var(--white);font-family:'Mulish',sans-serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.42rem 0.85rem;border-radius:2px}
+.page{padding-top:52px}
+.hero{background:var(--sand);padding:3rem 1.1rem;border-bottom:1px solid var(--line)}
+.breadcrumb{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--lite);margin-bottom:1.25rem}
+.breadcrumb a{color:var(--lite)}.breadcrumb a:hover{color:var(--gold)}.breadcrumb span{color:var(--gold)}
+.hero-tag{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.55rem;margin-bottom:0.75rem}
+.hero-tag::before{content:'';width:1.4rem;height:1px;background:var(--gold)}
+.hero-h1{font-family:'Playfair Display',serif;font-size:1.85rem;font-weight:400;line-height:1.18;color:var(--ink);margin-bottom:0.85rem}
+.hero-lead{font-size:0.85rem;color:var(--mid);line-height:1.78;font-weight:300}
+.section{padding:2.5rem 1.1rem}
+.section.sand{background:var(--sand)}
+.section+.section{border-top:1px solid var(--line)}
+.tag{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.55rem;margin-bottom:0.75rem}
+.tag::before{content:'';width:1.4rem;height:1px;background:var(--gold)}
+.sh{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:400;line-height:1.22;color:var(--ink);margin-bottom:1rem}
+.bt{font-size:0.85rem;color:var(--mid);line-height:1.8;font-weight:300}
+.bt+.bt{margin-top:0.85rem}
+.info-block{background:var(--sand);border:1px solid var(--line);padding:1.25rem;margin-top:1.25rem;border-radius:2px}
+.info-block-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--ink);margin-bottom:0.75rem}
+.info-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.info-list li{font-size:0.8rem;color:var(--mid);line-height:1.6;display:flex;align-items:flex-start;gap:0.6rem}
+.info-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:0.48rem}
+.reg-block{background:var(--ink);color:var(--white);padding:1.5rem 1.1rem;margin-top:0}
+.reg-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--gold2);margin-bottom:0.5rem}
+.reg-text{font-size:0.75rem;color:rgba(253,252,250,0.5);line-height:1.7}
+.reg-num{font-size:0.72rem;color:var(--gold2);margin-top:0.5rem;letter-spacing:0.06em}
+.back-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-top:2rem}
+.back-link::before{content:'←'}
+footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,255,255,0.04)}
+.fl{font-family:'Playfair Display',serif;font-size:0.82rem;color:rgba(253,252,250,0.28);display:block;margin-bottom:0.75rem}
+.flinks{display:flex;gap:1.25rem;flex-wrap:wrap}
+.flinks a{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,252,250,0.22);transition:color 0.2s}
+.flinks a:hover{color:var(--gold2)}
+@media(min-width:768px){
+  .nav{padding:0 3rem;height:58px}.page{padding-top:58px}
+  .hero{padding:4rem 5rem}
+  .section{padding:3.5rem 5rem}
+  .reg-block{padding:2rem 5rem}
+  footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding:2rem 5rem}
+  .fl{margin-bottom:0}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a href="/" class="nav-brand">Dr <b>Aodhan</b> Docherty</a>
+  <a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="nav-bk">Book</a>
+</header>
+<div class="page">
+  <section class="hero">
+    <div class="breadcrumb"><a href="/">Home</a> → <span>Treatment Information</span></div>
+    <div class="hero-tag">Important information</div>
+    <h1 class="hero-h1">Treatment Information</h1>
+    <p class="hero-lead">Cosmetic dental procedures carry potential risks. This page provides important information about the treatments offered at this practice. Please read this before proceeding with any treatment.</p>
+  </section>
+
+  <section class="section">
+    <div class="tag">General</div>
+    <h2 class="sh">Before you proceed</h2>
+    <p class="bt">All cosmetic dental procedures carry potential risks. Outcomes vary between patients and cannot be guaranteed. Results depend on individual clinical circumstances including the health of your teeth, gums, bite, and other factors.</p>
+    <p class="bt">An in-person consultation with Dr Docherty is required before any treatment is planned or undertaken. Treatment is only recommended after a thorough clinical assessment. Alternatives to any proposed treatment are always discussed.</p>
+  </section>
+
+  <section class="section sand">
+    <div class="tag">Porcelain Veneers</div>
+    <h2 class="sh">Veneer treatment considerations</h2>
+    <p class="bt">For traditional porcelain veneers, preparing teeth involves removing enamel which cannot be replaced — teeth will always require some form of restoration following this procedure. Dr Docherty's minimal prep approach aims to preserve as much natural tooth structure as possible; in some cases little or no enamel removal is required. Whether minimal prep is appropriate depends on individual clinical circumstances assessed at consultation.</p>
+    <div class="info-block">
+      <div class="info-block-title">Potential risks include</div>
+      <ul class="info-list">
+        <li>Tooth sensitivity to hot and cold temperatures</li>
+        <li>Gum irritation or recession around veneer margins</li>
+        <li>Fracture or chipping of the veneer</li>
+        <li>Debonding of the veneer from the tooth surface</li>
+        <li>The need for repair or replacement over time</li>
+        <li>Colour mismatch with adjacent teeth over time</li>
+        <li>Irreversible removal of healthy tooth structure</li>
+      </ul>
+    </div>
+    <p class="bt" style="margin-top:1rem">After image timing and individual variation: results shown in any case gallery are relevant only to that individual patient. Outcomes for other patients will vary based on their clinical circumstances.</p>
+  </section>
+
+  <section class="section">
+    <div class="tag">Invisalign</div>
+    <h2 class="sh">Invisalign treatment considerations</h2>
+    <p class="bt">Invisalign is a clear aligner system used to gradually move teeth. It requires consistent wear — typically 20–22 hours per day — for treatment to progress as planned.</p>
+    <div class="info-block">
+      <div class="info-block-title">Potential risks and considerations include</div>
+      <ul class="info-list">
+        <li>Treatment outcome is dependent on patient compliance with wear time</li>
+        <li>Temporary speech changes during the adjustment period</li>
+        <li>Tooth discomfort or pressure, particularly when changing aligners</li>
+        <li>The possible need for refinement aligners beyond the original plan</li>
+        <li>Relapse of tooth position if retainers are not worn as directed after treatment</li>
+        <li>Individual results vary — not all cases are suitable for clear aligner treatment</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section sand">
+    <div class="tag">Dental Implants</div>
+    <h2 class="sh">Implant treatment considerations</h2>
+    <p class="bt">Dental implants involve surgical placement of a titanium post into the jawbone. They require adequate bone volume and density, healthy gums, and good overall oral health. Suitability is assessed with scans and clinical examination at consultation.</p>
+    <div class="info-block">
+      <div class="info-block-title">Potential risks include</div>
+      <ul class="info-list">
+        <li>Infection at the implant site</li>
+        <li>Implant failure — the implant does not integrate with the bone</li>
+        <li>Nerve or tissue damage in the surrounding area</li>
+        <li>Sinus complications for upper jaw implants</li>
+        <li>The need for bone grafting prior to implant placement</li>
+        <li>The need for revision or replacement over time</li>
+        <li>Peri-implantitis — gum disease around the implant</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="tag">Consent and images</div>
+    <h2 class="sh">Patient images and consent</h2>
+    <p class="bt">Any patient images used in advertising or on this website are of actual patients who have provided separate written consent for their use. Images have not been edited, filtered, or enhanced. Outcomes shown are relevant only to those individual patients.</p>
+    <p class="bt">Patients have the right to refuse the use of their images in advertising and may withdraw consent at any time.</p>
+  </section>
+
+  <section class="section sand">
+    <div class="tag">Complaints</div>
+    <h2 class="sh">If you have a concern</h2>
+    <p class="bt">If you are dissatisfied with any aspect of your care, please contact the practice directly in the first instance.</p>
+    <p class="bt">Complaints can also be directed to the Health Care Complaints Commission (NSW) at <a href="https://www.hccc.nsw.gov.au" style="color:var(--gold)">hccc.nsw.gov.au</a> or to AHPRA at <a href="https://www.ahpra.gov.au" style="color:var(--gold)">ahpra.gov.au</a>.</p>
+  </section>
+
+  <div class="reg-block">
+    <div class="reg-title">Practitioner Registration</div>
+    <p class="reg-text">Dr Aodhan Docherty · Cosmetic Dentist · Circular Quay, Sydney</p>
+    <p class="reg-num">AHPRA Registration: DEN0001938737</p>
+  </div>
+
+  <section class="section" style="padding-bottom:3rem">
+    <a href="/" class="back-link">Back to home</a>
+  </section>
+
+</div>
+<footer>
+  <span class="fl">Dr Aodhan Docherty</span>
+  <div class="flinks"><a href="/">Home</a><a href="/veneers">Veneers</a><a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type">Book</a></div>
+</footer>
+</body>
+</html>
