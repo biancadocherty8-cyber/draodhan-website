@@ -166,5 +166,14 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   <span class="fl">Dr Aodhan Docherty</span>
   <div class="flinks"><a href="/">Home</a><a href="/veneers">Veneers</a><a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type">Book</a></div>
 </footer>
+<!-- Meta Pixel - fire a Lead event when a visitor clicks through to the Zavy360 booking system -->
+<script>
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href*="bookings.zavy360.com"]');
+    if (link && typeof fbq === 'function') {
+      fbq('track', 'Lead', { content_name: 'Booking started', content_category: 'Consultation' });
+    }
+  }, true);
+</script>
 </body>
 </html>
