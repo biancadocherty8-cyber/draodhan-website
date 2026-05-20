@@ -509,5 +509,14 @@ document.querySelectorAll('a[href*="tel:"]').forEach(el=>el.addEventListener('cl
 const gal=document.getElementById('gallery');
 if(gal){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){fbq('track','ViewContent',{content_name:'Veneers Gallery'});o.unobserve(x.target)}})},{threshold:0.3});o.observe(gal)}
 </script>
+<!-- Meta Pixel - fire a Lead event when a visitor clicks through to the Zavy360 booking system -->
+<script>
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href*="bookings.zavy360.com"]');
+    if (link && typeof fbq === 'function') {
+      fbq('track', 'Lead', { content_name: 'Booking started', content_category: 'Consultation' });
+    }
+  }, true);
+</script>
 </body>
 </html>
