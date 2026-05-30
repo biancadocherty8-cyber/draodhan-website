@@ -76,7 +76,8 @@ a{text-decoration:none;color:inherit}
 .comp strong{color:var(--ink);font-weight:500}
 
 /* STATS */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);border-bottom:1px solid var(--line)}
+@media(min-width:768px){.stats{grid-template-columns:repeat(4,1fr)}}
 .stat{padding:1.1rem 0.5rem;text-align:center;border-right:1px solid var(--line)}
 .stat:last-child{border-right:none}
 .sn{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:400;color:var(--ink);display:block;line-height:1}
@@ -143,6 +144,56 @@ a{text-decoration:none;color:inherit}
 /* CONSULT */
 .consult{padding:2.5rem 1.1rem;background:var(--sand)}
 .consult-sub{font-size:0.8rem;color:var(--mid);line-height:1.75;font-weight:300;margin-top:0.75rem;margin-bottom:1.5rem}
+/* ASSESSMENT */
+.assess-section{padding:2.5rem 1.1rem;background:var(--white);border-top:1px solid var(--line)}
+.assess-intro .bt{margin-top:0.75rem;max-width:46ch}
+.assess-card{background:var(--white);border:1px solid var(--line);padding:1.5rem;border-radius:2px;margin-top:1.5rem;position:relative}
+.assess-eyebrow{font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem}
+.assess-eyebrow::before{content:'';width:1.2rem;height:1px;background:var(--gold)}
+.assess-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:400;color:var(--ink);line-height:1.2;margin-bottom:0.4rem}
+.assess-title em{font-style:italic;color:var(--gold)}
+.assess-cardsub{font-size:0.75rem;color:var(--mid);line-height:1.6;margin-bottom:1rem;font-weight:300}
+.assess-progress{display:flex;gap:0.25rem;margin-bottom:1.1rem}
+.assess-dot{flex:1;height:2px;background:var(--line);border-radius:2px;transition:background .25s}
+.assess-dot.done{background:var(--gold)}
+.assess-step{display:none}
+.assess-step.active{display:block}
+.assess-q{font-family:'Playfair Display',serif;font-size:1rem;color:var(--ink);line-height:1.35;margin-bottom:0.85rem;font-weight:400}
+.assess-opts{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.25rem}
+.assess-opt{padding:0.75rem 0.9rem;border:1px solid var(--line);background:var(--white);text-align:left;border-radius:2px;font-size:0.78rem;color:var(--ink);transition:all .15s;cursor:pointer;display:flex;align-items:center;gap:0.65rem;font-family:'Mulish',sans-serif}
+.assess-opt:hover{border-color:var(--gold);background:var(--sand)}
+.assess-opt.selected{border-color:var(--gold);background:rgba(168,134,74,0.06)}
+.assess-opt-bullet{width:1rem;height:1rem;border-radius:50%;border:1px solid var(--line);flex-shrink:0;position:relative;transition:border-color .15s}
+.assess-opt.selected .assess-opt-bullet{border-color:var(--gold)}
+.assess-opt.selected .assess-opt-bullet::after{content:'';position:absolute;inset:0.22rem;background:var(--gold);border-radius:50%}
+.assess-input{width:100%;padding:0.8rem 0.95rem;border:1px solid var(--line);border-radius:2px;font:inherit;font-size:0.85rem;color:var(--ink);font-family:'Mulish',sans-serif;outline:none;margin-bottom:0.5rem;background:var(--white)}
+.assess-input:focus{border-color:var(--gold)}
+.assess-input::placeholder{color:var(--lite)}
+.assess-photo{margin:0.85rem 0 0.25rem;padding-top:1rem;border-top:1px solid var(--line)}
+.assess-photo-head{font-size:0.82rem;color:var(--ink);font-weight:500;display:flex;align-items:center;gap:0.55rem}
+.assess-photo-head span{font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:0.18rem 0.45rem;border-radius:999px;font-weight:500}
+.assess-photo-sub{font-size:0.72rem;color:var(--mid);line-height:1.6;font-weight:300;margin:0.4rem 0 0.7rem}
+.assess-photo-drop{display:flex;align-items:center;gap:0.7rem;padding:0.85rem 0.95rem;border:1px dashed var(--line);border-radius:2px;cursor:pointer;transition:border-color .15s,background .15s;background:var(--sand)}
+.assess-photo-drop:hover{border-color:var(--gold);background:rgba(168,134,74,0.05)}
+.assess-photo-drop.filled{border-style:solid;border-color:var(--gold);background:rgba(168,134,74,0.06)}
+.apd-icon{width:1.6rem;height:1.6rem;border-radius:50%;background:var(--ink);color:var(--white);display:grid;place-items:center;font-size:1rem;flex-shrink:0;line-height:1}
+.assess-photo-drop.filled .apd-icon{background:var(--gold);color:var(--ink)}
+.apd-text{font-size:0.78rem;color:var(--ink);font-weight:400}
+.assess-photo-consent{font-size:0.6rem;color:var(--lite);line-height:1.55;font-weight:300;margin-top:0.55rem}
+.assess-nav{display:flex;justify-content:space-between;align-items:center;gap:0.5rem;margin-top:0.5rem}
+.assess-back{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--lite);background:transparent;padding:0.55rem 0;cursor:pointer;transition:color .15s;border:none}
+.assess-back:hover{color:var(--mid)}
+.assess-next{flex:1}
+.assess-disc{font-size:0.6rem;color:var(--lite);line-height:1.6;margin-top:0.85rem;font-weight:300}
+.assess-done{padding:0.5rem 0;text-align:center}
+.assess-done .checkmark{width:2.5rem;height:2.5rem;border-radius:50%;background:var(--gold);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem;font-family:'Playfair Display',serif}
+.assess-done h4{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:400;color:var(--ink);line-height:1.3;margin-bottom:0.6rem}
+.assess-done h4 em{font-style:italic;color:var(--gold)}
+.assess-done p{font-size:0.78rem;color:var(--mid);line-height:1.65;font-weight:300;margin-bottom:1rem}
+@media(min-width:768px){
+  .assess-section{padding:5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+  .assess-card{margin-top:0;padding:2rem;box-shadow:0 30px 80px -30px rgba(168,134,74,0.25)}
+}
 .cc{background:var(--white);border:1px solid var(--line);padding:1.4rem 1.1rem;margin-bottom:0.5rem;border-radius:2px}
 .cc-type{font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
 .cc-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:0.5rem}
@@ -176,7 +227,8 @@ a{text-decoration:none;color:inherit}
 .insta-lnk{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
 .insta-lnk::after{content:' →'}
 .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.3rem}
-.icell{aspect-ratio:1;overflow:hidden;background:var(--sand2)}
+.icell{display:block;aspect-ratio:1;overflow:hidden;background:var(--sand2);transition:opacity 0.2s}
+.icell:hover{opacity:0.85}
 .icell img{width:100%;height:100%;object-fit:cover}
 .iph{width:100%;height:100%;background:linear-gradient(135deg,var(--sand2),var(--line))}
 
@@ -235,7 +287,7 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   .step:first-child{padding-left:0}
   .step:last-child{border-right:none}
   .consult{padding:5rem}
-  .consult-cards{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+  .consult-cards{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--line)}
   .cc{border:none;border-right:1px solid var(--line);border-radius:0;margin-bottom:0}
   .cc:last-child{border-right:none}
   .payment{padding:5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
@@ -269,7 +321,7 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   <a href="#consult" class="dl nc">Consultations</a>
   <a href="#payment" class="dl nc">Payment Plans</a>
   <a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="d-book" id="dBk">Book an In-Person Consultation</a>
-  <a href="https://www.jotform.com/form/233018022648854" class="d-assess" id="dAs">Free Smile Assessment</a>
+  <a href="#assessment" class="d-assess nc" id="dAs">Smile Assessment</a>
 </nav>
 
 <section class="hero">
@@ -278,11 +330,11 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   <div class="hero-bw">
     <div class="hero-body">
       <div class="hero-ey">Cosmetic Dentist · Circular Quay, Sydney</div>
-      <h1 class="hero-h1">Where your smile<br><em>feels like yours.</em></h1>
-      <p class="hero-lead">Dr Aodhan Docherty brings the same considered approach to every patient — assessed carefully, treated thoughtfully, and looked after by someone who knows your case from the beginning.</p>
+      <h1 class="hero-h1">A smile that still <em>feels like yours.</em></h1>
+      <p class="hero-lead">Porcelain veneers, Invisalign and cosmetic dentistry, personally planned and placed by Dr Aodhan Docherty. A conservative approach that keeps as much of your natural tooth as is clinically possible, from a dentist who teaches the technique to others across Australia.</p>
       <div class="hero-btns">
-        <a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="btn-d" id="hBk">Book a Consultation</a>
-        <a href="tel:0283192323" class="btn-o" id="hPh">(02) 8319 2323</a>
+        <a href="#assessment" class="btn-d" id="hAs">Take the Smile Assessment</a>
+        <a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="btn-o" id="hBk">Book a Consultation</a>
       </div>
     </div>
 
@@ -292,9 +344,10 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
 <div class="comp"><strong>Important:</strong> All dental procedures carry potential risks. Outcomes vary between patients and cannot be guaranteed. An in-person consultation is required to assess suitability for any treatment. <a href="/treatment-information" style="color:var(--gold);text-decoration:underline">Treatment information →</a></div>
 
 <div class="stats">
-  <div class="stat"><span class="sn">1</span><span class="sl">Dentist, always</span></div>
-  <div class="stat"><span class="sn">CBD</span><span class="sl">Circular Quay</span></div>
-  <div class="stat"><span class="sn">Min.<br>prep</span><span class="sl">Veneer approach</span></div>
+  <div class="stat"><span class="sn">1,500+</span><span class="sl">Veneer cases personally placed</span></div>
+  <div class="stat"><span class="sn">42K</span><span class="sl">Instagram community</span></div>
+  <div class="stat"><span class="sn">10+</span><span class="sl">Years cosmetic focus</span></div>
+  <div class="stat"><span class="sn">Founder</span><span class="sl">Exceptional Dental Academy</span></div>
 </div>
 
 <section class="about" id="about">
@@ -304,12 +357,15 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
     <div class="atag"><span class="r">Cosmetic Dentist</span><span class="n">Dr Aodhan Docherty</span><span class="id">DEN0001938737</span></div>
     <div class="tag">About</div>
     <h2 class="sh">The dentist who<br><em>teaches other dentists</em></h2>
-    <p class="bt" style="margin-top:0.85rem">Dr Aodhan Docherty teaches aesthetic dentistry to practitioners across Australia and internationally. When you sit in his chair, you're with someone other dentists come to learn from.</p>
-    <p class="bt">His practice at Circular Quay is built around knowing each patient's case deeply. The dentist who assesses you is the one who treats you — which means nothing gets lost between appointments.</p>
-    <p class="bt">His approach to veneers is minimal prep — preserving as much of your natural tooth structure as possible while achieving the aesthetic outcome you're looking for.</p>
+    <p class="bt" style="margin-top:0.85rem">Dr Aodhan Docherty graduated from the University of Sydney with honours and a University Medal, and is the founder of Exceptional Dental Academy, where he trains other dentists across Australia and internationally. He is a university examiner in oral implants and co-author of the dental textbook <em>Practical Procedures in Implant Dentistry</em>. When you sit in his chair, you're with someone other dentists come to learn from.</p>
+    <p class="bt">His practice at Circular Quay is built around knowing each patient's case deeply. The dentist who assesses you is the one who treats you, which means nothing gets lost between appointments.</p>
+    <p class="bt">His approach to veneers is conservative: preserving as much of your natural tooth as is clinically possible while achieving the result you're after. Some preparation is still required, and suitability is always assessed in person.</p>
     <div class="creds">
-
-      <div class="cred">Teaches aesthetic dentistry across Australia and internationally</div>
+      <div class="cred">Founder of Exceptional Dental Academy, training dentists across Australia and internationally</div>
+      <div class="cred">University of Sydney, honours and University Medal. Examiner in the postgraduate Oral Implant Diploma</div>
+      <div class="cred">Co-author, <em>Practical Procedures in Implant Dentistry</em> (Wiley-Blackwell)</div>
+      <div class="cred">Fellow of the Pierre Fauchard Academy. Alumnus of the Kois Center and Fahl Cosmetic Academy</div>
+      <div class="cred">Followed by 42,000+ on Instagram at @dr.aodhan</div>
       <div class="cred">Ground Floor, Shop LLC125, 17 Young St, Sydney NSW 2000</div>
       <div class="cred"><a href="tel:0283192323">(02) 8319 2323</a></div>
     </div>
@@ -326,21 +382,21 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   <div class="svc">
     <div class="svc-n">01</div>
     <div class="svc-name">Porcelain Veneers</div>
-    <p class="svc-desc">A long-lasting, natural-looking option for changing the colour, shape, or alignment of teeth. Dr Docherty uses an ultra-thin, minimal prep approach — preserving as much natural tooth structure as possible. Porcelain veneers are the primary cosmetic treatment at this practice and where the majority of Dr Docherty's casework sits.</p>
+    <p class="svc-desc">A long-lasting, natural-looking option for changing the colour, shape, or alignment of teeth. Dr Docherty uses a conservative, tooth-preserving approach that keeps as much of your natural tooth as is clinically possible. Porcelain veneers are the primary cosmetic treatment at this practice and where the majority of Dr Docherty's casework sits.</p>
     <a href="/veneers" class="svc-lnk">Learn more</a>
   </div>
 
   <div class="svc">
     <div class="svc-n">02</div>
     <div class="svc-name">Composite Bonding</div>
-    <p class="svc-desc">A tooth-coloured resin applied and shaped directly on the tooth — no enamel removal required. A more affordable and reversible option for minor chips, gaps, or colour changes. Often a good starting point before committing to porcelain, or a standalone treatment for the right case.</p>
+    <p class="svc-desc">A tooth-coloured resin applied and shaped directly on the tooth, with no enamel removal required. A more conservative and reversible option for minor chips, gaps, or colour changes. Often a good starting point before committing to porcelain, or a standalone treatment for the right case.</p>
     <a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="svc-lnk">Book a consultation</a>
   </div>
 
   <div class="svc">
     <div class="svc-n">03</div>
     <div class="svc-name">Invisalign</div>
-    <p class="svc-desc">Clear aligner treatment to gradually move teeth. For many patients, Invisalign is worth considering before veneers — straightening first often means less intervention overall and a more natural result.</p>
+    <p class="svc-desc">Clear aligner treatment to gradually move teeth. For many patients, Invisalign is worth considering before veneers. Straightening first often means less intervention overall and a more natural result.</p>
     <a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="svc-lnk">Book a consultation</a>
   </div>
 
@@ -362,31 +418,47 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
 
 <section class="gallery" id="gallery">
   <div class="tag">Clinical Gallery</div>
-  <h2 class="sh">Patient cases — <em>before &amp; after</em></h2>
+  <h2 class="sh">Patient cases, <em>before &amp; after</em></h2>
   <div class="gal-notice"><strong>Important:</strong> All images are of actual patients who have given written consent. Images have not been edited, filtered, or enhanced. <strong>Outcomes shown are relevant only to that individual patient and do not necessarily reflect results others may achieve.</strong></div>
   <div class="bac">
     <div class="ba-imgs">
-      <div class="ba-side"><img src="before-1.jpg" alt="Before"><span class="blbl">Before</span></div>
-      <div class="ba-side"><img src="after-1.jpg" alt="After"><span class="blbl a">After</span></div>
+      <div class="ba-side"><img src="veneers-landing/cases/case-01-before.jpg" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><img src="veneers-landing/cases/case-01-after.jpg" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
       <div class="ba-sep"></div>
     </div>
-    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper + 10 lower porcelain veneers · Periodontal treatment + crown lengthening completed first · After image: ~3 weeks post-treatment</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper porcelain veneers + lower teeth whitening · After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
   </div>
   <div class="bac">
     <div class="ba-imgs">
-      <div class="ba-side"><img src="before-2.jpg" alt="Before"><span class="blbl">Before</span></div>
-      <div class="ba-side"><img src="after-2.jpg" alt="After"><span class="blbl a">After</span></div>
+      <div class="ba-side"><img src="veneers-landing/cases/case-02-before.jpg" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><img src="veneers-landing/cases/case-02-after.jpg" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
       <div class="ba-sep"></div>
     </div>
-    <div class="ba-foot"><div class="ba-tx">Porcelain + Composite Veneers</div><div class="ba-nt">10 upper porcelain + 6 lower composite veneers · Replacing ageing composite veneers · After image: ~2–3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper porcelain veneers + lower teeth whitening · After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
   </div>
   <div class="bac">
     <div class="ba-imgs">
-      <div class="ba-side"><img src="before-3.jpg" alt="Before"><span class="blbl">Before</span></div>
-      <div class="ba-side"><img src="after-3.jpg" alt="After"><span class="blbl a">After</span></div>
+      <div class="ba-side"><img src="veneers-landing/cases/case-03-before.jpg" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><img src="veneers-landing/cases/case-03-after.jpg" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
       <div class="ba-sep"></div>
     </div>
-    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">8 porcelain veneers · Replacing discoloured veneers and adjacent composite veneers · After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper porcelain veneers + lower teeth whitening · After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><img src="veneers-landing/cases/case-04-before.jpg" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><img src="veneers-landing/cases/case-04-after.jpg" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper and 10 lower porcelain veneers · After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><img src="veneers-landing/cases/case-05-before.jpg" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><img src="veneers-landing/cases/case-05-after.jpg" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">8 upper porcelain veneers · After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
   </div>
 </section>
 
@@ -402,6 +474,103 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   </div>
 </section>
 
+<section class="assess-section" id="assessment">
+  <div class="assess-intro">
+    <div class="tag">Smile assessment</div>
+    <h2 class="sh">Wondering if veneers are <em>right for you?</em></h2>
+    <p class="bt">Take the smile assessment. A few quick questions about your smile, a couple of minutes, no obligation, and a clear sense of your options before you decide whether to book a consultation.</p>
+  </div>
+  <div class="assess-card" id="assess">
+    <div class="assess-eyebrow">Complimentary · 2 minutes</div>
+    <h3 class="assess-title">Take the <em>smile assessment.</em></h3>
+    <p class="assess-cardsub">Five quick questions. We'll send you an indicative overview of suitable options, with no obligation to book.</p>
+
+    <div class="assess-progress" id="prog">
+      <div class="assess-dot done"></div>
+      <div class="assess-dot"></div>
+      <div class="assess-dot"></div>
+      <div class="assess-dot"></div>
+      <div class="assess-dot"></div>
+    </div>
+
+    <form id="assess-form" onsubmit="event.preventDefault();">
+      <div class="assess-step active" data-step="0">
+        <div class="assess-q">What would you most like to change about your smile?</div>
+        <div class="assess-opts">
+          <button type="button" class="assess-opt" data-val="colour"><span class="assess-opt-bullet"></span>Tooth colour or staining</button>
+          <button type="button" class="assess-opt" data-val="shape"><span class="assess-opt-bullet"></span>Shape, edges or chips</button>
+          <button type="button" class="assess-opt" data-val="alignment"><span class="assess-opt-bullet"></span>Minor gaps or alignment</button>
+          <button type="button" class="assess-opt" data-val="full"><span class="assess-opt-bullet"></span>A full smile makeover</button>
+          <button type="button" class="assess-opt" data-val="unsure"><span class="assess-opt-bullet"></span>Not sure, I'd like advice</button>
+        </div>
+      </div>
+
+      <div class="assess-step" data-step="1">
+        <div class="assess-q">How many teeth show when you smile?</div>
+        <div class="assess-opts">
+          <button type="button" class="assess-opt" data-val="4-6"><span class="assess-opt-bullet"></span>Around 4 to 6 (just the fronts)</button>
+          <button type="button" class="assess-opt" data-val="8"><span class="assess-opt-bullet"></span>Around 8</button>
+          <button type="button" class="assess-opt" data-val="10+"><span class="assess-opt-bullet"></span>10 or more (broad smile)</button>
+          <button type="button" class="assess-opt" data-val="not-sure"><span class="assess-opt-bullet"></span>Not sure</button>
+        </div>
+      </div>
+
+      <div class="assess-step" data-step="2">
+        <div class="assess-q">Have you had cosmetic dental work before?</div>
+        <div class="assess-opts">
+          <button type="button" class="assess-opt" data-val="never"><span class="assess-opt-bullet"></span>Never</button>
+          <button type="button" class="assess-opt" data-val="whitening"><span class="assess-opt-bullet"></span>Whitening only</button>
+          <button type="button" class="assess-opt" data-val="composite"><span class="assess-opt-bullet"></span>Composite bonding or veneers</button>
+          <button type="button" class="assess-opt" data-val="porcelain"><span class="assess-opt-bullet"></span>Porcelain veneers (replacing)</button>
+        </div>
+      </div>
+
+      <div class="assess-step" data-step="3">
+        <div class="assess-q">When are you looking to begin?</div>
+        <div class="assess-opts">
+          <button type="button" class="assess-opt" data-val="asap"><span class="assess-opt-bullet"></span>As soon as suitable</button>
+          <button type="button" class="assess-opt" data-val="1-3"><span class="assess-opt-bullet"></span>Within the next 1 to 3 months</button>
+          <button type="button" class="assess-opt" data-val="3-6"><span class="assess-opt-bullet"></span>3 to 6 months from now</button>
+          <button type="button" class="assess-opt" data-val="exploring"><span class="assess-opt-bullet"></span>Just exploring for now</button>
+        </div>
+      </div>
+
+      <div class="assess-step" data-step="4">
+        <div class="assess-q">Where should we send your assessment?</div>
+        <input type="text" class="assess-input" id="a-name" placeholder="Your first name" required>
+        <input type="email" class="assess-input" id="a-email" placeholder="Email address" required>
+        <input type="tel" class="assess-input" id="a-phone" placeholder="Mobile (optional)">
+
+        <div class="assess-photo">
+          <div class="assess-photo-head">Want a more personal response? <span>Optional</span></div>
+          <p class="assess-photo-sub">Add a quick photo of your smile and Dr Aodhan will tailor his reply to what he can see. A relaxed, natural smile in good light is perfect. Nothing clinical needed.</p>
+          <label class="assess-photo-drop" id="photoDrop">
+            <input type="file" id="a-photo" accept="image/*" hidden>
+            <span class="apd-icon">+</span>
+            <span class="apd-text" id="photoText">Add a photo of your smile</span>
+          </label>
+          <p class="assess-photo-consent">By adding a photo you agree it may be used to assess your enquiry. It is stored securely and never shared.</p>
+        </div>
+
+        <div class="assess-nav">
+          <button type="button" class="assess-back" data-back>← Back</button>
+          <button type="submit" class="btn-gld assess-next">Send my assessment</button>
+        </div>
+        <p class="assess-disc">Your assessment is indicative only and based on your answers. It does not replace a clinical examination, and suitability for any treatment must be assessed in person. Unsubscribe anytime.</p>
+      </div>
+
+      <div class="assess-step" data-step="5">
+        <div class="assess-done">
+          <div class="checkmark">✓</div>
+          <h4>Thank you. <em>Check your inbox.</em></h4>
+          <p>Your assessment is on its way. If a consultation looks like the right next step, the team will be in touch to arrange an in-person appointment at Circular Quay.</p>
+          <a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="btn-d">Or book a consultation now</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
 <section class="consult" id="consult">
   <div class="tag">Get started</div>
   <h2 class="sh">Book a <em>consultation</em></h2>
@@ -409,36 +578,43 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   <div class="consult-cards">
     <div class="cc"><div class="cc-type">In-Person · Circular Quay</div><div class="cc-name">In-Person Consultation</div><p class="cc-desc">60 minutes at the Circular Quay clinic. Clinical photographs, digital scans, and a full assessment. You leave with a detailed treatment plan, costs, and payment options.</p><div class="cc-dets"><span>60 minutes with Dr Docherty</span><span>Full treatment plan provided</span><span>Payment options discussed</span></div><a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="btn-d" id="cBk">Book Now</a></div>
     <div class="cc"><div class="cc-type">Online · Video Call</div><div class="cc-name">Zoom Consultation</div><p class="cc-desc">A video call with Dr Docherty to discuss your goals and concerns. A follow-up in-person visit for scans is included at no extra cost.</p><div class="cc-dets"><span>Video call with Dr Docherty</span><span>Follow-up scan visit included</span><span>Ideal if outside Sydney</span></div><a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="btn-o" id="cZm">Book Zoom</a></div>
-    <div class="cc"><div class="cc-type">Free · No Obligation</div><div class="cc-name">Smile Assessment</div><p class="cc-desc">Not ready to book? The online smile assessment gives a general overview of options and indicative costs before committing to a consultation.</p><div class="cc-dets"><span>5–10 minutes online</span><span>No cost, no obligation</span><span>General information only</span></div><a href="https://www.jotform.com/form/233018022648854" class="btn-o" id="cAs">Try Assessment</a></div>
   </div>
 </section>
 
 <section class="payment" id="payment">
   <div>
     <div class="tag">Payment options</div>
-    <h2 class="sh">Indicative <em>payment plans</em></h2>
-    <p class="pay-sub">Payment plan options are available to help spread the cost of treatment over time.</p>
-    <p class="pay-disc">Amounts are indicative only and vary by treatment and provider. Terms and lending criteria may apply. Full quote provided at consultation. Cosmetic dental procedures are not covered by Medicare.</p>
+    <h2 class="sh">A clear cost, <em>once we've met</em></h2>
+    <p class="pay-sub">Cosmetic dentistry is bespoke, so a price quoted before Dr Docherty has seen your teeth means very little. At your consultation you'll receive an exact, written cost for your individual case, with no pressure to proceed.</p>
+    <p class="pay-disc">For patients who choose to go ahead, interest-free payment plans are available to make treatment more manageable. Terms and lending criteria may apply. Cosmetic dental procedures are not covered by Medicare.</p>
     <div class="pay-tbl">
-      <div class="pt-row"><span class="pt-nm">Composite Bonding</span><span class="pt-fr">From $45/wk</span></div>
-      <div class="pt-row"><span class="pt-nm">Invisalign</span><span class="pt-fr">From $45–90/wk</span></div>
-      <div class="pt-row"><span class="pt-nm">Porcelain Veneers</span><span class="pt-fr">From $95–130/wk</span></div>
+      <div class="pt-row"><span class="pt-nm">Written treatment plan</span><span class="pt-fr">At consultation</span></div>
+      <div class="pt-row"><span class="pt-nm">Exact, itemised cost</span><span class="pt-fr">At consultation</span></div>
+      <div class="pt-row"><span class="pt-nm">Interest-free payment plans</span><span class="pt-fr">Available</span></div>
     </div>
   </div>
   <div class="abox">
     <div class="abadge">Circular Quay · Sydney</div>
     <div class="ah">Ready to get started?</div>
-    <p class="ad">Book a 60-minute consultation with Dr Docherty. You'll leave with a full treatment plan, clear costs, and payment plan options — everything you need to make a decision.</p>
+    <p class="ad">Book a 60-minute consultation with Dr Docherty. You'll leave with a full treatment plan, clear costs, and payment plan options, everything you need to make a decision.</p>
     <ul class="al"><li>60 minutes with Dr Docherty</li><li>Clinical assessment and digital scans</li><li>Full treatment plan and cost breakdown provided</li><li>No obligation to proceed</li></ul>
     <a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="btn-d" id="payBk">Book a Consultation</a>
-    <p class="an">Not ready to book? The <a href="https://www.jotform.com/form/233018022648854" style="color:var(--gold)">free smile assessment</a> gives a general overview of options before committing to an appointment.</p>
+    <p class="an">Curious first? The <a href="#assessment" style="color:var(--gold)">smile assessment</a> gives a general overview of your options before committing to an appointment.</p>
   </div>
 </section>
 
 <section class="insta">
   <div class="insta-hd">
-    <div class="insta-title">Follow Dr Docherty on Instagram</div>
+    <div class="insta-title">Followed by 42,000+ on Instagram</div>
     <a href="https://www.instagram.com/dr.aodhan" target="_blank" class="insta-lnk">@dr.aodhan</a>
+  </div>
+  <div class="igrid">
+    <a href="https://www.instagram.com/dr.aodhan" target="_blank" rel="noopener" class="icell"><img src="insta/ig-01.jpg" alt="Instagram post by @dr.aodhan" loading="lazy"></a>
+    <a href="https://www.instagram.com/dr.aodhan" target="_blank" rel="noopener" class="icell"><img src="insta/ig-02.jpg" alt="Instagram post by @dr.aodhan" loading="lazy"></a>
+    <a href="https://www.instagram.com/dr.aodhan" target="_blank" rel="noopener" class="icell"><img src="insta/ig-03.jpg" alt="Instagram post by @dr.aodhan" loading="lazy"></a>
+    <a href="https://www.instagram.com/dr.aodhan" target="_blank" rel="noopener" class="icell"><img src="insta/ig-04.jpg" alt="Instagram post by @dr.aodhan" loading="lazy"></a>
+    <a href="https://www.instagram.com/dr.aodhan" target="_blank" rel="noopener" class="icell"><img src="insta/ig-05.jpg" alt="Instagram post by @dr.aodhan" loading="lazy"></a>
+    <a href="https://www.instagram.com/dr.aodhan" target="_blank" rel="noopener" class="icell"><img src="insta/ig-06.jpg" alt="Instagram post by @dr.aodhan" loading="lazy"></a>
   </div>
 </section>
 
@@ -446,7 +622,7 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
 <section class="cta">
   <div class="tag">Book a consultation</div>
   <h2 class="cta-h">The same dentist,<br><em>start to finish.</em></h2>
-  <p class="cta-sub">Book a consultation at Circular Quay with Dr Docherty — the dentist who will also be doing your treatment.</p>
+  <p class="cta-sub">Book a consultation at Circular Quay with Dr Docherty, the dentist who will also be doing your treatment.</p>
   <div class="cta-btns">
     <a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="btn-gld" id="ctaBk">Book an In-Person Consultation</a>
     <a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/practitioner/30312/patient-type" class="btn-gh" id="ctaZm">Book a Zoom Consultation</a>
@@ -468,6 +644,7 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   </div>
 </footer>
 
+<script src="image-slot.js"></script>
 <script>
 const hbg=document.getElementById('hbg'),drawer=document.getElementById('drawer');
 hbg.addEventListener('click',()=>{hbg.classList.toggle('open');drawer.classList.toggle('open');document.body.style.overflow=drawer.classList.contains('open')?'hidden':''});
@@ -477,6 +654,68 @@ document.querySelectorAll('a[href*="jotform"]').forEach(el=>el.addEventListener(
 document.querySelectorAll('a[href*="tel:"]').forEach(el=>el.addEventListener('click',()=>fbq('track','Contact')));
 const gal=document.getElementById('gallery');
 if(gal){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){fbq('track','ViewContent',{content_name:'Gallery'});o.unobserve(x.target)}})},{threshold:0.3});o.observe(gal)}
+
+// SMILE ASSESSMENT state machine
+(function(){
+  let current = 0;
+  const answers = {};
+  function renderProgress(){
+    document.querySelectorAll('#prog .assess-dot').forEach((d,i)=>d.classList.toggle('done', i <= current));
+  }
+  function goTo(n){
+    current = n;
+    document.querySelectorAll('.assess-step').forEach(s=>s.classList.remove('active'));
+    const t = document.querySelector('.assess-step[data-step="'+n+'"]');
+    if(t) t.classList.add('active');
+    renderProgress();
+  }
+  document.querySelectorAll('.assess-step[data-step]').forEach(step=>{
+    const idx = parseInt(step.dataset.step,10);
+    if(idx >= 4) return;
+    step.querySelectorAll('.assess-opt').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        step.querySelectorAll('.assess-opt').forEach(b=>b.classList.remove('selected'));
+        btn.classList.add('selected');
+        answers[idx] = btn.dataset.val;
+        setTimeout(()=>goTo(idx+1),220);
+      });
+    });
+  });
+  document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>{ if(current>0) goTo(current-1); }));
+  const form = document.getElementById('assess-form');
+  if(form){
+    const photoInput=document.getElementById('a-photo');
+    const photoDrop=document.getElementById('photoDrop');
+    const photoText=document.getElementById('photoText');
+    if(photoInput){
+      photoInput.addEventListener('change',()=>{
+        if(photoInput.files && photoInput.files.length){
+          photoText.textContent=photoInput.files[0].name;
+          photoDrop.classList.add('filled');
+        }else{
+          photoText.textContent='Add a photo of your smile';
+          photoDrop.classList.remove('filled');
+        }
+      });
+    }
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      const name=document.getElementById('a-name').value.trim();
+      const email=document.getElementById('a-email').value.trim();
+      const phone=document.getElementById('a-phone').value.trim();
+      if(!name||!email) return;
+      answers.name=name; answers.email=email; answers.phone=phone;
+      const photoInput=document.getElementById('a-photo');
+      answers.hasPhoto = !!(photoInput && photoInput.files && photoInput.files.length);
+      if(answers.hasPhoto) answers.photoName = photoInput.files[0].name;
+      // Meta Pixel lead event
+      if(typeof fbq==='function'){try{fbq('track','Lead',{content_name:'Smile Assessment'});}catch(e){}}
+      // TODO: connect to your email / CRM here. Send `answers` to your endpoint or JotForm.
+      console.log('[Smile Assessment submission]', answers);
+      goTo(5);
+    });
+  }
+})();
 </script>
 </body>
 </html>
