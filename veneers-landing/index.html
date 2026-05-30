@@ -59,11 +59,10 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .hero-ig:hover{background:rgba(168,134,74,0.2);color:var(--white)}
 .hero-ig span{color:var(--gold2)}
 
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;margin-top:2rem;gap:0}
-.hs{padding:0.5rem 0.75rem;text-align:center}
-.hs:not(:first-child){border-left:1px solid rgba(255,255,255,0.08)}
-.hs:first-child{padding-left:0;text-align:left}
-.hs:last-child{padding-right:0;text-align:right}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;margin-top:2rem;gap:0}
+.hs{padding:0.5rem 1rem 0.5rem 0}
+.hs:nth-child(2n){padding:0.5rem 0 0.5rem 1rem;border-left:1px solid rgba(255,255,255,0.08)}
+.hs:nth-child(n+3){border-top:1px solid rgba(255,255,255,0.08);padding-top:1.1rem;margin-top:1rem}
 .hs-n{font-family:'Playfair Display',serif;font-size:1.55rem;color:var(--gold2);display:block;line-height:1;margin-bottom:0.35rem;font-weight:400}
 .hs-n em{font-style:italic}
 .hs-l{font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,252,250,0.45);line-height:1.4}
@@ -74,11 +73,10 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
   .hero-h1{font-size:3.6rem}
   .hero-lead{font-size:1rem}
   .hero-cta-row{flex-direction:row;max-width:none}
-  .hero-stats{grid-template-columns:repeat(3,1fr);margin-top:2.5rem}
-  .hs{padding:0.5rem 1.25rem;text-align:left}
-  .hs:first-child{padding-left:0;text-align:left}
-  .hs:last-child{text-align:left}
+  .hero-stats{grid-template-columns:repeat(4,1fr);margin-top:2.5rem}
+  .hs{padding:0.5rem 1rem;text-align:left}
   .hs:not(:first-child){border-left:1px solid rgba(255,255,255,0.08)}
+  .hs:nth-child(n+3){border-top:none;padding-top:0.5rem;margin-top:0}
   .hs-n{font-size:1.75rem}
 }
 
@@ -367,6 +365,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
         <div class="hero-tel">Or call us on <b>(02) 8319 2323</b></div>
         <div class="hero-stats">
           <div class="hs"><span class="hs-n">42<em>K</em></span><span class="hs-l">Instagram community</span></div>
+          <div class="hs"><span class="hs-n">1,500<em>+</em></span><span class="hs-l">Porcelain veneer cases personally placed</span></div>
           <div class="hs"><span class="hs-n">10<em>+</em></span><span class="hs-l">years cosmetic focus</span></div>
           <div class="hs"><span class="hs-n">Founder</span><span class="hs-l">Exceptional Dental Academy</span></div>
         </div>
