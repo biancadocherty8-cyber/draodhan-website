@@ -108,6 +108,18 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .assess-back:hover{color:var(--mid)}
 .assess-next{flex:1}
 .assess-disc{font-size:0.6rem;color:var(--lite);line-height:1.6;margin-top:0.85rem;font-weight:300}
+.assess-photo-divider{height:1px;background:var(--line);margin:1.25rem 0 1.1rem}
+.assess-photo-section{margin-bottom:1.1rem}
+.assess-photo-header{display:flex;align-items:center;gap:0.55rem;margin-bottom:0.5rem;flex-wrap:wrap}
+.assess-photo-header h4{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:400;color:var(--ink);margin:0;line-height:1.3;letter-spacing:-0.005em}
+.assess-photo-badge{font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:0.2rem 0.5rem;border-radius:2px;font-weight:500}
+.assess-photo-desc{font-size:0.72rem;color:var(--mid);line-height:1.6;margin-bottom:0.75rem;font-weight:300}
+.assess-photo-uploader{display:flex;align-items:center;gap:0.7rem;padding:0.85rem 0.95rem;border:1px solid var(--line);background:var(--sand);border-radius:2px;cursor:pointer;transition:all .15s;font-size:0.78rem;color:var(--ink);font-weight:500}
+.assess-photo-uploader:hover{border-color:var(--gold);background:rgba(168,134,74,0.06)}
+.assess-photo-uploader.has-file{border-color:var(--gold);background:rgba(168,134,74,0.08)}
+.assess-photo-plus{width:1.65rem;height:1.65rem;border-radius:50%;background:var(--ink);color:var(--white);display:inline-flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;font-weight:400;line-height:1}
+.assess-photo-uploader.has-file .assess-photo-plus{background:var(--gold);color:var(--ink);font-size:0.9rem}
+.assess-photo-privacy{font-size:0.6rem;color:var(--lite);line-height:1.6;margin-top:0.55rem;font-weight:300}
 .assess-done{padding:0.5rem 0;text-align:center}
 .assess-done .checkmark{width:2.5rem;height:2.5rem;border-radius:50%;background:var(--gold);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem;font-family:'Playfair Display',serif}
 .assess-done h4{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:400;color:var(--ink);line-height:1.3;margin-bottom:0.6rem;letter-spacing:-0.005em}
@@ -433,6 +445,22 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
             <input type="text" class="assess-input" id="a-name" placeholder="Your first name" required>
             <input type="email" class="assess-input" id="a-email" placeholder="Email address" required>
             <input type="tel" class="assess-input" id="a-phone" placeholder="Mobile (optional)">
+
+            <div class="assess-photo-divider"></div>
+            <div class="assess-photo-section">
+              <div class="assess-photo-header">
+                <h4>Want a more personal response?</h4>
+                <span class="assess-photo-badge">OPTIONAL</span>
+              </div>
+              <p class="assess-photo-desc">Add a quick photo of your smile and Dr Aodhan will tailor his reply to what he can see. A relaxed, natural smile in good light is perfect. Nothing clinical needed.</p>
+              <label class="assess-photo-uploader" for="a-photo" id="a-photo-uploader">
+                <span class="assess-photo-plus" id="a-photo-icon">+</span>
+                <span id="a-photo-label">Add a photo of your smile</span>
+              </label>
+              <input type="file" id="a-photo" accept="image/jpeg,image/png,image/heic,image/webp" style="display:none">
+              <p class="assess-photo-privacy">By adding a photo you agree it may be used to assess your enquiry. It is stored securely and never shared.</p>
+            </div>
+
             <div class="assess-nav">
               <button type="button" class="assess-back" data-back>← Back</button>
               <button type="submit" class="btn-gld assess-next">Send my assessment</button>
@@ -709,7 +737,8 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
   };
 
   function postToJotForm(answers){
-    const body = new URLSearchParams();
+    // Use FormData for multipart upload (required when a photo is attached)
+    const body = new FormData();
     body.append('submission[2]', OPTION_MAP[0][answers[0]] || '');
     body.append('submission[3]', OPTION_MAP[1][answers[1]] || '');
     body.append('submission[4]', OPTION_MAP[2][answers[2]] || '');
@@ -717,11 +746,36 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
     body.append('submission[6]', answers.name || '');
     body.append('submission[7]', answers.email || '');
     body.append('submission[8_full]', answers.phone || '');
+    if(answers.photo){
+      body.append('submission[12]', answers.photo, answers.photo.name);
+    }
     fetch(JOTFORM_API_URL, { method: 'POST', body: body })
       .then(r => r.json())
       .then(d => { if(!d || d.responseCode !== 200) console.warn('JotForm submit issue', d); })
       .catch(err => console.warn('JotForm submit error', err));
   }
+
+  // Photo upload UI: show filename and tick when selected
+  (function(){
+    const input = document.getElementById('a-photo');
+    const uploader = document.getElementById('a-photo-uploader');
+    const label = document.getElementById('a-photo-label');
+    const icon = document.getElementById('a-photo-icon');
+    if(!input) return;
+    input.addEventListener('change', () => {
+      const f = input.files && input.files[0];
+      if(f){
+        uploader.classList.add('has-file');
+        const name = f.name.length > 32 ? f.name.slice(0, 29) + '…' : f.name;
+        label.textContent = name;
+        icon.textContent = '✓';
+      } else {
+        uploader.classList.remove('has-file');
+        label.textContent = 'Add a photo of your smile';
+        icon.textContent = '+';
+      }
+    });
+  })();
 
   // Submit final step
   document.getElementById('assess-form').addEventListener('submit', (e) => {
@@ -729,8 +783,10 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
     const name = document.getElementById('a-name').value.trim();
     const email = document.getElementById('a-email').value.trim();
     const phone = document.getElementById('a-phone').value.trim();
+    const photoInput = document.getElementById('a-photo');
+    const photo = photoInput && photoInput.files && photoInput.files[0] ? photoInput.files[0] : null;
     if(!name || !email) return;
-    answers.name = name; answers.email = email; answers.phone = phone;
+    answers.name = name; answers.email = email; answers.phone = phone; answers.photo = photo;
     // Send to JotForm backend (custom UI preserved)
     postToJotForm(answers);
     // Meta Pixel Lead event (fires only if pixel installed)
