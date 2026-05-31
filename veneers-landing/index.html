@@ -721,12 +721,11 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
     });
   });
 
-  // JotForm REST API submission. Custom UI stays on this page; submissions land in JotForm dashboard.
-  // NOTE: The API key below is readable in page source. If abused, regenerate it in JotForm Settings → API.
-  // Long-term: relocate this key behind a Netlify Function so it never reaches the browser.
-  const JOTFORM_FORM_ID = '261458624229058';
-  const JOTFORM_API_KEY = '4ceb50c2ad2f4830f1c9b1da27552e4b';
-  const JOTFORM_API_URL = 'https://api.jotform.com/form/' + JOTFORM_FORM_ID + '/submissions?apiKey=' + JOTFORM_API_KEY;
+  // JotForm submissions go through a same-origin proxy at /api/submit
+  // (Cloudflare Pages Function, see functions/api/submit.js).
+  // The JotForm API key is held server-side as a Pages env var and is
+  // never exposed to the browser.
+  const JOTFORM_API_URL = '/api/submit';
 
   // Map in-page option codes to the exact JotForm option text
   const OPTION_MAP = {
