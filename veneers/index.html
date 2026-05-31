@@ -49,13 +49,8 @@ a{text-decoration:none;color:inherit}
 
 /* HERO */
 .hero{padding-top:52px}
-.hero-img{aspect-ratio:16/10;max-height:480px;background:linear-gradient(160deg,#2a2825,#1a1917);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
-.hero-ba{position:absolute;inset:0;display:grid;grid-template-rows:1fr 1fr;gap:1px;background:#1a1917;z-index:0}
-.hero-ba-side{position:relative;overflow:hidden}
-.hero-ba-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
-.hero-ba-lbl{position:absolute;top:0.55rem;left:0.55rem;background:rgba(0,0,0,0.6);color:#fff;padding:0.25rem 0.6rem;font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;border-radius:1px;backdrop-filter:blur(4px);z-index:2;font-weight:500}
-.hero-ba-cap{position:absolute;bottom:0.55rem;right:0.55rem;background:rgba(0,0,0,0.6);color:rgba(255,255,255,0.9);padding:0.25rem 0.6rem;font-size:0.5rem;letter-spacing:0.12em;border-radius:1px;backdrop-filter:blur(4px);z-index:2;text-transform:uppercase}
+.hero-img{background:#f5f2eb;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+.hero-ba-card{width:100%;max-width:320px}
 .hero-ph{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.12)}
 .hero-bw{padding:1.5rem 1.1rem 0;background:var(--white)}
 .hero-ey{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
@@ -239,11 +234,20 @@ footer{background:#111012;padding:1.5rem 1.1rem}
     <div class="hero-reg"><strong>Dr Aodhan Docherty</strong> · Registered Dentist, AHPRA DEN0001938737 · Circular Quay, Sydney. Veneers are an elective procedure. Suitability is assessed in person.</div>
   </div>
   <div class="hero-img">
-    <div class="hero-ba">
-      <div class="hero-ba-side"><img src="/veneers-landing/cases/case-16-before.jpg" alt="Case 16 before" loading="lazy" onerror="this.style.display='none'"><span class="hero-ba-lbl">Before</span></div>
-      <div class="hero-ba-side"><img src="/veneers-landing/cases/case-16-after.jpg" alt="Case 16 after" loading="lazy" onerror="this.style.display='none'"><span class="hero-ba-lbl">After</span></div>
+    <div class="hero-ba-card">
+      <div class="bac" style="margin-bottom:0">
+        <div class="ba-imgs">
+          <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-16-before.jpg" alt="Case 16 before" loading="lazy" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+          <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-16-after.jpg" alt="Case 16 after" loading="lazy" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+          <div class="ba-sep"></div>
+        </div>
+        <div class="ba-foot">
+          <div class="ba-tx">Porcelain Veneers</div>
+          <div class="ba-nt">8 upper porcelain veneers · After image: ~3 weeks post-procedure</div>
+          <div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div>
+        </div>
+      </div>
     </div>
-    <span class="hero-ba-cap">Patient case · 8 upper porcelain veneers</span>
   </div>
 </section>
 
