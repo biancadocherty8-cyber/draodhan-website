@@ -727,6 +727,10 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
   const JOTFORM_FORM_ID = '261458624229058';
   const JOTFORM_API_KEY = '4ceb50c2ad2f4830f1c9b1da27552e4b';
   const JOTFORM_API_URL = 'https://api.jotform.com/form/' + JOTFORM_FORM_ID + '/submissions?apiKey=' + JOTFORM_API_KEY;
+  // For submissions WITH a photo we use the classic submit endpoint instead — it natively handles
+  // multipart file uploads (the REST API submissions endpoint does not). Opaque response (no-cors)
+  // is fine because we just need to fire-and-forget.
+  const JOTFORM_SUBMIT_URL = 'https://submit.jotform.com/submit/' + JOTFORM_FORM_ID + '/';
 
   // Map in-page option codes to the exact JotForm option text
   const OPTION_MAP = {
@@ -737,22 +741,35 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
   };
 
   function postToJotForm(answers){
-    // Use FormData for multipart upload (required when a photo is attached)
-    const body = new FormData();
-    body.append('submission[2]', OPTION_MAP[0][answers[0]] || '');
-    body.append('submission[3]', OPTION_MAP[1][answers[1]] || '');
-    body.append('submission[4]', OPTION_MAP[2][answers[2]] || '');
-    body.append('submission[5]', OPTION_MAP[3][answers[3]] || '');
-    body.append('submission[6]', answers.name || '');
-    body.append('submission[7]', answers.email || '');
-    body.append('submission[8_full]', answers.phone || '');
-    if(answers.photo){
+    // Two paths:
+    //   (a) No photo → URLSearchParams to the REST API (proven, returns JSON we can read)
+    //   (b) Photo attached → multipart FormData to the classic submit endpoint (handles files natively)
+    if(!answers.photo){
+      const body = new URLSearchParams();
+      body.append('submission[2]', OPTION_MAP[0][answers[0]] || '');
+      body.append('submission[3]', OPTION_MAP[1][answers[1]] || '');
+      body.append('submission[4]', OPTION_MAP[2][answers[2]] || '');
+      body.append('submission[5]', OPTION_MAP[3][answers[3]] || '');
+      body.append('submission[6]', answers.name || '');
+      body.append('submission[7]', answers.email || '');
+      body.append('submission[8_full]', answers.phone || '');
+      fetch(JOTFORM_API_URL, { method: 'POST', body: body })
+        .then(r => r.json())
+        .then(d => { if(!d || d.responseCode !== 200) console.warn('JotForm submit issue', d); })
+        .catch(err => console.warn('JotForm submit error', err));
+    } else {
+      const body = new FormData();
+      body.append('submission[2]', OPTION_MAP[0][answers[0]] || '');
+      body.append('submission[3]', OPTION_MAP[1][answers[1]] || '');
+      body.append('submission[4]', OPTION_MAP[2][answers[2]] || '');
+      body.append('submission[5]', OPTION_MAP[3][answers[3]] || '');
+      body.append('submission[6]', answers.name || '');
+      body.append('submission[7]', answers.email || '');
+      body.append('submission[8_full]', answers.phone || '');
       body.append('submission[12]', answers.photo, answers.photo.name);
+      fetch(JOTFORM_SUBMIT_URL, { method: 'POST', body: body, mode: 'no-cors' })
+        .catch(err => console.warn('JotForm submit (with photo) error', err));
     }
-    fetch(JOTFORM_API_URL, { method: 'POST', body: body })
-      .then(r => r.json())
-      .then(d => { if(!d || d.responseCode !== 200) console.warn('JotForm submit issue', d); })
-      .catch(err => console.warn('JotForm submit error', err));
   }
 
   // Photo upload UI: show filename and tick when selected
