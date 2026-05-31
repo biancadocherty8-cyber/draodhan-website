@@ -698,19 +698,56 @@ if(gal){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){
         }
       });
     }
+    // JotForm submission (same form as landing page: 261458624229058)
+    const JOTFORM_FORM_ID = '261458624229058';
+    const JOTFORM_API_KEY = '4ceb50c2ad2f4830f1c9b1da27552e4b';
+    const JOTFORM_API_URL = 'https://api.jotform.com/form/' + JOTFORM_FORM_ID + '/submissions?apiKey=' + JOTFORM_API_KEY;
+    const JOTFORM_SUBMIT_URL = 'https://submit.jotform.com/submit/' + JOTFORM_FORM_ID + '/';
+    const OPTION_MAP = {
+      0: {colour:'Tooth colour or staining', shape:'Shape, edges or chips', alignment:'Minor gaps or alignment', full:'A full smile makeover', unsure:"Not sure — I'd like advice"},
+      1: {'4-6':'Around 4–6 (just the fronts)', '8':'Around 8', '10+':'10 or more (broad smile)', 'not-sure':'Not sure'},
+      2: {never:'Never', whitening:'Whitening only', composite:'Composite bonding or veneers', porcelain:'Porcelain veneers (replacing)'},
+      3: {asap:'As soon as suitable', '1-3':'Within the next 1–3 months', '3-6':'3–6 months from now', exploring:'Just exploring for now'}
+    };
+    function postToJotForm(a){
+      if(!a.photo){
+        const body = new URLSearchParams();
+        body.append('submission[2]', OPTION_MAP[0][a[0]] || '');
+        body.append('submission[3]', OPTION_MAP[1][a[1]] || '');
+        body.append('submission[4]', OPTION_MAP[2][a[2]] || '');
+        body.append('submission[5]', OPTION_MAP[3][a[3]] || '');
+        body.append('submission[6]', a.name || '');
+        body.append('submission[7]', a.email || '');
+        body.append('submission[8_full]', a.phone || '');
+        fetch(JOTFORM_API_URL, { method: 'POST', body: body })
+          .then(r => r.json())
+          .then(d => { if(!d || d.responseCode !== 200) console.warn('JotForm submit issue', d); })
+          .catch(err => console.warn('JotForm submit error', err));
+      } else {
+        const body = new FormData();
+        body.append('submission[2]', OPTION_MAP[0][a[0]] || '');
+        body.append('submission[3]', OPTION_MAP[1][a[1]] || '');
+        body.append('submission[4]', OPTION_MAP[2][a[2]] || '');
+        body.append('submission[5]', OPTION_MAP[3][a[3]] || '');
+        body.append('submission[6]', a.name || '');
+        body.append('submission[7]', a.email || '');
+        body.append('submission[8_full]', a.phone || '');
+        body.append('submission[12]', a.photo, a.photo.name);
+        fetch(JOTFORM_SUBMIT_URL, { method: 'POST', body: body, mode: 'no-cors' })
+          .catch(err => console.warn('JotForm submit (with photo) error', err));
+      }
+    }
     form.addEventListener('submit',e=>{
       e.preventDefault();
       const name=document.getElementById('a-name').value.trim();
       const email=document.getElementById('a-email').value.trim();
       const phone=document.getElementById('a-phone').value.trim();
-      if(!name||!email) return;
-      answers.name=name; answers.email=email; answers.phone=phone;
       const photoInput=document.getElementById('a-photo');
-      answers.hasPhoto = !!(photoInput && photoInput.files && photoInput.files.length);
-      if(answers.hasPhoto) answers.photoName = photoInput.files[0].name;
-      // Meta Pixel lead event
+      const photo = photoInput && photoInput.files && photoInput.files[0] ? photoInput.files[0] : null;
+      if(!name||!email) return;
+      answers.name=name; answers.email=email; answers.phone=phone; answers.photo=photo;
+      postToJotForm(answers);
       if(typeof fbq==='function'){try{fbq('track','Lead',{content_name:'Smile Assessment'});}catch(e){}}
-      // TODO: connect to your email / CRM here. Send `answers` to your endpoint or JotForm.
       console.log('[Smile Assessment submission]', answers);
       goTo(5);
     });
