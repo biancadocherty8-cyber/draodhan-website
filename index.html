@@ -698,10 +698,9 @@ if(gal){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){
         }
       });
     }
-    // JotForm submission (same form as landing page: 261458624229058)
-    const JOTFORM_FORM_ID = '261458624229058';
-    const JOTFORM_API_KEY = '4ceb50c2ad2f4830f1c9b1da27552e4b';
-    const JOTFORM_API_URL = 'https://api.jotform.com/form/' + JOTFORM_FORM_ID + '/submissions?apiKey=' + JOTFORM_API_KEY;
+    // JotForm submissions go through a same-origin proxy at /api/submit
+    // (Cloudflare Pages Function holds the API key server-side).
+    const JOTFORM_API_URL = '/api/submit';
     const OPTION_MAP = {
       0: {colour:'Tooth colour or staining', shape:'Shape, edges or chips', alignment:'Minor gaps or alignment', full:'A full smile makeover', unsure:"Not sure — I'd like advice"},
       1: {'4-6':'Around 4–6 (just the fronts)', '8':'Around 8', '10+':'10 or more (broad smile)', 'not-sure':'Not sure'},
