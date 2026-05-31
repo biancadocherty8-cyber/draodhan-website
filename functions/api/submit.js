@@ -1,4 +1,5 @@
 // Cloudflare Pages Function — proxy for JotForm submissions
+// v2 — rebuild trigger after API key rotation
 //
 // Lives at:  https://draodhan.com.au/api/submit
 // Receives:  POST form-urlencoded or multipart from the website forms
