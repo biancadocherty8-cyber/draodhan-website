@@ -89,6 +89,23 @@ export async function onRequestPost(context) {
   }
 }
 
+// TEMPORARY: GET /api/submit returns key prefix for debugging. Remove after diag.
+export async function onRequestGet(context) {
+  const { env } = context;
+  const k = env.JOTFORM_API_KEY || '';
+  return new Response(JSON.stringify({
+    keyPresent: !!k,
+    keyLength: k.length,
+    first5: k.slice(0, 5),
+    last4: k.slice(-4),
+    expectedFirst5: '6cdce',
+    expectedLast4: '7126'
+  }, null, 2), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' }
+  });
+}
+
 // Handle CORS preflight from the browser
 export async function onRequestOptions(context) {
   const origin = context.request.headers.get('Origin') || '';
