@@ -708,10 +708,37 @@ if(gal){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){
       2: {never:'Never', whitening:'Whitening only', composite:'Composite bonding or veneers', porcelain:'Porcelain veneers (replacing)'},
       3: {asap:'As soon as suitable', '1-3':'Within the next 1–3 months', '3-6':'3–6 months from now', exploring:'Just exploring for now'}
     };
-    function postToJotForm(a){
-      // Single path: multipart FormData to REST API. Handles text-only and photo upload,
-      // returns JSON we can verify (responseCode 200 = success).
-      const body = new FormData();
+    // Resize photo to max 1600px and return base64 data URL
+    function processPhoto(file){
+      return new Promise((resolve) => {
+        if(!file){ resolve(''); return; }
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          const img = new Image();
+          img.onload = () => {
+            const MAX = 1600;
+            let w = img.naturalWidth, h = img.naturalHeight;
+            if(w > MAX || h > MAX){
+              if(w >= h){ h = Math.round(h * MAX / w); w = MAX; }
+              else { w = Math.round(w * MAX / h); h = MAX; }
+            }
+            const c = document.createElement('canvas');
+            c.width = w; c.height = h;
+            c.getContext('2d').drawImage(img, 0, 0, w, h);
+            resolve(c.toDataURL('image/jpeg', 0.82));
+          };
+          img.onerror = () => resolve('');
+          img.src = ev.target.result;
+        };
+        reader.onerror = () => resolve('');
+        reader.readAsDataURL(file);
+      });
+    }
+    async function postToJotForm(a){
+      // Text-only submission to REST API. Photo is resized client-side and packed
+      // into hidden field submission[13] (qid photoData) as a base64 data URL.
+      const photoB64 = a.photo ? await processPhoto(a.photo) : '';
+      const body = new URLSearchParams();
       body.append('submission[2]', OPTION_MAP[0][a[0]] || '');
       body.append('submission[3]', OPTION_MAP[1][a[1]] || '');
       body.append('submission[4]', OPTION_MAP[2][a[2]] || '');
@@ -719,9 +746,7 @@ if(gal){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){
       body.append('submission[6]', a.name || '');
       body.append('submission[7]', a.email || '');
       body.append('submission[8_full]', a.phone || '');
-      if(a.photo){
-        body.append('submission[12]', a.photo, a.photo.name);
-      }
+      if(photoB64){ body.append('submission[13]', photoB64); }
       fetch(JOTFORM_API_URL, { method: 'POST', body: body })
         .then(r => r.json())
         .then(d => { if(!d || d.responseCode !== 200) console.warn('JotForm submit issue', d); })
