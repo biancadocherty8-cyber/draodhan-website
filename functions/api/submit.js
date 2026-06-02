@@ -18,19 +18,6 @@ const META_PIXEL_ID = '439427055594933';
 const META_API_VERSION = 'v18.0';
 
 // =============================================================================
-// TEMP debug endpoint — GET /api/submit returns env var presence (no values)
-// =============================================================================
-export async function onRequestGet(context) {
-  const e = context.env;
-  return new Response(JSON.stringify({
-    JOTFORM_API_KEY: { present: !!e.JOTFORM_API_KEY, len: (e.JOTFORM_API_KEY || '').length },
-    META_CAPI_ACCESS_TOKEN: { present: !!e.META_CAPI_ACCESS_TOKEN, len: (e.META_CAPI_ACCESS_TOKEN || '').length, first6: (e.META_CAPI_ACCESS_TOKEN || '').slice(0,6) },
-    META_CAPI_TEST_EVENT_CODE: { present: !!e.META_CAPI_TEST_EVENT_CODE, value: e.META_CAPI_TEST_EVENT_CODE || null },
-    allEnvKeys: Object.keys(e)
-  }, null, 2), { status: 200, headers: {'Content-Type': 'application/json'} });
-}
-
-// =============================================================================
 // CORS preflight
 // =============================================================================
 export async function onRequestOptions(context) {
@@ -126,17 +113,14 @@ export async function onRequestPost(context) {
     upstreamOk = parsed && parsed.responseCode === 200;
   } catch (_) {}
 
-  // TEMP DEBUG: run CAPI inline and stash result in a header so we can see what Meta says
-  let capiDebug = 'skipped';
+  // Fire Meta CAPI Lead in the background (verified working as of 2026-06-02).
+  // Uses waitUntil so the patient's response isn't delayed by Meta's ~150ms latency.
   if (upstreamOk && env.META_CAPI_ACCESS_TOKEN) {
-    try {
-      const capiResp = await fireMetaLead(bodyText, request, env);
-      capiDebug = 'sent:' + JSON.stringify(capiResp).slice(0, 300);
-    } catch (err) {
-      capiDebug = 'err:' + (err && err.message);
-    }
-  } else {
-    capiDebug = 'gated:upstreamOk=' + upstreamOk + ' tokenPresent=' + !!env.META_CAPI_ACCESS_TOKEN;
+    context.waitUntil(
+      fireMetaLead(bodyText, request, env).catch((err) => {
+        console.warn('Meta CAPI Lead failed:', err && err.message);
+      })
+    );
   }
 
   // --- Return JotForm's response to the browser ----------------------------
@@ -144,12 +128,10 @@ export async function onRequestPost(context) {
     status: upstreamStatus,
     headers: {
       'Content-Type': upstreamContentType,
-      'X-Capi-Debug': capiDebug.slice(0, 1000),
       ...(origin && originOk
         ? {
             'Access-Control-Allow-Origin': origin,
             'Access-Control-Allow-Credentials': 'true',
-            'Access-Control-Expose-Headers': 'X-Capi-Debug',
           }
         : {}),
     },
