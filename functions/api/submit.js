@@ -126,12 +126,17 @@ export async function onRequestPost(context) {
     upstreamOk = parsed && parsed.responseCode === 200;
   } catch (_) {}
 
+  // TEMP DEBUG: run CAPI inline and stash result in a header so we can see what Meta says
+  let capiDebug = 'skipped';
   if (upstreamOk && env.META_CAPI_ACCESS_TOKEN) {
-    context.waitUntil(
-      fireMetaLead(bodyText, request, env).catch((err) => {
-        console.warn('Meta CAPI Lead failed:', err && err.message);
-      })
-    );
+    try {
+      const capiResp = await fireMetaLead(bodyText, request, env);
+      capiDebug = 'sent:' + JSON.stringify(capiResp).slice(0, 300);
+    } catch (err) {
+      capiDebug = 'err:' + (err && err.message);
+    }
+  } else {
+    capiDebug = 'gated:upstreamOk=' + upstreamOk + ' tokenPresent=' + !!env.META_CAPI_ACCESS_TOKEN;
   }
 
   // --- Return JotForm's response to the browser ----------------------------
@@ -139,10 +144,12 @@ export async function onRequestPost(context) {
     status: upstreamStatus,
     headers: {
       'Content-Type': upstreamContentType,
+      'X-Capi-Debug': capiDebug.slice(0, 1000),
       ...(origin && originOk
         ? {
             'Access-Control-Allow-Origin': origin,
             'Access-Control-Allow-Credentials': 'true',
+            'Access-Control-Expose-Headers': 'X-Capi-Debug',
           }
         : {}),
     },
@@ -242,10 +249,13 @@ async function fireMetaLead(bodyText, request, env) {
     body: JSON.stringify(payload),
   });
 
+  const respText = await r.text();
+  let respParsed = null;
+  try { respParsed = JSON.parse(respText); } catch (_) {}
   if (!r.ok) {
-    const errText = await r.text();
-    console.warn('Meta CAPI returned', r.status, errText);
+    console.warn('Meta CAPI returned', r.status, respText);
   }
+  return { status: r.status, ok: r.ok, body: respParsed || respText.slice(0, 300) };
 }
 
 // SHA-256 hex digest using Web Crypto (available in Cloudflare Workers)
