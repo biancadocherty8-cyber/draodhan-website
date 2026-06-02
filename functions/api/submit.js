@@ -18,6 +18,19 @@ const META_PIXEL_ID = '439427055594933';
 const META_API_VERSION = 'v18.0';
 
 // =============================================================================
+// TEMP debug endpoint — GET /api/submit returns env var presence (no values)
+// =============================================================================
+export async function onRequestGet(context) {
+  const e = context.env;
+  return new Response(JSON.stringify({
+    JOTFORM_API_KEY: { present: !!e.JOTFORM_API_KEY, len: (e.JOTFORM_API_KEY || '').length },
+    META_CAPI_ACCESS_TOKEN: { present: !!e.META_CAPI_ACCESS_TOKEN, len: (e.META_CAPI_ACCESS_TOKEN || '').length, first6: (e.META_CAPI_ACCESS_TOKEN || '').slice(0,6) },
+    META_CAPI_TEST_EVENT_CODE: { present: !!e.META_CAPI_TEST_EVENT_CODE, value: e.META_CAPI_TEST_EVENT_CODE || null },
+    allEnvKeys: Object.keys(e)
+  }, null, 2), { status: 200, headers: {'Content-Type': 'application/json'} });
+}
+
+// =============================================================================
 // CORS preflight
 // =============================================================================
 export async function onRequestOptions(context) {
