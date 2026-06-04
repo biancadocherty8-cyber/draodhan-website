@@ -396,6 +396,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
           <div class="assess-dot"></div>
           <div class="assess-dot"></div>
           <div class="assess-dot"></div>
+          <div class="assess-dot"></div>
         </div>
 
         <form id="assess-form" onsubmit="event.preventDefault();">
@@ -419,6 +420,9 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
               <button type="button" class="assess-opt" data-val="10+"><span class="assess-opt-bullet"></span>10 or more (broad smile)</button>
               <button type="button" class="assess-opt" data-val="not-sure"><span class="assess-opt-bullet"></span>Not sure</button>
             </div>
+            <div class="assess-nav">
+              <button type="button" class="assess-back" data-back>← Back</button>
+            </div>
           </div>
 
           <div class="assess-step" data-step="2">
@@ -428,6 +432,9 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
               <button type="button" class="assess-opt" data-val="whitening"><span class="assess-opt-bullet"></span>Whitening only</button>
               <button type="button" class="assess-opt" data-val="composite"><span class="assess-opt-bullet"></span>Composite bonding or veneers</button>
               <button type="button" class="assess-opt" data-val="porcelain"><span class="assess-opt-bullet"></span>Porcelain veneers (replacing)</button>
+            </div>
+            <div class="assess-nav">
+              <button type="button" class="assess-back" data-back>← Back</button>
             </div>
           </div>
 
@@ -439,11 +446,29 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
               <button type="button" class="assess-opt" data-val="3-6"><span class="assess-opt-bullet"></span>3 to 6 months from now</button>
               <button type="button" class="assess-opt" data-val="exploring"><span class="assess-opt-bullet"></span>Just exploring for now</button>
             </div>
+            <div class="assess-nav">
+              <button type="button" class="assess-back" data-back>← Back</button>
+            </div>
           </div>
 
           <div class="assess-step" data-step="4">
+            <div class="assess-q">A considered investment</div>
+            <p class="assess-subq" style="font-size:0.72rem;color:var(--mid);line-height:1.55;margin-top:-0.45rem;margin-bottom:1rem;font-weight:300">A full cosmetic case at this practice is bespoke and personally placed by Dr Aodhan. To help us send you the right information, which best describes your thinking?</p>
+            <div class="assess-opts">
+              <button type="button" class="assess-opt" data-val="invest"><span class="assess-opt-bullet"></span>I'm investing in the right outcome, happy to discuss what that requires</button>
+              <button type="button" class="assess-opt" data-val="budget"><span class="assess-opt-bullet"></span>I have a defined budget I'd like the treatment to fit within</button>
+              <button type="button" class="assess-opt" data-val="understand"><span class="assess-opt-bullet"></span>I'd like to understand the investment before deciding</button>
+              <button type="button" class="assess-opt" data-val="prefer-not"><span class="assess-opt-bullet"></span>I'd prefer not to share at this stage</button>
+            </div>
+            <div class="assess-nav">
+              <button type="button" class="assess-back" data-back>← Back</button>
+            </div>
+          </div>
+
+          <div class="assess-step" data-step="5">
             <div class="assess-q">Where should we email your assessment?</div>
-            <input type="text" class="assess-input" id="a-name" placeholder="Your first name" required>
+            <input type="text" class="assess-input" id="a-name" placeholder="First name" required>
+            <input type="text" class="assess-input" id="a-last" placeholder="Last name" required>
             <input type="email" class="assess-input" id="a-email" placeholder="Email address" required>
             <input type="tel" class="assess-input" id="a-phone" placeholder="Mobile (optional)">
 
@@ -469,7 +494,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
             <p class="assess-disc">Your assessment is indicative only and based on your answers. It does not replace a clinical examination. Suitability for any treatment must be assessed in person. Unsubscribe anytime.</p>
           </div>
 
-          <div class="assess-step" data-step="5">
+          <div class="assess-step" data-step="6">
             <div class="assess-done">
               <div class="checkmark">✓</div>
               <h4>Thank you. <em>Check your inbox.</em></h4>
@@ -678,7 +703,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
 <script>
 // SMILE ASSESSMENT STATE MACHINE
 (function(){
-  const STEPS = 5; // 0..4 then thank-you step 5
+  const STEPS = 6; // 0..5 then thank-you step 6
   let current = 0;
   const answers = {};
 
@@ -703,7 +728,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
   // Auto-advance on option click
   document.querySelectorAll('.assess-step[data-step]').forEach(step => {
     const idx = parseInt(step.dataset.step, 10);
-    if(idx >= 4) return; // last step has its own submit
+    if(idx >= 5) return; // contact step has its own submit
     step.querySelectorAll('.assess-opt').forEach(btn => {
       btn.addEventListener('click', () => {
         step.querySelectorAll('.assess-opt').forEach(b => b.classList.remove('selected'));
@@ -733,7 +758,8 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
     0: {colour:'Tooth colour or staining', shape:'Shape, edges or chips', alignment:'Minor gaps or alignment', full:'A full smile makeover', unsure:"Not sure — I'd like advice"},
     1: {'4-6':'Around 4–6 (just the fronts)', '8':'Around 8', '10+':'10 or more (broad smile)', 'not-sure':'Not sure'},
     2: {never:'Never', whitening:'Whitening only', composite:'Composite bonding or veneers', porcelain:'Porcelain veneers (replacing)'},
-    3: {asap:'As soon as suitable', '1-3':'Within the next 1–3 months', '3-6':'3–6 months from now', exploring:'Just exploring for now'}
+    3: {asap:'As soon as suitable', '1-3':'Within the next 1–3 months', '3-6':'3–6 months from now', exploring:'Just exploring for now'},
+    4: {'invest':"I'm investing in the right outcome, happy to discuss what that requires", 'budget':"I have a defined budget I'd like the treatment to fit within", 'understand':"I'd like to understand the investment before deciding", 'prefer-not':"I'd prefer not to share at this stage"}
   };
 
   // Resize photo and re-encode JPEG, shrinking until the base64 string fits
@@ -792,7 +818,9 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
     body.append('submission[3]', OPTION_MAP[1][answers[1]] || '');
     body.append('submission[4]', OPTION_MAP[2][answers[2]] || '');
     body.append('submission[5]', OPTION_MAP[3][answers[3]] || '');
+    body.append('submission[10]', OPTION_MAP[4][answers[4]] || '');
     body.append('submission[6]', answers.name || '');
+    body.append('submission[14]', answers.last || '');
     body.append('submission[7]', answers.email || '');
     body.append('submission[8_full]', answers.phone || '');
     if(photoB64){
@@ -830,12 +858,13 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
   document.getElementById('assess-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('a-name').value.trim();
+    const last = document.getElementById('a-last').value.trim();
     const email = document.getElementById('a-email').value.trim();
     const phone = document.getElementById('a-phone').value.trim();
     const photoInput = document.getElementById('a-photo');
     const photo = photoInput && photoInput.files && photoInput.files[0] ? photoInput.files[0] : null;
-    if(!name || !email) return;
-    answers.name = name; answers.email = email; answers.phone = phone; answers.photo = photo;
+    if(!name || !last || !email) return;
+    answers.name = name; answers.last = last; answers.email = email; answers.phone = phone; answers.photo = photo;
     // Send to JotForm backend (custom UI preserved)
     postToJotForm(answers);
     // Meta Pixel Lead event (fires only if pixel installed)
@@ -843,7 +872,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
     // gtag / google analytics conversion (fires only if gtag installed)
     if(typeof gtag === 'function') { try { gtag('event','generate_lead',{event_category:'assessment'}); } catch(e){} }
     console.log('[Smile Assessment submission]', answers);
-    goTo(5);
+    goTo(6);
   });
 })();
 
