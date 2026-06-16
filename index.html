@@ -824,6 +824,27 @@ if(gal){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){
     // JotForm submissions go through a same-origin proxy at /api/submit
     // (Cloudflare Pages Function holds the API key server-side).
     const JOTFORM_API_URL = '/api/submit';
+    // --- Lead attribution (UTM + referrer) --------------------------------
+    // Captured once per session so a Meta ad click is still recorded even if
+    // the visitor moves between pages before submitting. Posted as the hidden
+    // JotForm "Lead Source" field (qid 15) and recorded in the Submissions Log.
+    const LEAD_SOURCE = (function(){
+      try {
+        var KEY = 'da_lead_source';
+        var saved = sessionStorage.getItem(KEY);
+        if (saved) return saved;
+        var qp = new URLSearchParams(window.location.search);
+        var keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'];
+        var parts = [];
+        keys.forEach(function(k){ var v = qp.get(k); if (v) parts.push(k + '=' + v); });
+        if (document.referrer) parts.push('referrer=' + document.referrer);
+        parts.push('landing=' + window.location.pathname);
+        parts.push('ts=' + new Date().toISOString());
+        var val = parts.join(' | ');
+        try { sessionStorage.setItem(KEY, val); } catch(e){}
+        return val;
+      } catch(e){ return ''; }
+    })();
     const OPTION_MAP = {
       0: {colour:'Tooth colour or staining', shape:'Shape, edges or chips', alignment:'Minor gaps or alignment', full:'A full smile makeover', unsure:"Not sure — I'd like advice"},
       1: {'4-6':'Around 4–6 (just the fronts)', '8':'Around 8', '10+':'10 or more (broad smile)', 'not-sure':'Not sure'},
@@ -889,6 +910,7 @@ if(gal){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){
       body.append('submission[7]', a.email || '');
       body.append('submission[8_full]', a.phone || '');
       if(photoB64){ body.append('submission[13]', photoB64); }
+      body.append('submission[15]', LEAD_SOURCE);
       fetch(JOTFORM_API_URL, { method: 'POST', body: body })
         .then(r => r.json())
         .then(d => { if(!d || d.responseCode !== 200) console.warn('JotForm submit issue', d); })
