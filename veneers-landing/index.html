@@ -851,6 +851,27 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
   // The JotForm API key is held server-side as a Pages env var and is
   // never exposed to the browser.
   const JOTFORM_API_URL = '/api/submit';
+  // --- Lead attribution (UTM + referrer) ----------------------------------
+  // Captured once per session so a Meta ad click is still recorded even if the
+  // visitor moves between pages before submitting. Posted as the hidden JotForm
+  // "Lead Source" field (qid 15) and recorded in the Submissions Log.
+  const LEAD_SOURCE = (function(){
+    try {
+      var KEY = 'da_lead_source';
+      var saved = sessionStorage.getItem(KEY);
+      if (saved) return saved;
+      var qp = new URLSearchParams(window.location.search);
+      var keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'];
+      var parts = [];
+      keys.forEach(function(k){ var v = qp.get(k); if (v) parts.push(k + '=' + v); });
+      if (document.referrer) parts.push('referrer=' + document.referrer);
+      parts.push('landing=' + window.location.pathname);
+      parts.push('ts=' + new Date().toISOString());
+      var val = parts.join(' | ');
+      try { sessionStorage.setItem(KEY, val); } catch(e){}
+      return val;
+    } catch(e){ return ''; }
+  })();
 
   // Map in-page option codes to the exact JotForm option text
   const OPTION_MAP = {
@@ -922,6 +943,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
     body.append('submission[14]', answers.last || '');
     body.append('submission[7]', answers.email || '');
     body.append('submission[8_full]', answers.phone || '');
+    body.append('submission[15]', LEAD_SOURCE);
     if(photoB64){
       body.append('submission[13]', photoB64);
     }
