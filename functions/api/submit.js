@@ -195,8 +195,8 @@ async function fireMetaLead(bodyText, request, env) {
         event_source_url: referer,
         user_data,
         custom_data: {
-          content_name: 'Smile Assessment',
-          content_category: 'cosmetic_dentistry',
+          content_name: 'Enquiry',
+
         },
         // event_id helps Meta dedupe against any client-side Lead that
         // happens to fire on the same submission. Using a stable id based
