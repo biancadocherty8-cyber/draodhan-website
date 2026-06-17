@@ -743,7 +743,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
     scheduleFired = false;
     if (opts.userInitiated && window.fbq && !initiateFired) {
       initiateFired = true;
-      try { window.fbq('track', 'InitiateCheckout', { content_name: 'Consultation Booking', content_category: 'booking_funnel' }); } catch(e){}
+      try { window.fbq('track', 'InitiateCheckout', { content_name: 'Booking' }); } catch(e){}
     }
     if (opts.userInitiated && window.fbq) {
       try { window.fbq('trackCustom', 'BookingTabSelected', { type: type }); } catch(e){}
@@ -769,7 +769,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
     iframe.style.height = e.data.height + 'px';
     if (!scheduleFired && e.data.height >= SCHEDULE_HEIGHT_THRESHOLD && window.fbq) {
       scheduleFired = true;
-      try { window.fbq('track', 'Schedule', { content_name: current === 'virtual' ? 'Zoom Consultation' : 'In-Person Consultation', content_category: 'consultation_booking' }); } catch(e){}
+      try { window.fbq('track', 'Schedule', { content_name: current === 'virtual' ? 'Zoom Booking' : 'In-Person Booking' }); } catch(e){}
     }
   });
   setType('inperson');
@@ -989,7 +989,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
     // Send to JotForm backend (custom UI preserved)
     postToJotForm(answers);
     // Meta Pixel Lead event (fires only if pixel installed)
-    if(typeof fbq === 'function') { try { fbq('track','Lead',{content_name:'Smile Assessment'}); } catch(e){} }
+    if(typeof fbq === 'function') { try { fbq('track','Lead',{content_name:'Enquiry'}); } catch(e){} }
     // gtag / google analytics conversion (fires only if gtag installed)
     if(typeof gtag === 'function') { try { gtag('event','generate_lead',{event_category:'assessment'}); } catch(e){} }
     console.log('[Smile Assessment submission]', answers);
