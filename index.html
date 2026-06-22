@@ -569,13 +569,13 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
 
         <div class="assess-photo">
           <div class="assess-photo-head">Want a more personal response? <span>Optional</span></div>
-          <p class="assess-photo-sub">Add a quick photo of your smile and Dr Aodhan will tailor his reply to what he can see. A relaxed, natural smile in good light is perfect. Nothing clinical needed.</p>
+          <p class="assess-photo-sub">Add a quick photo of your smile and Dr Aodhan can make his reply more personal. A relaxed, natural smile in good light is perfect. Nothing clinical needed.</p>
           <label class="assess-photo-drop" id="photoDrop">
             <input type="file" id="a-photo" accept="image/*" hidden>
             <span class="apd-icon">+</span>
             <span class="apd-text" id="photoText">Add a photo of your smile</span>
           </label>
-          <p class="assess-photo-consent">By adding a photo you agree it may be used to assess your enquiry. It is stored securely and never shared.</p>
+          <p class="assess-photo-consent">By adding a photo you agree it may be used to help personalise your reply. It is stored securely and never shared.</p>
         </div>
 
         <div class="assess-nav">
@@ -914,7 +914,8 @@ if(gal){const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){
       fetch(JOTFORM_API_URL, { method: 'POST', body: body })
         .then(r => r.json())
         .then(d => { if(!d || d.responseCode !== 200) console.warn('JotForm submit issue', d); })
-        .catch(err => console.warn('JotForm submit error', err));
+        .catch(err => console.warn('JotForm submit error', err))
+        .finally(() => { window.location.assign('/thank-you'); });
     }
     form.addEventListener('submit',e=>{
       e.preventDefault();
