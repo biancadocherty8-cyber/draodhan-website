@@ -388,7 +388,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
       <div class="assess-card" id="assess" data-screen-label="03 Assessment">
         <div class="assess-eyebrow">Complimentary · 2 minutes</div>
         <h3 class="assess-title">Take the <em>smile assessment.</em></h3>
-        <p class="assess-sub">Four quick questions. We'll email you an indicative treatment overview and suitable options. All before you book anything.</p>
+        <p class="assess-sub">Four quick questions. We'll email you an indicative overview of suitable options. All before you book anything.</p>
 
         <div class="assess-progress" id="prog">
           <div class="assess-dot done"></div>
@@ -478,13 +478,13 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
                 <h4>Want a more personal response?</h4>
                 <span class="assess-photo-badge">OPTIONAL</span>
               </div>
-              <p class="assess-photo-desc">Add a quick photo of your smile and Dr Aodhan will tailor his reply to what he can see. A relaxed, natural smile in good light is perfect. Nothing clinical needed.</p>
+              <p class="assess-photo-desc">Add a quick photo of your smile and Dr Aodhan can make his reply more personal. A relaxed, natural smile in good light is perfect. Nothing clinical needed.</p>
               <label class="assess-photo-uploader" for="a-photo" id="a-photo-uploader">
                 <span class="assess-photo-plus" id="a-photo-icon">+</span>
                 <span id="a-photo-label">Add a photo of your smile</span>
               </label>
               <input type="file" id="a-photo" accept="image/jpeg,image/png,image/heic,image/webp" style="display:none">
-              <p class="assess-photo-privacy">By adding a photo you agree it may be used to assess your enquiry. It is stored securely and never shared.</p>
+              <p class="assess-photo-privacy">By adding a photo you agree it may be used to help personalise your reply. It is stored securely and never shared.</p>
             </div>
 
             <div class="assess-nav">
@@ -619,7 +619,7 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
 <div class="mid-cta">
   <div class="mid-cta-inner">
     <h3>Wondering if veneers are <em>right for you?</em></h3>
-    <p>The complimentary smile assessment takes about two minutes. We'll email an indicative treatment overview based on your answers. No obligation to book anything.</p>
+    <p>The complimentary smile assessment takes about two minutes. We'll email an indicative overview of your options based on your answers. No obligation to book anything.</p>
     <div class="btns">
       <a href="#assess" class="btn-gld">Take the smile assessment</a>
       <a href="/book" target="_blank" rel="noopener" class="btn-o">Or book a consultation</a>
@@ -943,14 +943,15 @@ footer{background:#111012;padding:1.75rem 1.1rem;border-top:1px solid rgba(255,2
     body.append('submission[14]', answers.last || '');
     body.append('submission[7]', answers.email || '');
     body.append('submission[8_full]', answers.phone || '');
-    body.append('submission[15]', LEAD_SOURCE);
     if(photoB64){
       body.append('submission[13]', photoB64);
     }
+    body.append('submission[15]', LEAD_SOURCE);
     fetch(JOTFORM_API_URL, { method: 'POST', body: body })
       .then(r => r.json())
       .then(d => { if(!d || d.responseCode !== 200) console.warn('JotForm submit issue', d); })
-      .catch(err => console.warn('JotForm submit error', err));
+      .catch(err => console.warn('JotForm submit error', err))
+      .finally(() => { window.location.assign('/thank-you'); });
   }
 
   // Photo upload UI: show filename and tick when selected
