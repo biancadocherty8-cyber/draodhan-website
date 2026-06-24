@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journal | Dr Aodhan Docherty, Cosmetic Dentist Sydney</title>
+<meta name="description" content="Articles on veneers, clear aligners and cosmetic dentistry from Dr Aodhan Docherty in Circular Quay, Sydney. Clear, honest answers to the questions patients ask most.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://draodhan.com.au/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Journal | Dr Aodhan Docherty">
+<meta property="og:description" content="Clear, honest articles on veneers, aligners and cosmetic dentistry from Dr Aodhan Docherty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#18181A;--mid:#4A4A50;--lite:#8A8A92;--sand:#F7F3EE;--sand2:#EDE7DE;--white:#FDFCFA;--gold:#A8864A;--gold2:#C4A46E;--line:#DDD7CF}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Mulish',sans-serif;background:var(--white);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+/* NAV (site-wide) */
+.nav{position:sticky;top:0;z-index:200;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;background:rgba(253,252,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-brand{font-family:'Playfair Display',serif;font-size:0.9rem;letter-spacing:0.02em;color:var(--ink);white-space:nowrap;text-decoration:none}
+.nav-brand b{color:var(--gold);font-weight:400;font-style:italic}
+.nav-r{display:flex;align-items:center;gap:0.7rem}
+.nav-bk{background:var(--ink);color:var(--white);font-family:'Mulish',sans-serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.5rem 0.95rem;border-radius:2px;white-space:nowrap;text-decoration:none;transition:background .2s}
+.nav-bk:hover{background:var(--gold);color:var(--ink)}
+.hbg{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:5px}
+.hbg span{display:block;width:19px;height:1.5px;background:var(--ink);transition:transform .28s,opacity .28s;transform-origin:center}
+.hbg.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0}
+.hbg.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.drawer{position:fixed;top:56px;left:0;right:0;bottom:0;z-index:190;background:var(--white);display:flex;flex-direction:column;padding:1.5rem 1.25rem;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto}
+.drawer.open{transform:translateX(0)}
+.dl{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--line);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);text-decoration:none}
+.dl::after{content:'→';color:var(--gold)}
+.nav-dd{display:flex;flex-direction:column}
+.nav-dd-t{cursor:pointer}
+.nav-dd-t::after{content:''}
+.nav-dd-menu{display:flex;flex-direction:column}
+.dl-s{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0 0.75rem 1rem;border-bottom:1px solid var(--line);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none}
+.dl-s::after{content:'→';color:var(--gold)}
+.d-book{margin-top:1.5rem;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--white);padding:0.95rem;border-radius:2px;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none}
+@media(min-width:768px){
+  .nav{padding:0 2.5rem;height:60px}
+  .hbg{display:none}
+  .nav-r{display:none}
+  .drawer{position:static;transform:none!important;display:flex;flex-direction:row;align-items:center;gap:1.9rem;padding:0;background:transparent;overflow:visible;inset:auto;height:auto;width:auto}
+  .dl{padding:0;border:none;font-size:0.66rem;color:var(--mid)}
+  .dl::after{display:none}
+  .dl:hover{color:var(--ink)}
+  .nav-dd{position:relative;flex-direction:row;align-items:center}
+  .nav-dd::after{content:'';position:absolute;top:100%;left:0;right:0;height:14px}
+  .nav-dd-t::after{content:'▾';color:var(--gold);margin-left:0.32rem;font-size:0.66rem}
+  .nav-dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(10px);background:var(--white);border:1px solid var(--line);border-radius:3px;padding:0.4rem 0;min-width:188px;box-shadow:0 20px 50px -26px rgba(24,24,26,0.45);opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease;z-index:210}
+  .nav-dd:hover .nav-dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(4px)}
+  .dl-s{padding:0.5rem 1.15rem;border:none;font-size:0.63rem;color:var(--mid);white-space:nowrap}
+  .dl-s::after{display:none}
+  .dl-s:hover{color:var(--ink);background:var(--sand)}
+  .d-book{margin:0;padding:0.5rem 1rem;font-size:0.62rem}
+}
+.head{max-width:880px;margin:0 auto;padding:3rem 1.25rem 1.5rem;text-align:center}
+.tag{font-size:0.6rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:0.6rem;margin-bottom:0.9rem}
+.tag::before,.tag::after{content:'';width:1.5rem;height:1px;background:var(--gold)}
+h1{font-family:'Playfair Display',serif;font-weight:400;font-size:2.3rem;line-height:1.15;letter-spacing:-0.01em}
+h1 em{font-style:italic;color:var(--gold)}
+.head p{font-size:0.95rem;color:var(--mid);font-weight:300;max-width:540px;margin:0.9rem auto 0;line-height:1.7}
+.grid{max-width:1100px;margin:1.5rem auto 0;padding:0 1.25rem 3rem;display:grid;grid-template-columns:1fr;gap:1.5rem}
+.card{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--white);display:flex;flex-direction:column;transition:box-shadow .2s}
+.card:hover{box-shadow:0 18px 50px -28px rgba(168,134,74,0.4)}
+.card-img{aspect-ratio:16/9;background:linear-gradient(160deg,#2a2825,#1a1917);position:relative;overflow:hidden}
+.card-img img{position:absolute;inset:0}
+.card-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,0.14);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase}
+.card-body{padding:1.4rem 1.4rem 1.6rem;display:flex;flex-direction:column;flex:1}
+.card-cat{font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+.card-h{font-family:'Playfair Display',serif;font-weight:400;font-size:1.3rem;line-height:1.25;margin-bottom:0.55rem}
+.card-x{font-size:0.85rem;color:var(--mid);font-weight:300;line-height:1.65;flex:1}
+.card-r{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-top:1.1rem;display:inline-flex;align-items:center;gap:0.4rem;font-weight:600}
+.card-r::after{content:'→'}
+.card-meta{font-size:0.6rem;letter-spacing:0.06em;color:var(--lite);margin-top:0.5rem}
+footer{background:#111012;padding:2rem 1.25rem;text-align:center}
+.fl{font-family:'Playfair Display',serif;font-size:0.85rem;color:rgba(253,252,250,0.32);display:block;margin-bottom:0.6rem}
+.fl b{color:var(--gold2);font-weight:400}
+.freg{font-size:0.6rem;color:rgba(253,252,250,0.22);line-height:1.7;max-width:60ch;margin:0 auto 0.8rem}
+.flinks{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap}
+.flinks a{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,252,250,0.3)}
+.flinks a:hover{color:var(--gold2)}
+@media(min-width:680px){.grid{grid-template-columns:1fr 1fr}h1{font-size:2.8rem}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a href="/" class="nav-brand">Dr <b>Aodhan</b> Docherty</a>
+  <nav class="drawer" id="drawer">
+  <a href="/" class="dl nc">Home</a>
+  <div class="nav-dd">
+    <span class="dl nav-dd-t">Treatments</span>
+    <div class="nav-dd-menu">
+      <a href="/veneers" class="dl-s nc">Veneers</a>
+      <a href="/clear-aligners" class="dl-s nc">Clear Aligners</a>
+      <a href="/composite-bonding" class="dl-s nc">Composite Bonding</a>
+      <a href="/dental-implants" class="dl-s nc">Dental Implants</a>
+    </div>
+  </div>
+  <a href="/blog/" class="dl nc">Journal</a>
+  <a href="/book" class="d-book nc">Book</a>
+  </nav>
+  <div class="nav-r">
+    <a href="/book" class="nav-bk">Book</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="head">
+  <div class="tag">The Journal</div>
+  <h1>Notes on a <em>natural smile</em></h1>
+  <p>Clear, honest answers to the questions patients ask most, on veneers, clear aligners and looking after your smile, written by Dr Aodhan Docherty.</p>
+</section>
+
+<section class="grid">
+
+  <a class="card" href="/blog/will-veneers-ruin-your-natural-teeth/">
+    <div class="card-img"><img src="/veneers-landing/cases/case-05-after.jpg" alt="Natural-looking porcelain veneers" loading="lazy" onerror="this.style.display='none'"><div class="card-ph">Veneers</div></div>
+    <div class="card-body">
+      <div class="card-cat">Common questions</div>
+      <div class="card-h">Will veneers ruin your natural teeth?</div>
+      <p class="card-x">The honest answer to the question almost everyone asks before veneers, and how a conservative approach changes it.</p>
+      <span class="card-r">Read</span>
+      <div class="card-meta">6 min read</div>
+    </div>
+  </a>
+
+  <a class="card" href="/blog/veneers-bonding-or-clear-aligners/">
+    <div class="card-img"><img src="/veneers-landing/cases/case-07-after.jpg" alt="Comparing cosmetic dental options" loading="lazy" onerror="this.style.display='none'"><div class="card-ph">Your options</div></div>
+    <div class="card-body">
+      <div class="card-cat">Your options</div>
+      <div class="card-h">Veneers, bonding or clear aligners?</div>
+      <p class="card-x">Three different ways to improve a smile, what each one does well, and how to tell which suits yours.</p>
+      <span class="card-r">Read</span>
+      <div class="card-meta">7 min read</div>
+    </div>
+  </a>
+
+  <a class="card" href="/blog/nervous-about-the-dentist/">
+    <div class="card-img"><img src="/hero.jpg" alt="A calm dental practice in Circular Quay" loading="lazy" onerror="this.style.display='none'"><div class="card-ph">Your comfort</div></div>
+    <div class="card-body">
+      <div class="card-cat">Your comfort</div>
+      <div class="card-h">Nervous about the dentist?</div>
+      <p class="card-x">Dental anxiety is common and nothing to be embarrassed about. What helps, and why a calm first visit makes all the difference.</p>
+      <span class="card-r">Read</span>
+      <div class="card-meta">5 min read</div>
+    </div>
+  </a>
+
+</section>
+
+<footer>
+  <span class="fl">Dr <b>Aodhan</b> Docherty</span>
+  <p class="freg">Registered Dentist, AHPRA DEN0001938737 · About Smiles Circular Quay, Sydney. Articles are general information only and not a substitute for personal advice. Any dental procedure carries risk and individual results vary. Suitability is confirmed by an in-person clinical examination.</p>
+  <div class="flinks">
+    <a href="/">Home</a>
+    <a href="/veneers">Veneers</a>
+    <a href="/book">Book</a>
+    <a href="/blog/">Journal</a>
+  </div>
+</footer>
+<script>
+(function(){var h=document.getElementById('hbg'),d=document.getElementById('drawer');if(!h||!d)return;
+h.addEventListener('click',function(){h.classList.toggle('open');d.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';});
+document.querySelectorAll('.drawer .nc').forEach(function(el){el.addEventListener('click',function(){h.classList.remove('open');d.classList.remove('open');document.body.style.overflow='';});});
+})();
+</script>
+</body>
+</html>
