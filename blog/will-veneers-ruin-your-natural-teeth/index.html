@@ -19,10 +19,47 @@
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{font-family:'Mulish',sans-serif;background:var(--white);color:var(--ink);line-height:1.6}
 a{color:inherit}
-.nav{position:sticky;top:0;z-index:100;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;background:rgba(253,252,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-brand{font-family:'Playfair Display',serif;font-size:0.9rem;color:var(--ink);text-decoration:none}
+/* NAV (site-wide) */
+.nav{position:sticky;top:0;z-index:200;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;background:rgba(253,252,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-brand{font-family:'Playfair Display',serif;font-size:0.9rem;letter-spacing:0.02em;color:var(--ink);white-space:nowrap;text-decoration:none}
 .nav-brand b{color:var(--gold);font-weight:400;font-style:italic}
-.nav-bk{background:var(--ink);color:var(--white);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.5rem 1rem;border-radius:2px;text-decoration:none}
+.nav-r{display:flex;align-items:center;gap:0.7rem}
+.nav-bk{background:var(--ink);color:var(--white);font-family:'Mulish',sans-serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.5rem 0.95rem;border-radius:2px;white-space:nowrap;text-decoration:none;transition:background .2s}
+.nav-bk:hover{background:var(--gold);color:var(--ink)}
+.hbg{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:5px}
+.hbg span{display:block;width:19px;height:1.5px;background:var(--ink);transition:transform .28s,opacity .28s;transform-origin:center}
+.hbg.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0}
+.hbg.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.drawer{position:fixed;top:56px;left:0;right:0;bottom:0;z-index:190;background:var(--white);display:flex;flex-direction:column;padding:1.5rem 1.25rem;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto}
+.drawer.open{transform:translateX(0)}
+.dl{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--line);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);text-decoration:none}
+.dl::after{content:'→';color:var(--gold)}
+.nav-dd{display:flex;flex-direction:column}
+.nav-dd-t{cursor:pointer}
+.nav-dd-t::after{content:''}
+.nav-dd-menu{display:flex;flex-direction:column}
+.dl-s{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0 0.75rem 1rem;border-bottom:1px solid var(--line);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none}
+.dl-s::after{content:'→';color:var(--gold)}
+.d-book{margin-top:1.5rem;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--white);padding:0.95rem;border-radius:2px;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none}
+@media(min-width:768px){
+  .nav{padding:0 2.5rem;height:60px}
+  .hbg{display:none}
+  .nav-r{display:none}
+  .drawer{position:static;transform:none!important;display:flex;flex-direction:row;align-items:center;gap:1.9rem;padding:0;background:transparent;overflow:visible;inset:auto;height:auto;width:auto}
+  .dl{padding:0;border:none;font-size:0.66rem;color:var(--mid)}
+  .dl::after{display:none}
+  .dl:hover{color:var(--ink)}
+  .nav-dd{position:relative;flex-direction:row;align-items:center}
+  .nav-dd::after{content:'';position:absolute;top:100%;left:0;right:0;height:14px}
+  .nav-dd-t::after{content:'▾';color:var(--gold);margin-left:0.32rem;font-size:0.66rem}
+  .nav-dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(10px);background:var(--white);border:1px solid var(--line);border-radius:3px;padding:0.4rem 0;min-width:188px;box-shadow:0 20px 50px -26px rgba(24,24,26,0.45);opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease;z-index:210}
+  .nav-dd:hover .nav-dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(4px)}
+  .dl-s{padding:0.5rem 1.15rem;border:none;font-size:0.63rem;color:var(--mid);white-space:nowrap}
+  .dl-s::after{display:none}
+  .dl-s:hover{color:var(--ink);background:var(--sand)}
+  .d-book{margin:0;padding:0.5rem 1rem;font-size:0.62rem}
+}
 .art{max-width:720px;margin:0 auto;padding:2.6rem 1.25rem 1rem}
 .crumb{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--lite);margin-bottom:1.4rem}
 .crumb a{color:var(--gold);text-decoration:none}
@@ -75,7 +112,24 @@ footer{background:#111012;padding:2rem 1.25rem;text-align:center;margin-top:1.5r
 <body>
 <header class="nav">
   <a href="/" class="nav-brand">Dr <b>Aodhan</b> Docherty</a>
-  <a href="/book" class="nav-bk">Book</a>
+  <nav class="drawer" id="drawer">
+  <a href="/" class="dl nc">Home</a>
+  <div class="nav-dd">
+    <span class="dl nav-dd-t">Treatments</span>
+    <div class="nav-dd-menu">
+      <a href="/veneers" class="dl-s nc">Veneers</a>
+      <a href="/clear-aligners" class="dl-s nc">Clear Aligners</a>
+      <a href="/composite-bonding" class="dl-s nc">Composite Bonding</a>
+      <a href="/dental-implants" class="dl-s nc">Dental Implants</a>
+    </div>
+  </div>
+  <a href="/blog/" class="dl nc">Journal</a>
+  <a href="/book" class="d-book nc">Book</a>
+  </nav>
+  <div class="nav-r">
+    <a href="/book" class="nav-bk">Book</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
 </header>
 
 <section class="hero">
@@ -130,5 +184,11 @@ footer{background:#111012;padding:2rem 1.25rem;text-align:center;margin-top:1.5r
   <p class="freg">Registered Dentist, AHPRA DEN0001938737 · About Smiles Circular Quay, Sydney. General information only, not a substitute for personal advice. Suitability is confirmed by an in-person clinical examination.</p>
   <div class="flinks"><a href="/">Home</a><a href="/veneers">Veneers</a><a href="/blog/">Journal</a><a href="/book">Book</a></div>
 </footer>
+<script>
+(function(){var h=document.getElementById('hbg'),d=document.getElementById('drawer');if(!h||!d)return;
+h.addEventListener('click',function(){h.classList.toggle('open');d.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';});
+document.querySelectorAll('.drawer .nc').forEach(function(el){el.addEventListener('click',function(){h.classList.remove('open');d.classList.remove('open');document.body.style.overflow='';});});
+})();
+</script>
 </body>
 </html>
