@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Composite Bonding Sydney – Dr Aodhan Docherty, Circular Quay</title>
+<meta name="description" content="Composite bonding and edge bonding in Circular Quay, Sydney, hand-sculpted by Dr Aodhan Docherty. A conservative, additive way to refine chips, edges and small gaps, often in a single visit.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://draodhan.com.au/composite-bonding/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Mulish:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#18181A;--mid:#4A4A50;--lite:#8A8A92;--sand:#F7F3EE;--sand2:#EDE7DE;--white:#FDFCFA;--gold:#A8864A;--gold2:#C4A46E;--line:#DDD7CF}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Mulish',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 1.1rem;background:rgba(253,252,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-brand{font-family:'Playfair Display',serif;font-size:0.85rem;letter-spacing:0.02em;color:var(--ink);white-space:nowrap}
+.nav-brand b{color:var(--gold);font-weight:400}
+.nav-r{display:flex;align-items:center;gap:0.6rem}
+.nav-bk{background:var(--ink);color:var(--white);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.42rem 0.85rem;border-radius:2px;white-space:nowrap}
+.hbg{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:5px}
+.hbg span{display:block;width:19px;height:1.5px;background:var(--ink);transition:transform 0.28s,opacity 0.28s;transform-origin:center}
+.hbg.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0}
+.hbg.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.drawer{position:fixed;top:52px;left:0;right:0;bottom:0;z-index:190;background:var(--white);display:flex;flex-direction:column;padding:1.75rem 1.25rem;transform:translateX(100%);transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);overflow-y:auto}
+.drawer.open{transform:translateX(0)}
+.dl{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--line);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
+.dl::after{content:'→';color:var(--gold)}
+.d-book{margin-top:1.75rem;display:block;text-align:center;background:var(--ink);color:var(--white);padding:0.95rem;border-radius:2px;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase}
+.d-assess{margin-top:0.6rem;display:block;text-align:center;background:transparent;color:var(--ink);padding:0.95rem;border-radius:2px;border:1px solid var(--line);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase}
+
+/* UTILS */
+.tag{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.55rem;margin-bottom:0.75rem}
+.tag::before{content:'';width:1.4rem;height:1px;background:var(--gold)}
+.sh{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:400;line-height:1.2;color:var(--ink)}
+.sh em{font-style:italic;color:var(--gold)}
+.bt{font-size:0.85rem;color:var(--mid);line-height:1.8;font-weight:300}
+.btn-d{display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--white);padding:0.88rem 1.25rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--ink);transition:background 0.2s}
+.btn-d:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn-o{display:flex;align-items:center;justify-content:center;background:transparent;color:var(--ink);padding:0.88rem 1.25rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--line);transition:border-color 0.2s}
+.btn-o:hover{border-color:var(--ink)}
+
+/* HERO */
+.hero{padding-top:52px}
+.hero-img{background:#f5f2eb;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+.hero-ba-card{width:100%;max-width:320px}
+.hero-ph{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.12)}
+.hero-bw{padding:1.5rem 1.1rem 0;background:var(--white)}
+.hero-ey{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.hero-h1{font-family:'Playfair Display',serif;font-size:1.95rem;font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:0.85rem}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-lead{font-size:0.85rem;color:var(--mid);line-height:1.78;font-weight:300;margin-bottom:1.25rem}
+.hero-btns{display:flex;flex-direction:column;gap:0.55rem}
+.hero-reg{background:var(--sand);border-top:1px solid var(--line);padding:0.8rem 1.1rem;font-size:0.62rem;color:var(--lite);line-height:1.55;margin-top:1.25rem}
+.hero-stat{display:flex;align-items:baseline;gap:0.7rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--line)}
+.hero-stat .hsn{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);line-height:1;flex-shrink:0}
+.hero-stat .hsl{font-size:0.62rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);line-height:1.5;font-weight:500}
+.hero-reg strong{color:var(--mid);font-weight:500}
+
+/* COMPLIANCE */
+.comp{background:var(--sand2);padding:0.9rem 1.1rem;font-size:0.65rem;color:var(--mid);line-height:1.6;border-bottom:1px solid var(--line)}
+.comp strong{color:var(--ink);font-weight:500}
+
+/* SECTION GENERIC */
+.sec{padding:2.5rem 1.1rem}
+.sec.sand{background:var(--sand)}
+.sec.white{background:var(--white)}
+.sec-lead{font-size:0.82rem;color:var(--mid);line-height:1.8;font-weight:300;margin-top:0.75rem;max-width:62ch}
+
+/* APPROACH / COMPARISON */
+.cmp{margin-top:1.5rem;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.cmp-row{display:grid;grid-template-columns:1fr 1fr}
+.cmp-row.head .cmp-c{background:var(--ink);color:var(--white);font-family:'Playfair Display',serif;font-size:0.95rem;padding:0.95rem 1rem}
+.cmp-row.head .cmp-c.alt{background:var(--gold);color:var(--ink)}
+.cmp-c{padding:0.85rem 1rem;font-size:0.74rem;line-height:1.55;color:var(--mid);border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.cmp-c:last-child{border-right:none}
+.cmp-c.alt{background:rgba(168,134,74,0.05);color:var(--ink)}
+.cmp-row:last-child .cmp-c{border-bottom:none}
+.cmp-note{font-size:0.66rem;color:var(--lite);line-height:1.65;margin-top:1rem;font-style:italic}
+
+/* SPLIT (porcelain vs composite) */
+.split{display:grid;grid-template-columns:1fr;gap:0.5rem;margin-top:1.5rem}
+.opt{border:1px solid var(--line);border-radius:2px;padding:1.5rem 1.25rem;background:var(--white)}
+.opt-k{font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+.opt-h{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--ink);margin-bottom:0.85rem}
+.opt ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.opt li{font-size:0.76rem;color:var(--mid);line-height:1.6;font-weight:300;padding-left:1rem;position:relative}
+.opt li::before{content:'';position:absolute;left:0;top:0.5rem;width:7px;height:1px;background:var(--gold)}
+.opt-foot{margin-top:1rem;padding-top:0.85rem;border-top:1px solid var(--line);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--lite)}
+
+/* PROCESS */
+.process{padding:2.5rem 1.1rem;background:var(--ink)}
+.process .tag{color:var(--gold2)}
+.process .tag::before{background:var(--gold2)}
+.process .sh{color:var(--white)}
+.process .sh em{color:var(--gold2)}
+.proc-sub{font-size:0.8rem;color:rgba(253,252,250,0.42);line-height:1.75;font-weight:300;margin-top:0.75rem}
+.steps{margin-top:1.75rem;border-top:1px solid rgba(255,255,255,0.07)}
+.step{padding:1.35rem 0;border-bottom:1px solid rgba(255,255,255,0.07)}
+.step-n{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;color:rgba(255,255,255,0.07);line-height:1;margin-bottom:0.5rem}
+.step-dur{font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.5rem}
+.step-t{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--white);margin-bottom:0.35rem}
+.step-d{font-size:0.75rem;color:rgba(253,252,250,0.38);line-height:1.7;font-weight:300}
+
+/* GALLERY — swipe carousel with auto-scroll */
+.ba-head{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:0.4rem}
+.gal-notice{background:var(--sand);border:1px solid var(--line);padding:0.9rem 1rem;margin:1.1rem 0 0;font-size:0.65rem;color:var(--mid);line-height:1.6;border-radius:2px}
+.gal-notice strong{color:var(--ink);font-weight:600}
+.gal-controls{display:flex;justify-content:space-between;align-items:center;margin:1.4rem 0 1.1rem;gap:1rem;flex-wrap:wrap}
+.gal-count{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.55rem}
+.gal-count::before{content:'';width:1rem;height:1px;background:var(--gold)}
+.gallery-grid{display:flex;gap:0.65rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:0.75rem;margin-left:-1.1rem;margin-right:-1.1rem;padding-left:1.1rem;padding-right:1.1rem;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.gallery-grid::-webkit-scrollbar{height:6px}
+.gallery-grid::-webkit-scrollbar-track{background:transparent}
+.gallery-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.bac{flex:0 0 62%;scroll-snap-align:start;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--white)}
+.ba-imgs{display:grid;grid-template-rows:1fr 1fr;aspect-ratio:3/4;position:relative}
+.ba-side{overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:0.45rem}
+.bb{position:absolute;inset:0;background:linear-gradient(160deg,#c0b8ae,#a8a09a)}
+.ab{position:absolute;inset:0;background:linear-gradient(160deg,#e8e0d4,#f0ead8)}
+.ba-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.blbl{position:relative;z-index:1;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;background:rgba(0,0,0,0.4);color:#fff;padding:0.2rem 0.42rem;border-radius:1px;backdrop-filter:blur(4px)}
+.blbl.a{background:rgba(168,134,74,0.85);color:var(--ink)}
+.ba-sep{position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(253,252,250,0.85);z-index:2}
+.ba-foot{padding:0.75rem 0.9rem;background:var(--sand);border-top:1px solid var(--line)}
+.ba-tx{font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem}
+.ba-nt{font-size:0.72rem;color:var(--ink);line-height:1.5;font-weight:500}
+.ba-when{font-size:0.55rem;letter-spacing:0.06em;color:var(--lite);margin-top:0.35rem;font-style:italic;line-height:1.4}
+.gal-swipe{display:flex;justify-content:flex-start;gap:0.5rem;margin-top:0.5rem;color:var(--lite);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;align-items:center}
+/* FAQ */
+.faq{border-top:1px solid var(--line);margin-top:1.5rem}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 0;text-align:left;font-family:'Playfair Display',serif;font-size:0.98rem;color:var(--ink);line-height:1.3}
+.faq-q .pl{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);transition:transform 0.25s;flex-shrink:0;line-height:1}
+.faq-item.open .pl{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.faq-a-in{padding:0 0 1.2rem;font-size:0.78rem;color:var(--mid);line-height:1.75;font-weight:300}
+.faq-a-in p+p{margin-top:0.7rem}
+
+/* RISKS */
+.risks{padding:2.5rem 1.1rem;background:var(--sand2)}
+.risk-list{margin-top:1.5rem;display:flex;flex-direction:column;gap:0.5rem}
+.risk{background:var(--white);border:1px solid var(--line);padding:0.95rem 1.1rem;display:flex;gap:0.85rem;border-radius:2px}
+.risk-n{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--gold);font-style:italic;flex-shrink:0;line-height:1.4}
+.risk-b{font-size:0.76rem;color:var(--mid);line-height:1.6;font-weight:300}
+.risk-b strong{display:block;color:var(--ink);font-weight:500;margin-bottom:0.15rem}
+.risk-fine{font-size:0.64rem;color:var(--lite);line-height:1.7;font-style:italic;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--line)}
+
+/* BOOK EMBED */
+.book-sec{padding:3rem 1.1rem;background:var(--sand)}
+.book-sec .tag{margin-bottom:0.85rem}
+.book-h{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:0.75rem}
+.book-h em{font-style:italic;color:var(--gold)}
+.book-sub{font-size:0.8rem;color:var(--mid);line-height:1.75;font-weight:300;margin-bottom:1.5rem;max-width:60ch}
+.book-embed{border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--white)}
+.book-embed iframe{display:block;width:1px;min-width:100%;border:none;height:760px;background:var(--white)}
+@media(min-width:768px){.book-sec{padding:5rem}}
+
+/* CTA */
+.cta{padding:3rem 1.1rem;background:var(--ink);text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:80%;aspect-ratio:1;background:radial-gradient(circle,rgba(168,134,74,0.07),transparent 65%)}
+.cta .tag{justify-content:center;color:var(--gold2)}
+.cta .tag::before{display:none}
+.cta-h{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:400;line-height:1.2;color:var(--white);margin:0 auto 0.85rem;position:relative}
+.cta-h em{font-style:italic;color:var(--gold2)}
+.cta-sub{font-size:0.8rem;color:rgba(253,252,250,0.42);line-height:1.75;font-weight:300;margin-bottom:1.75rem;position:relative}
+.cta-btns{display:flex;flex-direction:column;gap:0.55rem;position:relative}
+.btn-gld{display:flex;align-items:center;justify-content:center;background:var(--gold);color:var(--ink);padding:0.88rem 1.25rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--gold);transition:background 0.2s}
+.btn-gld:hover{background:var(--gold2)}
+.btn-gh{display:flex;align-items:center;justify-content:center;background:transparent;color:rgba(253,252,250,0.6);padding:0.88rem 1.25rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.12);transition:border-color 0.2s,color 0.2s}
+.btn-gh:hover{border-color:rgba(255,255,255,0.35);color:var(--white)}
+
+/* FOOTER */
+footer{background:#111012;padding:1.5rem 1.1rem}
+.fl{font-family:'Playfair Display',serif;font-size:0.82rem;color:rgba(253,252,250,0.28);display:block;margin-bottom:0.75rem}
+.freg{font-size:0.58rem;color:rgba(253,252,250,0.16);line-height:1.6;margin-bottom:0.85rem}
+.flinks{display:flex;gap:1.25rem;flex-wrap:wrap}
+.flinks a{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,252,250,0.22);transition:color 0.2s}
+.flinks a:hover{color:var(--gold2)}
+
+@media(min-width:768px){
+  .nav{padding:0 3rem;height:58px}
+  .hbg,.nav-bk{display:none}
+  .drawer{position:static;transform:none!important;display:flex;flex-direction:row;padding:0;gap:2rem;background:transparent;overflow:visible;align-items:center;top:auto;height:auto}
+  .dl{padding:0;border:none;font-size:0.68rem;color:var(--mid)}
+  .dl::after{display:none}
+  .d-book{margin:0;padding:0.48rem 1.2rem;font-size:0.67rem}
+  .d-assess{display:none}
+  .hero{display:grid;grid-template-columns:52% 48%;padding-top:58px;min-height:88vh}
+  .hero-img{height:100%;max-height:none;order:2}
+  .hero-bw{order:1;display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem 4rem 4.5rem;position:relative}
+  .hero-bw::after{content:'';position:absolute;right:0;top:10%;bottom:10%;width:1px;background:var(--line)}
+  .hero-h1{font-size:3rem}
+  .hero-btns{flex-direction:row}
+  .hero-reg{margin-top:1.75rem}
+  .sec{padding:5rem}
+  .split{grid-template-columns:1fr 1fr;gap:0.6rem}
+  .process{padding:5rem}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.07)}
+  .step{padding:2rem 1.75rem 2rem 0;border-bottom:none;border-right:1px solid rgba(255,255,255,0.06)}
+  .step:first-child{padding-left:0}
+  .step:last-child{border-right:none}
+  .bac{flex:0 0 34%}
+  .risks{padding:5rem}
+  .faq-cols{max-width:60ch}
+  .cta{padding:6rem 5rem}
+  .cta-h{font-size:3rem;max-width:18ch;margin-left:auto;margin-right:auto}
+  .cta-btns{flex-direction:row;justify-content:center}
+  footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding:2rem 5rem}
+  .fl{margin-bottom:0}
+  .freg{margin-bottom:0;max-width:44ch;text-align:center}
+}
+</style>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xbs2v1xyop");</script>
+<!-- End Microsoft Clarity -->
+</head>
+<body>
+<header class="nav">
+  <a href="/" class="nav-brand">Dr <b>Aodhan</b> Docherty</a>
+  <div class="nav-r">
+    <a href="/book" class="nav-bk">Book</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="drawer" id="drawer">
+  <a href="/" class="dl nc">Home</a>
+  <a href="#approach" class="dl nc">Our approach</a>
+  <a href="#options" class="dl nc">What it can do</a>
+  <a href="#process" class="dl nc">The process</a>
+  <a href="#gallery" class="dl nc">Before & after</a>
+  <a href="#faq" class="dl nc">Questions</a>
+  <a href="/book" class="d-book">Book a Free Consultation</a>
+  <a href="/#assessment" class="d-assess">Smile Assessment</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="hero-bw">
+    <div class="hero-ey">Composite &amp; edge bonding · Circular Quay</div>
+    <h1 class="hero-h1">Refined by hand, in <em>a single visit.</em></h1>
+    <p class="hero-lead">Composite bonding is an additive, tooth-coloured material that Dr Aodhan sculpts directly onto your teeth to reshape edges, repair chips and close small gaps. In many cases little or no natural tooth is removed.</p>
+    <div class="hero-btns">
+      <a href="/book" class="btn-d">Book a Free Consultation</a>
+      <a href="/#assessment" class="btn-o">Take the Smile Assessment</a>
+    </div>
+    <div class="hero-stat">
+      <span class="hsn">1</span>
+      <span class="hsl">most composite bonding cases are completed in a single visit, hand-finished by Dr Aodhan</span>
+    </div>
+    <div class="hero-reg"><strong>Dr Aodhan Docherty</strong> · Registered Dentist, AHPRA DEN0001938737 · Circular Quay, Sydney. Bonding is an elective procedure. Suitability is assessed in person.</div>
+  </div>
+  <div class="hero-img">
+    <div class="hero-ba-card">
+      <div class="bac" style="margin-bottom:0">
+        <div class="ba-imgs">
+          <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-13-before.jpg" alt="Case 13 before" loading="lazy" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+          <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-13-after.jpg" alt="Case 13 after" loading="lazy" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+          <div class="ba-sep"></div>
+        </div>
+        <div class="ba-foot">
+          <div class="ba-nt">10 upper composite veneers</div>
+          <div class="ba-when">After image: ~3 weeks post-procedure</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<div class="comp"><strong>Important.</strong> Composite bonding is generally additive, but it can chip, wear or stain over time and may need maintenance or replacement. Outcomes vary between individuals and cannot be guaranteed. The information on this page is general only and not a substitute for an in-person clinical assessment.</div>
+<!-- APPROACH -->
+<section class="sec white" id="approach" data-screen-label="02 Approach">
+  <div class="tag">Our approach</div>
+  <h2 class="sh">Additive first. <em>Minimal removal.</em></h2>
+  <p class="sec-lead">Where it is clinically suitable, bonding lets Dr Aodhan improve a smile by adding material rather than cutting tooth away. It is one of the most conservative cosmetic options available, and often the right starting point before considering anything more involved.</p>
+  <div class="cmp">
+    <div class="cmp-row head">
+      <div class="cmp-c">Conventional restorations</div>
+      <div class="cmp-c alt">Conservative bonding</div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-c">Often removes natural tooth</div>
+      <div class="cmp-c alt">Frequently little to no enamel removed</div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-c">Usually irreversible</div>
+      <div class="cmp-c alt">Often reversible where no tooth is removed</div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-c">Multiple appointments</div>
+      <div class="cmp-c alt">Frequently completed in one visit</div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-c">Lab-made</div>
+      <div class="cmp-c alt">Sculpted by hand, chairside</div>
+    </div>
+  </div>
+  <p class="cmp-note">Whether bonding is right for you, and whether it can be done additively, is assessed clinically. Larger changes or heavy bite forces sometimes call for porcelain instead.</p>
+</section>
+
+<!-- OPTIONS -->
+<section class="sec sand" id="options" data-screen-label="03 What it treats">
+  <div class="tag">What it can do</div>
+  <h2 class="sh">Small changes, <em>big difference.</em></h2>
+  <p class="sec-lead">Bonding suits subtle, targeted improvements. For larger or full-smile changes, Dr Aodhan will tell you honestly when porcelain is the better long-term choice.</p>
+  <div class="split">
+    <div class="opt">
+      <div class="opt-k">Well suited to</div>
+      <div class="opt-h">Bonding works well for</div>
+      <ul>
+        <li>Chipped, worn or uneven edges.</li>
+        <li>Small gaps between front teeth.</li>
+        <li>Minor reshaping of tooth size or form.</li>
+        <li>Refreshing the smile with minimal intervention.</li>
+      </ul>
+      <div class="opt-foot">Usually 1 appointment</div>
+    </div>
+    <div class="opt">
+      <div class="opt-k">Better with porcelain</div>
+      <div class="opt-h">When we may suggest more</div>
+      <ul>
+        <li>Heavily discoloured teeth that bonding cannot mask.</li>
+        <li>Full-smile makeovers across many teeth.</li>
+        <li>Strong grinding or clenching habits.</li>
+        <li>Cases needing the longest-lasting result.</li>
+      </ul>
+      <div class="opt-foot">Discussed at consultation</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process" data-screen-label="04 Process">
+  <div class="tag">The process</div>
+  <h2 class="sh">From consult to <em>finished smile.</em></h2>
+  <p class="proc-sub">A clear, unhurried path. No treatment is recommended before a proper assessment, and the additive nature of bonding means many changes can be previewed and refined as we go.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">01</div>
+      <div class="step-dur">60 minutes</div>
+      <div class="step-t">Consultation</div>
+      <p class="step-d">Meet Dr Aodhan to discuss your goals. A full examination, photographs and shade matching are completed.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">02</div>
+      <div class="step-dur">Planning</div>
+      <div class="step-t">Design</div>
+      <p class="step-d">Your proposed shape is planned. For larger changes a preview can be shown before any material is placed.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">03</div>
+      <div class="step-dur">Same day</div>
+      <div class="step-t">Sculpt &amp; polish</div>
+      <p class="step-d">Composite is hand-layered onto the teeth and polished to a natural finish, frequently in a single visit.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">04</div>
+      <div class="step-dur">Ongoing</div>
+      <div class="step-t">Review &amp; maintain</div>
+      <p class="step-d">A simple polish at your regular hygiene visits helps keep bonding looking its best over time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec white" id="gallery" data-screen-label="05 Gallery">
+  <div class="ba-head">
+    <div class="tag">Recent cases</div>
+    <h2 class="sh">Before &amp; <em>after</em></h2>
+  </div>
+  <div class="gal-notice"><strong>About these images.</strong> All photos are of actual patients who have given written consent. They are not edited, filtered or enhanced. Each outcome is relevant only to the individual shown and is not a guarantee of result for any other patient.</div>
+  <div class="gal-controls"><span class="gal-count" id="gal-count">20 cases shown</span></div>
+  <div class="gallery-grid" id="ba-grid"></div>
+  <div class="gal-swipe"><span>&larr; Swipe to see more cases &rarr;</span></div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sand" id="faq" data-screen-label="06 FAQ">
+  <div class="tag">Common questions</div>
+  <h2 class="sh">The things patients <em>ask.</em></h2>
+  <div class="faq-cols">
+    <div class="faq" id="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">How long does composite bonding last?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Composite bonding typically lasts around three to five years before it may need a polish, repair or refresh, though this varies. Longevity depends on your bite, diet, whether you grind your teeth, and habits such as smoking. Porcelain options last longer but are less conservative.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does bonding stain?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Composite can pick up staining over time from coffee, tea, red wine and smoking, more so than porcelain. Good hygiene and the occasional polish help. If staining is a particular concern, Dr Aodhan will talk through whether porcelain suits you better.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is it reversible?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>When bonding is fully additive and no natural tooth is removed, it can often be adjusted or removed later. Where a small amount of reshaping is needed, that part is not reversible. Which applies to you is confirmed at your consultation.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will it damage my teeth?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Additive bonding is one of the gentlest cosmetic treatments because it usually adds to the tooth rather than removing structure. As with any restoration, good hygiene matters to keep the underlying tooth and gum healthy.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I see a price first?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Bonding cost depends on how many teeth are treated and the complexity of the work. An accurate figure is only possible after Dr Aodhan has seen your teeth. At your consultation you receive a clear, written plan and cost to take home.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you offer payment plans?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Yes. For patients who choose to proceed, we offer an interest-free payment plan to make treatment more manageable. Eligibility and terms are confirmed in person at your consultation.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Am I a candidate?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Bonding suits many patients but not every case. Active decay, gum disease or a heavy grinding habit may need to be addressed first, or may point to a different treatment. The consultation is the only reliable way to know.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RISKS -->
+<section class="risks" id="risks" data-screen-label="07 Risks">
+  <div class="tag">Important to know</div>
+  <h2 class="sh">Before you <em>proceed.</em></h2>
+  <p class="sec-lead">Composite bonding is conservative, but it is still a restoration with limits. These points are part of the conversation we have with you in person before any treatment is planned.</p>
+  <div class="risk-list">
+    <div class="risk"><span class="risk-n">01</span><div class="risk-b"><strong>Chipping &amp; wear</strong>Composite is less hard than porcelain and can chip or wear, particularly on biting edges or with grinding.</div></div>
+    <div class="risk"><span class="risk-n">02</span><div class="risk-b"><strong>Staining</strong>Bonding can discolour over time with coffee, tea, wine and smoking, and may need polishing or refreshing.</div></div>
+    <div class="risk"><span class="risk-n">03</span><div class="risk-b"><strong>Maintenance &amp; replacement</strong>Bonding is not permanent and will need upkeep, repair or replacement at some point, with associated cost.</div></div>
+    <div class="risk"><span class="risk-n">04</span><div class="risk-b"><strong>Aesthetic limits</strong>Bonding cannot always mask very dark teeth or achieve the same translucency as porcelain in larger cases.</div></div>
+    <div class="risk"><span class="risk-n">05</span><div class="risk-b"><strong>Suitability</strong>Active decay, gum disease or a significant bite problem must be managed first, and may make another option more appropriate.</div></div>
+  </div>
+  <p class="risk-fine">Any dental procedure carries risk. Before proceeding we recommend seeking a second opinion from a suitably qualified dental practitioner. Outcomes vary between individuals, and the cases shown on this website are examples for those specific patients only and are not a guarantee of result. Costs are not covered by Medicare or private health funds.</p>
+</section>
+
+<!-- BOOK -->
+<section class="book-sec" id="book">
+  <div class="tag">Get started</div>
+  <h2 class="book-h">Ready when <em>you are.</em></h2>
+  <p class="book-sub">Start with a free, no-obligation consultation. Pick a time on the booking page and you'll meet Dr Aodhan at Circular Quay.</p>
+  <a href="/book" class="btn-d" style="max-width:340px;margin:0 auto">Book a Free Consultation</a>
+</section>
+
+<!-- CTA -->
+<section class="cta" data-screen-label="08 CTA">
+  <div class="tag">The same dentist, start to finish</div>
+  <h2 class="cta-h">Start with a <em>smile assessment.</em></h2>
+  <p class="cta-sub">A few quick questions about your smile. A couple of minutes, no obligation, and a clear sense of your options before you decide whether to book.</p>
+  <div class="cta-btns">
+    <a href="/#assessment" class="btn-gld">Take the Smile Assessment</a>
+    <a href="/book" class="btn-gh">Book a Free Consultation</a>
+  </div>
+</section>
+<footer>
+  <span class="fl">Dr Aodhan Docherty</span>
+  <p class="freg">All procedures carry potential risks. Outcomes vary and cannot be guaranteed. Individual results depend on clinical circumstances. Dr Aodhan Docherty, AHPRA registration DEN0001938737, Circular Quay, Sydney.</p>
+  <div class="flinks">
+    <a href="/">Home</a>
+    <a href="https://www.instagram.com/dr.aodhan" target="_blank" rel="noopener">Instagram</a>
+    <a href="#approach">Our approach</a>
+    <a href="#risks">Risks</a>
+  </div>
+</footer>
+<script>
+const hbg=document.getElementById('hbg'),drawer=document.getElementById('drawer');
+hbg.addEventListener('click',()=>{hbg.classList.toggle('open');drawer.classList.toggle('open');document.body.style.overflow=drawer.classList.contains('open')?'hidden':''});
+document.querySelectorAll('.nc').forEach(el=>el.addEventListener('click',()=>{hbg.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow=''}));
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;const ans=item.querySelector('.faq-a');const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});
+    if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px'}
+  });
+});
+(function(){
+  var grid = document.getElementById('ba-grid');
+  var countEl = document.getElementById('gal-count');
+  if(!grid) return;
+  var cases = [
+    {n:1, label:'10 upper porcelain veneers + lower teeth whitening'},
+    {n:2, label:'10 upper porcelain veneers + lower teeth whitening'},
+    {n:3, label:'10 upper porcelain veneers + lower teeth whitening'},
+    {n:4, label:'10 upper and 10 lower porcelain veneers'},
+    {n:5, label:'8 upper porcelain veneers'},
+    {n:6, label:'8 upper porcelain veneers'},
+    {n:7, label:'Clear aligners followed by 10 upper porcelain veneers and 8 lower composite veneers'},
+    {n:8, label:'10 upper and 10 lower porcelain veneers'},
+    {n:9, label:'10 upper and 10 lower porcelain veneers'},
+    {n:10, label:'10 upper porcelain veneers and 6 lower composite veneers'},
+    {n:11, label:'10 upper porcelain veneers'},
+    {n:12, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:13, label:'10 upper composite veneers'},
+    {n:14, label:'8 upper porcelain veneers'},
+    {n:15, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:16, label:'8 upper porcelain veneers'},
+    {n:17, label:'10 upper and 10 lower porcelain veneers'},
+    {n:18, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:19, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:20, label:'10 upper porcelain veneers'}
+  ];
+  function makeCard(c){
+    var nn = String(c.n).padStart(2,'0');
+    var card = document.createElement('div');
+    card.className = 'bac';
+    card.innerHTML =
+      '<div class="ba-imgs">'
+      + '<div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-'+nn+'-before.jpg" loading="lazy" alt="Case '+nn+' before" onerror="this.style.display=\'none\'"><span class="blbl">Before</span></div>'
+      + '<div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-'+nn+'-after.jpg" loading="lazy" alt="Case '+nn+' after" onerror="this.style.display=\'none\'"><span class="blbl a">After</span></div>'
+      + '<div class="ba-sep"></div>'
+      + '</div>'
+      + '<div class="ba-foot"><div class="ba-nt">'+c.label+'</div><div class="ba-when">After image: ~3 weeks post-procedure</div></div>';
+    return card;
+  }
+  cases.forEach(function(c){ grid.appendChild(makeCard(c)); });
+  if(countEl) countEl.textContent = cases.length + ' cases shown';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    cases.forEach(function(c){ grid.appendChild(makeCard(c)); });
+    grid.style.scrollSnapType = 'none';
+    var paused = false;
+    function half(){ return grid.scrollWidth / 2; }
+    function tick(){
+      if(!paused){
+        grid.scrollLeft += 0.55;
+        if(grid.scrollLeft >= half()){ grid.scrollLeft -= half(); }
+      }
+      requestAnimationFrame(tick);
+    }
+    ['mouseenter','touchstart','pointerdown'].forEach(function(ev){ grid.addEventListener(ev, function(){ paused = true; }, {passive:true}); });
+    ['mouseleave','touchend','pointerup'].forEach(function(ev){ grid.addEventListener(ev, function(){ paused = false; }, {passive:true}); });
+    requestAnimationFrame(tick);
+  }
+})();
+</script>
+</body>
+</html>
