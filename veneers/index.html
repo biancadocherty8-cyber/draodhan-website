@@ -107,23 +107,32 @@ a{text-decoration:none;color:inherit}
 .step-t{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--white);margin-bottom:0.35rem}
 .step-d{font-size:0.75rem;color:rgba(253,252,250,0.38);line-height:1.7;font-weight:300}
 
-/* GALLERY */
-.gal-notice{background:var(--sand);border:1px solid var(--line);padding:0.9rem 1rem;margin:1.1rem 0 1.5rem;font-size:0.65rem;color:var(--mid);line-height:1.6;border-radius:2px}
-.gal-notice strong{color:var(--ink);font-weight:500}
-.bac{border:1px solid var(--line);margin-bottom:0.85rem;border-radius:2px;overflow:hidden}
-.ba-imgs{display:grid;grid-template-rows:1fr 1fr;aspect-ratio:5/6;position:relative}
+/* GALLERY — swipe carousel with auto-scroll */
+.ba-head{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:0.4rem}
+.gal-notice{background:var(--sand);border:1px solid var(--line);padding:0.9rem 1rem;margin:1.1rem 0 0;font-size:0.65rem;color:var(--mid);line-height:1.6;border-radius:2px}
+.gal-notice strong{color:var(--ink);font-weight:600}
+.gal-controls{display:flex;justify-content:space-between;align-items:center;margin:1.4rem 0 1.1rem;gap:1rem;flex-wrap:wrap}
+.gal-count{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.55rem}
+.gal-count::before{content:'';width:1rem;height:1px;background:var(--gold)}
+.gallery-grid{display:flex;gap:0.65rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:0.75rem;margin-left:-1.1rem;margin-right:-1.1rem;padding-left:1.1rem;padding-right:1.1rem;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.gallery-grid::-webkit-scrollbar{height:6px}
+.gallery-grid::-webkit-scrollbar-track{background:transparent}
+.gallery-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.bac{flex:0 0 62%;scroll-snap-align:start;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--white)}
+.ba-imgs{display:grid;grid-template-rows:1fr 1fr;aspect-ratio:3/4;position:relative}
 .ba-side{overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:0.45rem}
 .bb{position:absolute;inset:0;background:linear-gradient(160deg,#c0b8ae,#a8a09a)}
 .ab{position:absolute;inset:0;background:linear-gradient(160deg,#e8e0d4,#f0ead8)}
-.ba-side img{position:absolute;inset:0}
-.blbl{position:relative;z-index:1;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;background:rgba(0,0,0,0.35);color:#fff;padding:0.18rem 0.4rem;border-radius:1px;backdrop-filter:blur(4px)}
-.blbl.a{background:rgba(168,134,74,0.82)}
+.ba-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.blbl{position:relative;z-index:1;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;background:rgba(0,0,0,0.4);color:#fff;padding:0.2rem 0.42rem;border-radius:1px;backdrop-filter:blur(4px)}
+.blbl.a{background:rgba(168,134,74,0.85);color:var(--ink)}
 .ba-sep{position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(253,252,250,0.85);z-index:2}
 .ba-foot{padding:0.75rem 0.9rem;background:var(--sand);border-top:1px solid var(--line)}
-.ba-tx{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.18rem}
-.ba-nt{font-size:0.67rem;color:var(--lite);line-height:1.5}
-.ba-di{font-size:0.6rem;color:var(--lite);font-style:italic;margin-top:0.25rem}
-
+.ba-tx{font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem}
+.ba-nt{font-size:0.72rem;color:var(--ink);line-height:1.5;font-weight:500}
+.ba-when{font-size:0.55rem;letter-spacing:0.06em;color:var(--lite);margin-top:0.35rem;font-style:italic;line-height:1.4}
+.ba-di{font-size:0.55rem;color:var(--lite);font-style:italic;margin-top:0.35rem;line-height:1.4}
+.gal-swipe{display:flex;justify-content:flex-start;gap:0.5rem;margin-top:0.5rem;color:var(--lite);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;align-items:center}
 /* FAQ */
 .faq{border-top:1px solid var(--line);margin-top:1.5rem}
 .faq-item{border-bottom:1px solid var(--line)}
@@ -187,9 +196,7 @@ footer{background:#111012;padding:1.5rem 1.1rem}
   .step{padding:2rem 1.75rem 2rem 0;border-bottom:none;border-right:1px solid rgba(255,255,255,0.06)}
   .step:first-child{padding-left:0}
   .step:last-child{border-right:none}
-  .ba-imgs{aspect-ratio:5/6}
-  .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem}
-  .bac{margin-bottom:0}
+  .bac{flex:0 0 34%}
   .risks{padding:5rem}
   .faq-cols{max-width:60ch}
   .cta{padding:6rem 5rem}
@@ -200,6 +207,9 @@ footer{background:#111012;padding:1.5rem 1.1rem}
   .freg{margin-bottom:0;max-width:44ch;text-align:center}
 }
 </style>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xbs2v1xyop");</script>
+<!-- End Microsoft Clarity -->
 </head>
 <body>
 
@@ -227,10 +237,10 @@ footer{background:#111012;padding:1.5rem 1.1rem}
   <div class="hero-bw">
     <div class="hero-ey">Porcelain &amp; composite veneers · Circular Quay</div>
     <h1 class="hero-h1">Veneers that still <em>feel like yours.</em></h1>
-    <p class="hero-lead">A veneer should enhance your natural smile, not replace it. Every case is personally planned and placed by Dr Aodhan Docherty, using a conservative approach that keeps as much of your natural tooth as is clinically possible.</p>
+    <p class="hero-lead">A veneer should enhance your natural smile, not replace it. Every case is personally planned and placed by Dr Aodhan Docherty, using a conservative approach that keeps as much of your natural tooth as is clinically possible. Start with a free, no-obligation smile consultation.</p>
     <div class="hero-btns">
-      <a href="/#assessment" class="btn-d">Take the Smile Assessment</a>
-      <a href="/book" class="btn-o">Book a Consultation</a>
+      <a href="/book" class="btn-d">Book a Free Consultation</a>
+      <a href="/#assessment" class="btn-o">Take the Smile Assessment</a>
     </div>
     <div class="hero-reg"><strong>Dr Aodhan Docherty</strong> · Registered Dentist, AHPRA DEN0001938737 · Circular Quay, Sydney. Veneers are an elective procedure. Suitability is assessed in person.</div>
   </div>
@@ -255,11 +265,52 @@ footer{background:#111012;padding:1.5rem 1.1rem}
 <!-- COMPLIANCE -->
 <div class="comp"><strong>Important.</strong> Veneers involve preparation of natural teeth and may be irreversible. Outcomes vary between individuals and cannot be guaranteed. The information on this page is general only and not a substitute for an in-person clinical assessment.</div>
 
+<!-- THE AODHAN METHOD -->
+<style>
+.method{background:#141210;padding:2.5rem 1.1rem;position:relative;overflow:hidden}
+.method::before{content:'';position:absolute;top:-30%;right:-10%;width:60%;aspect-ratio:1;background:radial-gradient(circle,rgba(168,134,74,0.10),transparent 65%);pointer-events:none}
+.method-in{position:relative;max-width:1240px;margin:0 auto}
+.method-ey{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold2);display:flex;align-items:center;gap:0.55rem;margin-bottom:1rem}
+.method-ey::before{content:'';width:1.4rem;height:1px;background:var(--gold2)}
+.method-h{font-family:'Playfair Display',serif;font-weight:400;font-size:2.2rem;line-height:1.06;color:var(--white);letter-spacing:-0.01em;margin-bottom:0.9rem}
+.method-h em{font-style:italic;color:var(--gold2)}
+.method-h sup{font-size:0.34em;letter-spacing:0;vertical-align:super;color:var(--gold2)}
+.method-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:0.98rem;line-height:1.6;color:rgba(253,252,250,0.55);font-weight:400;max-width:54ch;margin-bottom:2.6rem}
+.method-grid{display:grid;grid-template-columns:1fr;gap:2.1rem}
+.mstep{display:flex;flex-direction:column}
+.mstep-n{width:2.6rem;height:2.6rem;border-radius:50%;border:1px solid rgba(168,134,74,0.5);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--gold2);margin-bottom:1.1rem}
+.mstep-t{font-family:'Playfair Display',serif;font-weight:400;font-size:1.3rem;color:var(--white);margin-bottom:0.6rem}
+.mstep-d{font-size:0.82rem;line-height:1.8;color:rgba(253,252,250,0.9);font-weight:400}
+.method-foot{font-size:0.62rem;line-height:1.7;color:rgba(253,252,250,0.32);font-style:italic;margin-top:2.6rem;max-width:84ch;border-top:1px solid rgba(255,255,255,0.08);padding-top:1.3rem}
+@media(min-width:680px){.method-grid{grid-template-columns:1fr 1fr;gap:2.4rem 3rem}}
+@media(min-width:1024px){
+  .method{padding:5rem}
+  .method-grid{grid-template-columns:repeat(5,1fr);gap:2.6rem}
+  .method-h{font-size:3rem}
+  .method-sub{font-size:1.02rem}
+}
+</style>
+<section class="method" id="method" data-screen-label="01b The Aodhan Method">
+  <div class="method-in">
+    <div class="method-ey">A signature approach</div>
+    <h2 class="method-h">The Aodhan <em>Method</em><sup>&trade;</sup></h2>
+    <p class="method-sub">A considered, preservation-first approach to veneers, guided by the same dentist from your first conversation to your final smile.</p>
+    <div class="method-grid">
+      <div class="mstep"><div class="mstep-n">1</div><div class="mstep-t">Understand</div><p class="mstep-d">It begins with your face, not just your teeth. Dr Aodhan considers your features and what you want your smile to say, so the design suits you rather than a template.</p></div>
+      <div class="mstep"><div class="mstep-n">2</div><div class="mstep-t">Design</div><p class="mstep-d">Using digital and hand design, your proposed smile is planned around your facial proportions, balancing shape, length and harmony as a whole.</p></div>
+      <div class="mstep"><div class="mstep-n">3</div><div class="mstep-t">Preview</div><p class="mstep-d">You see, and can often trial, your proposed smile before any irreversible treatment. Nothing is finalised until you feel confident in the plan.</p></div>
+      <div class="mstep"><div class="mstep-n">4</div><div class="mstep-t">Preserve</div><p class="mstep-d">Teeth are prepared as conservatively as each case allows, protecting as much healthy, natural tooth as possible. This is the heart of the method.</p></div>
+      <div class="mstep"><div class="mstep-n">5</div><div class="mstep-t">Refine</div><p class="mstep-d">Each veneer is hand-characterised by skilled technicians and refined at the fit, so the finished result looks like a natural part of you.</p></div>
+    </div>
+    <p class="method-foot">The Aodhan Method describes Dr Aodhan's personal approach to planning and delivering veneer treatment. It is not a guarantee of any particular result. Suitability, including whether a conservative preparation or a trial preview is appropriate, is assessed at an in-person clinical consultation. Every patient is different and outcomes vary.</p>
+  </div>
+</section>
+
 <!-- APPROACH -->
 <section class="sec white" id="approach" data-screen-label="02 Approach">
-  <div class="tag">Our approach</div>
+  <div class="tag">Inside the method · Preserve</div>
   <h2 class="sh">Conservative dentistry. <em>Considered cosmetics.</em></h2>
-  <p class="sec-lead">Wherever it is clinically appropriate, Dr Aodhan uses a conservative technique that protects healthy enamel. The aim is a result that looks right today and preserves more of your natural tooth for the future. It is the same approach he teaches to other dentists across Australia.</p>
+  <p class="sec-lead">The fourth stage of the method, Preserve, is where Dr Aodhan's approach differs most. Wherever it is clinically appropriate, he uses a conservative technique that protects healthy enamel, so your result looks right today and keeps more of your natural tooth for the future. It is the same approach he teaches to other dentists across Australia.</p>
   <div class="cmp">
     <div class="cmp-row head">
       <div class="cmp-c">Traditional approach</div>
@@ -351,10 +402,14 @@ footer{background:#111012;padding:1.5rem 1.1rem}
 
 <!-- GALLERY -->
 <section class="sec white" id="gallery" data-screen-label="05 Gallery">
-  <div class="tag">Recent cases</div>
-  <h2 class="sh">Before &amp; <em>after.</em></h2>
+  <div class="ba-head">
+    <div class="tag">Recent cases</div>
+    <h2 class="sh">Before &amp; <em>after</em></h2>
+  </div>
   <div class="gal-notice"><strong>About these images.</strong> All photos are of actual patients who have given written consent. They are not edited, filtered or enhanced. Each outcome is relevant only to the individual shown and is not a guarantee of result for any other patient.</div>
-  <div class="gallery-grid" id="gal"></div>
+  <div class="gal-controls"><span class="gal-count" id="gal-count">20 cases shown</span></div>
+  <div class="gallery-grid" id="ba-grid"></div>
+  <div class="gal-swipe"><span>&larr; Swipe to see more cases &rarr;</span></div>
 </section>
 
 <!-- FAQ -->
@@ -453,26 +508,63 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 
 // Gallery — veneer cases (sourced from veneers-landing folder)
 (function(){
-  const cases=[
-    {n:6,  t:'Porcelain Veneers', d:'8 upper porcelain veneers · After image: ~3 weeks post-procedure'},
-    {n:7,  t:'Aligners + Veneers', d:'Clear aligners followed by 10 upper porcelain veneers and 8 lower composite veneers · After image: ~3 weeks post-procedure'},
-    {n:8,  t:'Porcelain Veneers', d:'10 upper and 10 lower porcelain veneers · After image: ~3 weeks post-procedure'},
-    {n:9,  t:'Porcelain Veneers', d:'10 upper and 10 lower porcelain veneers · After image: ~3 weeks post-procedure'},
-    {n:10, t:'Porcelain + Composite', d:'10 upper porcelain veneers and 6 lower composite veneers · After image: ~3 weeks post-procedure'},
-    {n:13, t:'Composite Veneers', d:'10 upper composite veneers · After image: ~3 weeks post-procedure'}
+  var grid = document.getElementById('ba-grid');
+  var countEl = document.getElementById('gal-count');
+  if(!grid) return;
+  var cases = [
+    {n:1, label:'10 upper porcelain veneers + lower teeth whitening'},
+    {n:2, label:'10 upper porcelain veneers + lower teeth whitening'},
+    {n:3, label:'10 upper porcelain veneers + lower teeth whitening'},
+    {n:4, label:'10 upper and 10 lower porcelain veneers'},
+    {n:5, label:'8 upper porcelain veneers'},
+    {n:6, label:'8 upper porcelain veneers'},
+    {n:7, label:'Clear aligners followed by 10 upper porcelain veneers and 8 lower composite veneers'},
+    {n:8, label:'10 upper and 10 lower porcelain veneers'},
+    {n:9, label:'10 upper and 10 lower porcelain veneers'},
+    {n:10, label:'10 upper porcelain veneers and 6 lower composite veneers'},
+    {n:11, label:'10 upper porcelain veneers'},
+    {n:12, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:13, label:'10 upper composite veneers'},
+    {n:14, label:'8 upper porcelain veneers'},
+    {n:15, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:16, label:'8 upper porcelain veneers'},
+    {n:17, label:'10 upper and 10 lower porcelain veneers'},
+    {n:18, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:19, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:20, label:'10 upper porcelain veneers'}
   ];
-  const g=document.getElementById('gal');
-  cases.forEach(c=>{
-    const nn=String(c.n).padStart(2,'0');
-    const d=document.createElement('div');d.className='bac';
-    d.innerHTML=`<div class="ba-imgs">
-      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-${nn}-before.jpg" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
-      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-${nn}-after.jpg" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
-      <div class="ba-sep"></div>
-    </div>
-    <div class="ba-foot"><div class="ba-tx">${c.t}</div><div class="ba-nt">${c.d}</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>`;
-    g.appendChild(d);
-  });
+  function makeCard(c){
+    var nn = String(c.n).padStart(2,'0');
+    var card = document.createElement('div');
+    card.className = 'bac';
+    card.innerHTML =
+      '<div class="ba-imgs">'
+      + '<div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-'+nn+'-before.jpg" loading="lazy" alt="Before" onerror="this.style.display=\'none\'"><span class="blbl">Before</span></div>'
+      + '<div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-'+nn+'-after.jpg" loading="lazy" alt="After" onerror="this.style.display=\'none\'"><span class="blbl a">After</span></div>'
+      + '<div class="ba-sep"></div>'
+      + '</div>'
+      + '<div class="ba-foot"><div class="ba-nt">'+c.label+'</div><div class="ba-when">After image: ~3 weeks post-procedure</div></div>';
+    return card;
+  }
+  cases.forEach(function(c){ grid.appendChild(makeCard(c)); });
+  if(countEl) countEl.textContent = cases.length + ' cases shown';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    cases.forEach(function(c){ grid.appendChild(makeCard(c)); });
+    grid.style.scrollSnapType = 'none';
+    var paused = false;
+    function half(){ return grid.scrollWidth / 2; }
+    function tick(){
+      if(!paused){
+        grid.scrollLeft += 0.55;
+        if(grid.scrollLeft >= half()){ grid.scrollLeft -= half(); }
+      }
+      requestAnimationFrame(tick);
+    }
+    ['mouseenter','touchstart','pointerdown'].forEach(function(ev){ grid.addEventListener(ev, function(){ paused = true; }, {passive:true}); });
+    ['mouseleave','touchend','pointerup'].forEach(function(ev){ grid.addEventListener(ev, function(){ paused = false; }, {passive:true}); });
+    requestAnimationFrame(tick);
+  }
 })();
 </script>
 </body>
