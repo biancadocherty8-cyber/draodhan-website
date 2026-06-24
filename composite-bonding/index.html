@@ -20,21 +20,39 @@ a{text-decoration:none;color:inherit}
 
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 1.1rem;background:rgba(253,252,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-brand{font-family:'Playfair Display',serif;font-size:0.85rem;letter-spacing:0.02em;color:var(--ink);white-space:nowrap}
+.nav-brand{font-family:'Playfair Display',serif;font-size:0.85rem;letter-spacing:0.02em;color:var(--ink);white-space:nowrap;text-decoration:none}
 .nav-brand b{color:var(--gold);font-weight:400}
 .nav-r{display:flex;align-items:center;gap:0.6rem}
-.nav-bk{background:var(--ink);color:var(--white);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.42rem 0.85rem;border-radius:2px;white-space:nowrap}
+.nav-bk{background:var(--ink);color:var(--white);font-family:'Mulish',sans-serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.42rem 0.85rem;border-radius:2px;white-space:nowrap;text-decoration:none}
+.nav-bk:hover{background:var(--gold);color:var(--ink)}
 .hbg{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:5px}
-.hbg span{display:block;width:19px;height:1.5px;background:var(--ink);transition:transform 0.28s,opacity 0.28s;transform-origin:center}
+.hbg span{display:block;width:19px;height:1.5px;background:var(--ink);transition:transform .28s,opacity .28s;transform-origin:center}
 .hbg.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
 .hbg.open span:nth-child(2){opacity:0}
 .hbg.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
-.drawer{position:fixed;top:52px;left:0;right:0;bottom:0;z-index:190;background:var(--white);display:flex;flex-direction:column;padding:1.75rem 1.25rem;transform:translateX(100%);transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);overflow-y:auto}
+/* DRAWER */
+.drawer{position:fixed;top:52px;left:0;right:0;bottom:0;z-index:190;background:var(--white);display:flex;flex-direction:column;padding:1.5rem 1.25rem;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto}
 .drawer.open{transform:translateX(0)}
-.dl{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--line);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
+.dl{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--line);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);text-decoration:none}
 .dl::after{content:'→';color:var(--gold)}
-.d-book{margin-top:1.75rem;display:block;text-align:center;background:var(--ink);color:var(--white);padding:0.95rem;border-radius:2px;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase}
-.d-assess{margin-top:0.6rem;display:block;text-align:center;background:transparent;color:var(--ink);padding:0.95rem;border-radius:2px;border:1px solid var(--line);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase}
+.nav-dd{display:flex;flex-direction:column}
+.nav-dd-t{cursor:pointer}
+.nav-dd-t::after{content:''}
+.nav-dd-menu{display:flex;flex-direction:column}
+.dl-s{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0 0.75rem 1rem;border-bottom:1px solid var(--line);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none}
+.dl-s::after{content:'→';color:var(--gold)}
+.d-book{margin-top:1.5rem;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--white);padding:0.95rem;border-radius:2px;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none}
+@media(min-width:768px){
+  .nav-r{display:none}
+  .nav-dd{position:relative;flex-direction:row;align-items:center}
+  .nav-dd::after{content:'';position:absolute;top:100%;left:0;right:0;height:14px}
+  .nav-dd > .nav-dd-t::after{content:'▾';color:var(--gold);margin-left:0.32rem;font-size:0.66rem;display:inline}
+  .nav-dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(10px);background:var(--white);border:1px solid var(--line);border-radius:3px;padding:0.4rem 0;min-width:188px;box-shadow:0 20px 50px -26px rgba(24,24,26,0.45);opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease;z-index:210}
+  .nav-dd:hover .nav-dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(4px)}
+  .nav-dd-menu .dl-s{padding:0.5rem 1.15rem;border:none;font-size:0.63rem;color:var(--mid);white-space:nowrap}
+  .nav-dd-menu .dl-s::after{display:none}
+  .nav-dd-menu .dl-s:hover{color:var(--ink);background:var(--sand)}
+}
 
 /* UTILS */
 .tag{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.55rem;margin-bottom:0.75rem}
@@ -225,22 +243,25 @@ footer{background:#111012;padding:1.5rem 1.1rem}
 <body>
 <header class="nav">
   <a href="/" class="nav-brand">Dr <b>Aodhan</b> Docherty</a>
+  <nav class="drawer" id="drawer">
+  <a href="/" class="dl nc">Home</a>
+  <div class="nav-dd">
+    <span class="dl nav-dd-t">Treatments</span>
+    <div class="nav-dd-menu">
+      <a href="/veneers" class="dl-s nc">Veneers</a>
+      <a href="/clear-aligners" class="dl-s nc">Clear Aligners</a>
+      <a href="/composite-bonding" class="dl-s nc">Composite Bonding</a>
+      <a href="/dental-implants" class="dl-s nc">Dental Implants</a>
+    </div>
+  </div>
+  <a href="/blog/" class="dl nc">Journal</a>
+  <a href="/book" class="d-book nc">Book</a>
+  </nav>
   <div class="nav-r">
     <a href="/book" class="nav-bk">Book</a>
     <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
-
-<nav class="drawer" id="drawer">
-  <a href="/" class="dl nc">Home</a>
-  <a href="#approach" class="dl nc">Our approach</a>
-  <a href="#options" class="dl nc">What it can do</a>
-  <a href="#process" class="dl nc">The process</a>
-  <a href="#gallery" class="dl nc">Before & after</a>
-  <a href="#faq" class="dl nc">Questions</a>
-  <a href="/book" class="d-book">Book a Free Consultation</a>
-  <a href="/#assessment" class="d-assess">Smile Assessment</a>
-</nav>
 
 <!-- HERO -->
 <section class="hero" data-screen-label="01 Hero">
