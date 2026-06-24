@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dental Implants Sydney – Dr Aodhan Docherty, Circular Quay</title>
+<meta name="description" content="Dental implants in Circular Quay, Sydney, planned, placed and restored by Dr Aodhan Docherty, who holds a Graduate Diploma in Clinical Dentistry (Oral Implants). A fixed, natural-feeling way to replace a missing tooth.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://draodhan.com.au/dental-implants/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Mulish:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#18181A;--mid:#4A4A50;--lite:#8A8A92;--sand:#F7F3EE;--sand2:#EDE7DE;--white:#FDFCFA;--gold:#A8864A;--gold2:#C4A46E;--line:#DDD7CF}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Mulish',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 1.1rem;background:rgba(253,252,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-brand{font-family:'Playfair Display',serif;font-size:0.85rem;letter-spacing:0.02em;color:var(--ink);white-space:nowrap}
+.nav-brand b{color:var(--gold);font-weight:400}
+.nav-r{display:flex;align-items:center;gap:0.6rem}
+.nav-bk{background:var(--ink);color:var(--white);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.42rem 0.85rem;border-radius:2px;white-space:nowrap}
+.hbg{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:5px}
+.hbg span{display:block;width:19px;height:1.5px;background:var(--ink);transition:transform 0.28s,opacity 0.28s;transform-origin:center}
+.hbg.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0}
+.hbg.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.drawer{position:fixed;top:52px;left:0;right:0;bottom:0;z-index:190;background:var(--white);display:flex;flex-direction:column;padding:1.75rem 1.25rem;transform:translateX(100%);transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);overflow-y:auto}
+.drawer.open{transform:translateX(0)}
+.dl{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--line);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
+.dl::after{content:'→';color:var(--gold)}
+.d-book{margin-top:1.75rem;display:block;text-align:center;background:var(--ink);color:var(--white);padding:0.95rem;border-radius:2px;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase}
+.d-assess{margin-top:0.6rem;display:block;text-align:center;background:transparent;color:var(--ink);padding:0.95rem;border-radius:2px;border:1px solid var(--line);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase}
+
+/* UTILS */
+.tag{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.55rem;margin-bottom:0.75rem}
+.tag::before{content:'';width:1.4rem;height:1px;background:var(--gold)}
+.sh{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:400;line-height:1.2;color:var(--ink)}
+.sh em{font-style:italic;color:var(--gold)}
+.bt{font-size:0.85rem;color:var(--mid);line-height:1.8;font-weight:300}
+.btn-d{display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--white);padding:0.88rem 1.25rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--ink);transition:background 0.2s}
+.btn-d:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn-o{display:flex;align-items:center;justify-content:center;background:transparent;color:var(--ink);padding:0.88rem 1.25rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--line);transition:border-color 0.2s}
+.btn-o:hover{border-color:var(--ink)}
+
+/* HERO */
+.hero{padding-top:52px}
+.hero-img{height:64vw;max-height:340px;background:linear-gradient(160deg,#2a2825,#1a1917);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-img img{position:absolute;inset:0}
+.hero-ph{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.12)}
+.hero-bw{padding:1.5rem 1.1rem 0;background:var(--white)}
+.hero-ey{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.hero-h1{font-family:'Playfair Display',serif;font-size:1.95rem;font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:0.85rem}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-lead{font-size:0.85rem;color:var(--mid);line-height:1.78;font-weight:300;margin-bottom:1.25rem}
+.hero-btns{display:flex;flex-direction:column;gap:0.55rem}
+.hero-reg{background:var(--sand);border-top:1px solid var(--line);padding:0.8rem 1.1rem;font-size:0.62rem;color:var(--lite);line-height:1.55;margin-top:1.25rem}
+.hero-stat{display:flex;align-items:baseline;gap:0.7rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--line)}
+.hero-stat .hsn{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);line-height:1;flex-shrink:0}
+.hero-stat .hsl{font-size:0.62rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);line-height:1.5;font-weight:500}
+.hero-reg strong{color:var(--mid);font-weight:500}
+
+/* COMPLIANCE */
+.comp{background:var(--sand2);padding:0.9rem 1.1rem;font-size:0.65rem;color:var(--mid);line-height:1.6;border-bottom:1px solid var(--line)}
+.comp strong{color:var(--ink);font-weight:500}
+
+/* SECTION GENERIC */
+.sec{padding:2.5rem 1.1rem}
+.sec.sand{background:var(--sand)}
+.sec.white{background:var(--white)}
+.sec-lead{font-size:0.82rem;color:var(--mid);line-height:1.8;font-weight:300;margin-top:0.75rem;max-width:62ch}
+
+/* APPROACH / COMPARISON */
+.cmp{margin-top:1.5rem;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.cmp-row{display:grid;grid-template-columns:1fr 1fr}
+.cmp-row.head .cmp-c{background:var(--ink);color:var(--white);font-family:'Playfair Display',serif;font-size:0.95rem;padding:0.95rem 1rem}
+.cmp-row.head .cmp-c.alt{background:var(--gold);color:var(--ink)}
+.cmp-c{padding:0.85rem 1rem;font-size:0.74rem;line-height:1.55;color:var(--mid);border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.cmp-c:last-child{border-right:none}
+.cmp-c.alt{background:rgba(168,134,74,0.05);color:var(--ink)}
+.cmp-row:last-child .cmp-c{border-bottom:none}
+.cmp-note{font-size:0.66rem;color:var(--lite);line-height:1.65;margin-top:1rem;font-style:italic}
+
+/* SPLIT (porcelain vs composite) */
+.split{display:grid;grid-template-columns:1fr;gap:0.5rem;margin-top:1.5rem}
+.opt{border:1px solid var(--line);border-radius:2px;padding:1.5rem 1.25rem;background:var(--white)}
+.opt-k{font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+.opt-h{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--ink);margin-bottom:0.85rem}
+.opt ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.opt li{font-size:0.76rem;color:var(--mid);line-height:1.6;font-weight:300;padding-left:1rem;position:relative}
+.opt li::before{content:'';position:absolute;left:0;top:0.5rem;width:7px;height:1px;background:var(--gold)}
+.opt-foot{margin-top:1rem;padding-top:0.85rem;border-top:1px solid var(--line);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--lite)}
+
+/* PROCESS */
+.process{padding:2.5rem 1.1rem;background:var(--ink)}
+.process .tag{color:var(--gold2)}
+.process .tag::before{background:var(--gold2)}
+.process .sh{color:var(--white)}
+.process .sh em{color:var(--gold2)}
+.proc-sub{font-size:0.8rem;color:rgba(253,252,250,0.42);line-height:1.75;font-weight:300;margin-top:0.75rem}
+.steps{margin-top:1.75rem;border-top:1px solid rgba(255,255,255,0.07)}
+.step{padding:1.35rem 0;border-bottom:1px solid rgba(255,255,255,0.07)}
+.step-n{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;color:rgba(255,255,255,0.07);line-height:1;margin-bottom:0.5rem}
+.step-dur{font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold2);margin-bottom:0.5rem}
+.step-t{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--white);margin-bottom:0.35rem}
+.step-d{font-size:0.75rem;color:rgba(253,252,250,0.38);line-height:1.7;font-weight:300}
+
+/* GALLERY — swipe carousel with auto-scroll */
+.ba-head{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:0.4rem}
+.gal-notice{background:var(--sand);border:1px solid var(--line);padding:0.9rem 1rem;margin:1.1rem 0 0;font-size:0.65rem;color:var(--mid);line-height:1.6;border-radius:2px}
+.gal-notice strong{color:var(--ink);font-weight:600}
+.gal-controls{display:flex;justify-content:space-between;align-items:center;margin:1.4rem 0 1.1rem;gap:1rem;flex-wrap:wrap}
+.gal-count{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.55rem}
+.gal-count::before{content:'';width:1rem;height:1px;background:var(--gold)}
+.gallery-grid{display:flex;gap:0.65rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:0.75rem;margin-left:-1.1rem;margin-right:-1.1rem;padding-left:1.1rem;padding-right:1.1rem;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.gallery-grid::-webkit-scrollbar{height:6px}
+.gallery-grid::-webkit-scrollbar-track{background:transparent}
+.gallery-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.bac{flex:0 0 62%;scroll-snap-align:start;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--white)}
+.ba-imgs{display:grid;grid-template-rows:1fr 1fr;aspect-ratio:3/4;position:relative}
+.ba-side{overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:0.45rem}
+.bb{position:absolute;inset:0;background:linear-gradient(160deg,#c0b8ae,#a8a09a)}
+.ab{position:absolute;inset:0;background:linear-gradient(160deg,#e8e0d4,#f0ead8)}
+.ba-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.blbl{position:relative;z-index:1;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;background:rgba(0,0,0,0.4);color:#fff;padding:0.2rem 0.42rem;border-radius:1px;backdrop-filter:blur(4px)}
+.blbl.a{background:rgba(168,134,74,0.85);color:var(--ink)}
+.ba-sep{position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(253,252,250,0.85);z-index:2}
+.ba-foot{padding:0.75rem 0.9rem;background:var(--sand);border-top:1px solid var(--line)}
+.ba-tx{font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem}
+.ba-nt{font-size:0.72rem;color:var(--ink);line-height:1.5;font-weight:500}
+.ba-when{font-size:0.55rem;letter-spacing:0.06em;color:var(--lite);margin-top:0.35rem;font-style:italic;line-height:1.4}
+.gal-swipe{display:flex;justify-content:flex-start;gap:0.5rem;margin-top:0.5rem;color:var(--lite);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;align-items:center}
+/* FAQ */
+.faq{border-top:1px solid var(--line);margin-top:1.5rem}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 0;text-align:left;font-family:'Playfair Display',serif;font-size:0.98rem;color:var(--ink);line-height:1.3}
+.faq-q .pl{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);transition:transform 0.25s;flex-shrink:0;line-height:1}
+.faq-item.open .pl{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.faq-a-in{padding:0 0 1.2rem;font-size:0.78rem;color:var(--mid);line-height:1.75;font-weight:300}
+.faq-a-in p+p{margin-top:0.7rem}
+
+/* RISKS */
+.risks{padding:2.5rem 1.1rem;background:var(--sand2)}
+.risk-list{margin-top:1.5rem;display:flex;flex-direction:column;gap:0.5rem}
+.risk{background:var(--white);border:1px solid var(--line);padding:0.95rem 1.1rem;display:flex;gap:0.85rem;border-radius:2px}
+.risk-n{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--gold);font-style:italic;flex-shrink:0;line-height:1.4}
+.risk-b{font-size:0.76rem;color:var(--mid);line-height:1.6;font-weight:300}
+.risk-b strong{display:block;color:var(--ink);font-weight:500;margin-bottom:0.15rem}
+.risk-fine{font-size:0.64rem;color:var(--lite);line-height:1.7;font-style:italic;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--line)}
+
+/* BOOK EMBED */
+.book-sec{padding:3rem 1.1rem;background:var(--sand)}
+.book-sec .tag{margin-bottom:0.85rem}
+.book-h{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:0.75rem}
+.book-h em{font-style:italic;color:var(--gold)}
+.book-sub{font-size:0.8rem;color:var(--mid);line-height:1.75;font-weight:300;margin-bottom:1.5rem;max-width:60ch}
+.book-embed{border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--white)}
+.book-embed iframe{display:block;width:1px;min-width:100%;border:none;height:760px;background:var(--white)}
+@media(min-width:768px){.book-sec{padding:5rem}}
+
+/* CTA */
+.cta{padding:3rem 1.1rem;background:var(--ink);text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:80%;aspect-ratio:1;background:radial-gradient(circle,rgba(168,134,74,0.07),transparent 65%)}
+.cta .tag{justify-content:center;color:var(--gold2)}
+.cta .tag::before{display:none}
+.cta-h{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:400;line-height:1.2;color:var(--white);margin:0 auto 0.85rem;position:relative}
+.cta-h em{font-style:italic;color:var(--gold2)}
+.cta-sub{font-size:0.8rem;color:rgba(253,252,250,0.42);line-height:1.75;font-weight:300;margin-bottom:1.75rem;position:relative}
+.cta-btns{display:flex;flex-direction:column;gap:0.55rem;position:relative}
+.btn-gld{display:flex;align-items:center;justify-content:center;background:var(--gold);color:var(--ink);padding:0.88rem 1.25rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--gold);transition:background 0.2s}
+.btn-gld:hover{background:var(--gold2)}
+.btn-gh{display:flex;align-items:center;justify-content:center;background:transparent;color:rgba(253,252,250,0.6);padding:0.88rem 1.25rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.12);transition:border-color 0.2s,color 0.2s}
+.btn-gh:hover{border-color:rgba(255,255,255,0.35);color:var(--white)}
+
+/* FOOTER */
+footer{background:#111012;padding:1.5rem 1.1rem}
+.fl{font-family:'Playfair Display',serif;font-size:0.82rem;color:rgba(253,252,250,0.28);display:block;margin-bottom:0.75rem}
+.freg{font-size:0.58rem;color:rgba(253,252,250,0.16);line-height:1.6;margin-bottom:0.85rem}
+.flinks{display:flex;gap:1.25rem;flex-wrap:wrap}
+.flinks a{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,252,250,0.22);transition:color 0.2s}
+.flinks a:hover{color:var(--gold2)}
+
+@media(min-width:768px){
+  .nav{padding:0 3rem;height:58px}
+  .hbg,.nav-bk{display:none}
+  .drawer{position:static;transform:none!important;display:flex;flex-direction:row;padding:0;gap:2rem;background:transparent;overflow:visible;align-items:center;top:auto;height:auto}
+  .dl{padding:0;border:none;font-size:0.68rem;color:var(--mid)}
+  .dl::after{display:none}
+  .d-book{margin:0;padding:0.48rem 1.2rem;font-size:0.67rem}
+  .d-assess{display:none}
+  .hero{display:grid;grid-template-columns:52% 48%;padding-top:58px;min-height:88vh}
+  .hero-img{height:100%;max-height:none;order:2}
+  .hero-bw{order:1;display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem 4rem 4.5rem;position:relative}
+  .hero-bw::after{content:'';position:absolute;right:0;top:10%;bottom:10%;width:1px;background:var(--line)}
+  .hero-h1{font-size:3rem}
+  .hero-btns{flex-direction:row}
+  .hero-reg{margin-top:1.75rem}
+  .sec{padding:5rem}
+  .split{grid-template-columns:1fr 1fr;gap:0.6rem}
+  .process{padding:5rem}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.07)}
+  .step{padding:2rem 1.75rem 2rem 0;border-bottom:none;border-right:1px solid rgba(255,255,255,0.06)}
+  .step:first-child{padding-left:0}
+  .step:last-child{border-right:none}
+  .bac{flex:0 0 34%}
+  .risks{padding:5rem}
+  .faq-cols{max-width:60ch}
+  .cta{padding:6rem 5rem}
+  .cta-h{font-size:3rem;max-width:18ch;margin-left:auto;margin-right:auto}
+  .cta-btns{flex-direction:row;justify-content:center}
+  footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding:2rem 5rem}
+  .fl{margin-bottom:0}
+  .freg{margin-bottom:0;max-width:44ch;text-align:center}
+}
+</style>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xbs2v1xyop");</script>
+<!-- End Microsoft Clarity -->
+</head>
+<body>
+<header class="nav">
+  <a href="/" class="nav-brand">Dr <b>Aodhan</b> Docherty</a>
+  <div class="nav-r">
+    <a href="/book" class="nav-bk">Book</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="drawer" id="drawer">
+  <a href="/" class="dl nc">Home</a>
+  <a href="#approach" class="dl nc">Our approach</a>
+  <a href="#options" class="dl nc">Implant or bridge</a>
+  <a href="#process" class="dl nc">The process</a>
+  <a href="#gallery" class="dl nc">Before & after</a>
+  <a href="#faq" class="dl nc">Questions</a>
+  <a href="/book" class="d-book">Book a Free Consultation</a>
+  <a href="/#assessment" class="d-assess">Smile Assessment</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="hero-bw">
+    <div class="hero-ey">Dental implants · Circular Quay</div>
+    <h1 class="hero-h1">A replacement that <em>feels real.</em></h1>
+    <p class="hero-lead">A dental implant is a small titanium post that replaces the root of a missing tooth, topped with a custom crown. It is fixed in place, looks and functions like a natural tooth, and does not rely on cutting down the teeth either side.</p>
+    <div class="hero-btns">
+      <a href="/book" class="btn-d">Book a Free Consultation</a>
+      <a href="/#assessment" class="btn-o">Take the Smile Assessment</a>
+    </div>
+    <div class="hero-stat">
+      <span class="hsn">1</span>
+      <span class="hsl">the same dentist plans, places and restores your implant, start to finish</span>
+    </div>
+    <div class="hero-reg"><strong>Dr Aodhan Docherty</strong> · Registered Dentist, AHPRA DEN0001938737 · Graduate Diploma in Clinical Dentistry (Oral Implants), University of Sydney · Circular Quay, Sydney. Implant treatment is a surgical procedure. Suitability is assessed in person.</div>
+  </div>
+  <div class="hero-img"><span class="hero-ph">Dental implants by Dr Aodhan Docherty</span><img src="implant-hero.jpg" alt="Dental implants by Dr Aodhan Docherty" onerror="this.style.display='none'"></div>
+</section>
+
+<!-- COMPLIANCE -->
+<div class="comp"><strong>Important.</strong> Implant treatment is a surgical procedure that carries risks, and success depends on healing and individual factors such as bone, gum health and general health. Outcomes vary between individuals and cannot be guaranteed. The information on this page is general only and not a substitute for an in-person clinical assessment.</div>
+<!-- APPROACH -->
+<section class="sec white" id="approach" data-screen-label="02 Approach">
+  <div class="tag">Our approach</div>
+  <h2 class="sh">Planned in 3D. <em>Placed with care.</em></h2>
+  <p class="sec-lead">A good implant starts long before any surgery. Dr Aodhan plans each case using a three-dimensional scan to assess the bone and position the implant precisely, and restores it himself, so the same hands see your case through from start to finish.</p>
+  <div class="cmp">
+    <div class="cmp-row head">
+      <div class="cmp-c">A traditional bridge</div>
+      <div class="cmp-c alt">A dental implant</div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-c">Relies on cutting down neighbouring teeth</div>
+      <div class="cmp-c alt">Stands alone, neighbours left untouched</div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-c">Does not replace the tooth root</div>
+      <div class="cmp-c alt">Replaces the root and helps preserve bone</div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-c">Generally a quicker process</div>
+      <div class="cmp-c alt">Takes longer, as the implant integrates with bone</div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-c">Cleaned around and underneath</div>
+      <div class="cmp-c alt">Cleaned much like a natural tooth</div>
+    </div>
+  </div>
+  <p class="cmp-note">An implant is not right for every situation. Bone volume, gum health, general health and habits such as smoking all affect suitability, and are assessed clinically before any treatment is planned.</p>
+</section>
+
+<!-- OPTIONS -->
+<section class="sec sand" id="options" data-screen-label="03 Implant or bridge">
+  <div class="tag">Is it right for you</div>
+  <h2 class="sh">A fixed, <em>standalone</em> solution.</h2>
+  <p class="sec-lead">Implants suit many patients who are missing one or more teeth, but they are a considered decision. Here is where an implant tends to shine, and where another option may be discussed.</p>
+  <div class="split">
+    <div class="opt">
+      <div class="opt-k">Often a good fit</div>
+      <div class="opt-h">An implant may suit you if</div>
+      <ul>
+        <li>You are missing a single tooth or a few teeth.</li>
+        <li>You would rather not cut down healthy neighbours.</li>
+        <li>You have healthy gums and adequate bone.</li>
+        <li>You want a fixed, long-term replacement.</li>
+      </ul>
+      <div class="opt-foot">Fixed &amp; standalone</div>
+    </div>
+    <div class="opt">
+      <div class="opt-k">Assessed first</div>
+      <div class="opt-h">We will look closely at</div>
+      <ul>
+        <li>The amount and quality of bone present.</li>
+        <li>Gum health and any active disease.</li>
+        <li>General health and healing factors.</li>
+        <li>Habits such as smoking, which affect success.</li>
+      </ul>
+      <div class="opt-foot">Honest advice, always</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process" data-screen-label="04 Process">
+  <div class="tag">The process</div>
+  <h2 class="sh">A staged path to a <em>fixed tooth.</em></h2>
+  <p class="proc-sub">Implant treatment happens in stages over several months, allowing the implant to integrate with your bone before the final tooth is fitted. Nothing is rushed.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">01</div>
+      <div class="step-dur">60 minutes</div>
+      <div class="step-t">Consultation &amp; 3D scan</div>
+      <p class="step-d">Meet Dr Aodhan for an examination and a three-dimensional scan to assess the bone and plan the implant position.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">02</div>
+      <div class="step-dur">Placement</div>
+      <div class="step-t">Implant placed</div>
+      <p class="step-d">The titanium implant is placed under local anaesthetic. A temporary tooth is provided where appropriate.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">03</div>
+      <div class="step-dur">Months</div>
+      <div class="step-t">Healing</div>
+      <p class="step-d">The implant integrates with the bone over several months. This healing phase is essential and cannot be rushed.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">04</div>
+      <div class="step-dur">Final stage</div>
+      <div class="step-t">Final crown</div>
+      <p class="step-d">Once integrated, a custom crown is fitted onto the implant, and you return for ongoing review and maintenance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec white" id="gallery" data-screen-label="05 Gallery">
+  <div class="ba-head">
+    <div class="tag">Recent cases</div>
+    <h2 class="sh">Before &amp; <em>after</em></h2>
+  </div>
+  <div class="gal-notice"><strong>About these images.</strong> All photos are of actual patients who have given written consent. They are not edited, filtered or enhanced. Each outcome is relevant only to the individual shown and is not a guarantee of result for any other patient.</div>
+  <div class="gal-controls"><span class="gal-count" id="gal-count">20 cases shown</span></div>
+  <div class="gallery-grid" id="ba-grid"></div>
+  <div class="gal-swipe"><span>&larr; Swipe to see more cases &rarr;</span></div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sand" id="faq" data-screen-label="06 FAQ">
+  <div class="tag">Common questions</div>
+  <h2 class="sh">The things patients <em>ask.</em></h2>
+  <div class="faq-cols">
+    <div class="faq" id="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Does it hurt?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Implant placement is carried out under local anaesthetic, so the procedure itself is generally comfortable. Most patients describe the recovery as more manageable than they expected, often comparable to a tooth extraction, and any soreness is managed with simple measures.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does the whole process take?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Because the implant needs to integrate with the bone, the full process usually takes several months from placement to final crown. The exact timeline depends on your healing and whether any preparatory work, such as bone grafting, is needed. Dr Aodhan gives you a realistic plan at your consultation.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How successful are implants?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Dental implants are a well-established treatment with high reported success rates in suitable patients. That said, success is not guaranteed and depends on healing, bone, gum health, general health and habits such as smoking. Dr Aodhan will give you an honest, individual assessment.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Implant or bridge, which is better?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>It depends on your situation. An implant replaces the tooth root and leaves the neighbouring teeth untouched, while a bridge relies on the teeth either side for support. Each has pros and cons, and Dr Aodhan will talk through which genuinely suits your case.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I see a price first?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Implant cost depends on the case, including whether any bone grafting or other treatment is required. An accurate figure is only possible after a thorough assessment and scan. At your consultation you receive a clear, written plan and cost to take home.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you offer payment plans?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Yes. For patients who choose to proceed, we offer an interest-free payment plan to make treatment more manageable. Eligibility and terms are confirmed in person at your consultation.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Am I a candidate?<span class="pl">+</span></button>
+        <div class="faq-a"><div class="faq-a-in"><p>Many people are, but suitability depends on having enough healthy bone and gum, and on general health. Smoking, uncontrolled diabetes and active gum disease can affect healing and success. A consultation and 3D scan are the only reliable way to know.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RISKS -->
+<section class="risks" id="risks" data-screen-label="07 Risks">
+  <div class="tag">Important to know</div>
+  <h2 class="sh">Before you <em>proceed.</em></h2>
+  <p class="sec-lead">An implant is a surgical procedure and a significant decision. These points are not the small print. They are the conversation we have with you in person before any treatment is planned.</p>
+  <div class="risk-list">
+    <div class="risk"><span class="risk-n">01</span><div class="risk-b"><strong>Surgical risks</strong>As with any surgery, there are risks including infection, swelling, bruising and, uncommonly, effects on nearby nerves or the sinus.</div></div>
+    <div class="risk"><span class="risk-n">02</span><div class="risk-b"><strong>Integration is not guaranteed</strong>Occasionally an implant does not integrate with the bone and may need to be removed and the site allowed to heal before trying again.</div></div>
+    <div class="risk"><span class="risk-n">03</span><div class="risk-b"><strong>Time &amp; staging</strong>Treatment takes several months and sometimes requires additional procedures such as bone grafting before the implant can be placed.</div></div>
+    <div class="risk"><span class="risk-n">04</span><div class="risk-b"><strong>Health &amp; lifestyle factors</strong>Smoking, uncontrolled diabetes and gum disease reduce success rates and must be discussed and managed.</div></div>
+    <div class="risk"><span class="risk-n">05</span><div class="risk-b"><strong>Ongoing maintenance</strong>Implants need thorough cleaning and regular review. The surrounding gum and bone can be affected if hygiene is poor.</div></div>
+    <div class="risk"><span class="risk-n">06</span><div class="risk-b"><strong>Suitability</strong>Adequate bone and healthy gums are required. Where they are lacking, additional treatment or an alternative option may be needed.</div></div>
+  </div>
+  <p class="risk-fine">Any surgical or dental procedure carries risk. Before proceeding we recommend seeking a second opinion from a suitably qualified dental practitioner. Outcomes vary between individuals, and the cases shown on this website are examples for those specific patients only and are not a guarantee of result. Costs are not covered by Medicare or private health funds.</p>
+</section>
+
+<!-- BOOK -->
+<section class="book-sec" id="book">
+  <div class="tag">Get started</div>
+  <h2 class="book-h">Ready when <em>you are.</em></h2>
+  <p class="book-sub">Start with a free, no-obligation consultation. Pick a time on the booking page and you'll meet Dr Aodhan at Circular Quay.</p>
+  <a href="/book" class="btn-d" style="max-width:340px;margin:0 auto">Book a Free Consultation</a>
+</section>
+
+<!-- CTA -->
+<section class="cta" data-screen-label="08 CTA">
+  <div class="tag">The same dentist, start to finish</div>
+  <h2 class="cta-h">Start with a <em>smile assessment.</em></h2>
+  <p class="cta-sub">A few quick questions about your smile. A couple of minutes, no obligation, and a clear sense of your options before you decide whether to book.</p>
+  <div class="cta-btns">
+    <a href="/#assessment" class="btn-gld">Take the Smile Assessment</a>
+    <a href="/book" class="btn-gh">Book a Free Consultation</a>
+  </div>
+</section>
+<footer>
+  <span class="fl">Dr Aodhan Docherty</span>
+  <p class="freg">All procedures carry potential risks. Outcomes vary and cannot be guaranteed. Individual results depend on clinical circumstances. Dr Aodhan Docherty, AHPRA registration DEN0001938737, Circular Quay, Sydney.</p>
+  <div class="flinks">
+    <a href="/">Home</a>
+    <a href="https://www.instagram.com/dr.aodhan" target="_blank" rel="noopener">Instagram</a>
+    <a href="#approach">Our approach</a>
+    <a href="#risks">Risks</a>
+  </div>
+</footer>
+<script>
+const hbg=document.getElementById('hbg'),drawer=document.getElementById('drawer');
+hbg.addEventListener('click',()=>{hbg.classList.toggle('open');drawer.classList.toggle('open');document.body.style.overflow=drawer.classList.contains('open')?'hidden':''});
+document.querySelectorAll('.nc').forEach(el=>el.addEventListener('click',()=>{hbg.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow=''}));
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;const ans=item.querySelector('.faq-a');const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});
+    if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px'}
+  });
+});
+(function(){
+  var grid = document.getElementById('ba-grid');
+  var countEl = document.getElementById('gal-count');
+  if(!grid) return;
+  var cases = [
+    {n:1, label:'10 upper porcelain veneers + lower teeth whitening'},
+    {n:2, label:'10 upper porcelain veneers + lower teeth whitening'},
+    {n:3, label:'10 upper porcelain veneers + lower teeth whitening'},
+    {n:4, label:'10 upper and 10 lower porcelain veneers'},
+    {n:5, label:'8 upper porcelain veneers'},
+    {n:6, label:'8 upper porcelain veneers'},
+    {n:7, label:'Clear aligners followed by 10 upper porcelain veneers and 8 lower composite veneers'},
+    {n:8, label:'10 upper and 10 lower porcelain veneers'},
+    {n:9, label:'10 upper and 10 lower porcelain veneers'},
+    {n:10, label:'10 upper porcelain veneers and 6 lower composite veneers'},
+    {n:11, label:'10 upper porcelain veneers'},
+    {n:12, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:13, label:'10 upper composite veneers'},
+    {n:14, label:'8 upper porcelain veneers'},
+    {n:15, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:16, label:'8 upper porcelain veneers'},
+    {n:17, label:'10 upper and 10 lower porcelain veneers'},
+    {n:18, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:19, label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:20, label:'10 upper porcelain veneers'}
+  ];
+  function makeCard(c){
+    var nn = String(c.n).padStart(2,'0');
+    var card = document.createElement('div');
+    card.className = 'bac';
+    card.innerHTML =
+      '<div class="ba-imgs">'
+      + '<div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-'+nn+'-before.jpg" loading="lazy" alt="Case '+nn+' before" onerror="this.style.display=\'none\'"><span class="blbl">Before</span></div>'
+      + '<div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-'+nn+'-after.jpg" loading="lazy" alt="Case '+nn+' after" onerror="this.style.display=\'none\'"><span class="blbl a">After</span></div>'
+      + '<div class="ba-sep"></div>'
+      + '</div>'
+      + '<div class="ba-foot"><div class="ba-nt">'+c.label+'</div><div class="ba-when">After image: ~3 weeks post-procedure</div></div>';
+    return card;
+  }
+  cases.forEach(function(c){ grid.appendChild(makeCard(c)); });
+  if(countEl) countEl.textContent = cases.length + ' cases shown';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    cases.forEach(function(c){ grid.appendChild(makeCard(c)); });
+    grid.style.scrollSnapType = 'none';
+    var paused = false;
+    function half(){ return grid.scrollWidth / 2; }
+    function tick(){
+      if(!paused){
+        grid.scrollLeft += 0.55;
+        if(grid.scrollLeft >= half()){ grid.scrollLeft -= half(); }
+      }
+      requestAnimationFrame(tick);
+    }
+    ['mouseenter','touchstart','pointerdown'].forEach(function(ev){ grid.addEventListener(ev, function(){ paused = true; }, {passive:true}); });
+    ['mouseleave','touchend','pointerup'].forEach(function(ev){ grid.addEventListener(ev, function(){ paused = false; }, {passive:true}); });
+    requestAnimationFrame(tick);
+  }
+})();
+</script>
+</body>
+</html>
