@@ -75,18 +75,23 @@ a{text-decoration:none;color:inherit}
 .btn-o:hover{border-color:var(--ink)}
 
 /* HERO */
-.hero{padding-top:52px}
-.hero-img{height:68vw;max-height:360px;background:linear-gradient(160deg,#2a2825,#1a1917);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.hero-img img{position:absolute;inset:0}
-.hero-ph{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.12)}
-.hero-body{padding:1.5rem 1.1rem 0;background:var(--white)}
-.hero-ey{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
-.hero-h1{font-family:'Playfair Display',serif;font-size:1.95rem;font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:0.85rem}
+.hero{display:grid;grid-template-columns:1fr;grid-template-areas:"img" "stats" "body";padding-top:52px}
+.hero-img{grid-area:img;height:64vw;max-height:340px;background:linear-gradient(160deg,#2a2825,#1a1917);position:relative;overflow:hidden}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-stats{grid-area:stats;display:flex;gap:0.7rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:1.1rem 1.1rem 0.5rem;scrollbar-width:none}
+.hero-stats::-webkit-scrollbar{display:none}
+.hstat{flex:0 0 58%;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:1rem 1.1rem;display:flex;flex-direction:column;gap:0.55rem}
+.hstat-l{font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--lite);line-height:1.45}
+.hstat-n{font-family:'Playfair Display',serif;font-size:1.85rem;font-weight:400;color:var(--ink);line-height:1}
+.hstat-n .hk{color:var(--gold)}
+.hero-body{grid-area:body;padding:1.4rem 1.1rem 0.5rem;background:var(--white)}
+.hero-ey{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem}
+.hero-h1{font-family:'Playfair Display',serif;font-size:2.15rem;font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:0.85rem;letter-spacing:-0.01em}
 .hero-h1 em{font-style:italic;color:var(--gold)}
-.hero-lead{font-size:0.85rem;color:var(--mid);line-height:1.78;font-weight:300;margin-bottom:1.25rem}
-.hero-btns{display:flex;flex-direction:column;gap:0.55rem;margin-bottom:0}
-.hero-reg{background:var(--sand);border-top:1px solid var(--line);padding:0.8rem 1.1rem;font-size:0.62rem;color:var(--lite);line-height:1.55;margin-top:1.25rem}
-.hero-reg strong{color:var(--mid);font-weight:500}
+.hero-lead{font-size:0.88rem;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:1.25rem}
+.hero-btns{display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.1rem}
+.hero-trust{font-size:0.68rem;color:var(--mid);line-height:1.7}
+.hero-trust strong{color:var(--ink);font-weight:600}
 
 /* COMPLIANCE */
 .comp{background:var(--sand2);padding:0.9rem 1.1rem;font-size:0.65rem;color:var(--mid);line-height:1.6;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -101,7 +106,7 @@ a{text-decoration:none;color:inherit}
 .sl{font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--lite);margin-top:0.25rem;display:block}
 
 /* ABOUT */
-.about{padding:2.5rem 1.1rem;background:var(--white)}
+.about{padding:0.4rem 1.1rem 2.5rem;background:var(--white)}
 .about-img{height:54vw;max-height:260px;background:var(--sand2);margin-bottom:1.5rem;border-radius:2px;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .about-img img{object-position:top center}
 .about-img-ph{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(90,86,80,0.28);writing-mode:vertical-rl}
@@ -119,11 +124,19 @@ a{text-decoration:none;color:inherit}
 .svcs{padding:2.5rem 0;background:var(--sand)}
 .svcs-head{padding:0 1.1rem;margin-bottom:1.5rem}
 .svcs-note{font-size:0.67rem;color:var(--lite);line-height:1.6;margin-top:0.85rem;padding-top:0.85rem;border-top:1px solid var(--line)}
-.svc{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.5rem 1.1rem;margin-bottom:0.45rem}
-.svc-n{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;color:var(--line);line-height:1;margin-bottom:0.85rem}
-.svc-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:400;color:var(--ink);margin-bottom:0.55rem}
-.svc-desc{font-size:0.8rem;color:var(--mid);line-height:1.75;font-weight:300;margin-bottom:0.85rem}
-.svc-lnk{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.75rem}
+.svc-scroll{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 1.1rem 0.7rem;scrollbar-width:none}
+.svc-scroll::-webkit-scrollbar{display:none}
+.svc{flex:0 0 78%;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-radius:9px;overflow:hidden;display:flex;flex-direction:column}
+.svc-img{aspect-ratio:4/3;background:linear-gradient(160deg,#2a2825,#1a1917);position:relative;overflow:hidden}
+.svc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.svc-img.icon{background:#F9F4F1;border-bottom:1px solid var(--line)}
+.svc-img.icon img{object-fit:contain}
+.svc-img.zoom img{transform:scale(1.32)}
+.svc-b{padding:1.3rem 1.3rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.svc-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:var(--gold2);line-height:1;margin-bottom:0.8rem}
+.svc-name{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:0.55rem}
+.svc-desc{font-size:0.8rem;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:1rem;flex:1}
+.svc-lnk{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:0.4rem;margin-top:auto}
 .svc-lnk::after{content:'→'}
 .svc-disc{font-size:0.63rem;color:var(--lite);line-height:1.6;padding-top:0.75rem;border-top:1px solid var(--line)}
 
@@ -131,15 +144,17 @@ a{text-decoration:none;color:inherit}
 .gallery{padding:2.5rem 1.1rem;background:var(--white)}
 .gal-notice{background:var(--sand);border:1px solid var(--line);padding:0.9rem 1rem;margin:1.1rem 0 1.5rem;font-size:0.65rem;color:var(--mid);line-height:1.6;border-radius:2px}
 .gal-notice strong{color:var(--ink);font-weight:500}
-.bac{border:1px solid var(--line);margin-bottom:0.85rem;border-radius:2px;overflow:hidden}
-.ba-imgs{display:grid;grid-template-columns:1fr 1fr;height:28vw;max-height:280px;position:relative}
-.ba-side{overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:0.45rem}
+.ba-scroll{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:0.6rem;scrollbar-width:none}
+.ba-scroll::-webkit-scrollbar{display:none}
+.bac{flex:0 0 84%;scroll-snap-align:start;border:1px solid var(--line);border-radius:2px;overflow:hidden;display:flex;flex-direction:column}
+.ba-imgs{display:flex;flex-direction:column;position:relative}
+.ba-side{aspect-ratio:3/2;overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:0.5rem}
 .bb{width:100%;height:100%;position:absolute;inset:0;background:linear-gradient(160deg,#c0b8ae,#a8a09a)}
 .ab{width:100%;height:100%;position:absolute;inset:0;background:linear-gradient(160deg,#e8e0d4,#f0ead8)}
 .ba-side img{position:absolute;inset:0}
 .blbl{position:relative;z-index:1;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;background:rgba(0,0,0,0.35);color:#fff;padding:0.18rem 0.4rem;border-radius:1px;backdrop-filter:blur(4px)}
 .blbl.a{background:rgba(168,134,74,0.82)}
-.ba-sep{position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(253,252,250,0.85);z-index:2}
+.ba-sep{display:none}
 .ba-foot{padding:0.75rem 0.9rem;background:var(--sand);border-top:1px solid var(--line)}
 .ba-tx{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.18rem}
 .ba-nt{font-size:0.67rem;color:var(--lite);line-height:1.5}
@@ -288,19 +303,22 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   .dl::after{display:none}
   .d-book{margin:0;padding:0.48rem 1.2rem;font-size:0.67rem;background:var(--ink);color:var(--white);border-radius:2px}
   .d-assess{display:none}
-  .hero{display:grid;grid-template-columns:52% 48%;padding-top:58px;min-height:100vh}
-  .hero-img{height:100%;max-height:none;order:2}
-  .hero-bw{order:1;display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem 4rem 4.5rem;position:relative}
-  .hero-bw::after{content:'';position:absolute;right:0;top:10%;bottom:10%;width:1px;background:var(--line)}
-  .hero-body{padding:0;background:none}
+  .hero{grid-template-columns:1.02fr 0.98fr;grid-template-areas:"body img" "stats img";padding-top:58px;align-items:start}
+  .hero-img{grid-area:img;height:100%;max-height:none;min-height:540px}
+  .hero-body{grid-area:body;padding:3.4rem 2.5rem 1.2rem 5rem;background:none}
+  .hero-stats{grid-area:stats;overflow:visible;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:0 2.5rem 3.6rem 5rem}
+  .hstat{flex:none}
   .hero-btns{flex-direction:row}
-  .hero-h1{font-size:3.2rem}
+  .hero-h1{font-size:3.3rem;line-height:1.04}
+  .hero-trust{margin-top:0.2rem}
   .about{display:grid;grid-template-columns:1fr 1fr;gap:5rem;padding:5rem;align-items:center}
   .about-img{height:100%;max-height:none;margin-bottom:0}
   .svcs{padding:5rem 0}
   .svcs-head{padding:0 5rem}
-  .svc{padding:2.5rem 5rem}
+  .svc-scroll{padding:0 5rem 1rem;gap:1.5rem}
+  .svc{flex:0 0 340px}
   .gallery{padding:5rem}
+  .bac{flex:0 0 380px}
   .process{padding:5rem}
   .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.07)}
   .step{padding:2rem 1.75rem 2rem 0;border-bottom:none;border-right:1px solid rgba(255,255,255,0.06)}
@@ -351,30 +369,24 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
 </header>
 
 <section class="hero">
-  <div class="hero-img"><img src="hero.jpg" alt="About Smiles Circular Quay">
+  <div class="hero-img"><img src="hero.jpg" alt="About Smiles Circular Quay, Sydney"></div>
+  <div class="hero-stats">
+    <div class="hstat"><span class="hstat-l">Veneer cases personally placed</span><span class="hstat-n">1,500<span class="hk">+</span></span></div>
+    <div class="hstat"><span class="hstat-l">Instagram community</span><span class="hstat-n">42<span class="hk">K</span></span></div>
+    <div class="hstat"><span class="hstat-l">Years cosmetic focus</span><span class="hstat-n">10<span class="hk">+</span></span></div>
   </div>
-  <div class="hero-bw">
-    <div class="hero-body">
-      <div class="hero-ey">Cosmetic Dentist · Circular Quay, Sydney</div>
-      <h1 class="hero-h1">A natural-looking smile that still <em>looks like you.</em></h1>
-      <p class="hero-lead">Porcelain veneers, clear aligners and cosmetic dentistry, personally planned and placed by Dr Aodhan Docherty, the dentist who teaches the technique to others across Australia. Start with a free, no-obligation smile consultation.</p>
-      <div class="hero-btns">
-        <a href="#consult" class="btn-d" id="hBk">Book a Free Consultation</a>
-        <a href="#assessment" class="btn-o" id="hAs">Take the Smile Assessment</a>
-      </div>
+  <div class="hero-body">
+    <div class="hero-ey">Cosmetic Dentist · Circular Quay, Sydney</div>
+    <h1 class="hero-h1">Porcelain veneers and <em>cosmetic dentistry.</em></h1>
+    <p class="hero-lead">Personally planned and placed by Dr Aodhan Docherty at Circular Quay.</p>
+    <div class="hero-btns">
+      <a href="/book" class="btn-d" id="hBk">Book a Consultation</a>
+      <a href="#assessment" class="btn-o" id="hAs">Take the Smile Assessment</a>
     </div>
-
+    <div class="hero-trust"><strong>One dentist, start to finish</strong> · Conservative, tooth-preserving approach · No obligation</div>
   </div>
 </section>
 
-<div class="comp"><strong>Important:</strong> All dental procedures carry potential risks. Outcomes vary between patients and cannot be guaranteed. An in-person consultation is required to assess suitability for any treatment. <a href="/treatment-information" style="color:var(--gold);text-decoration:underline">Treatment information →</a></div>
-
-<div class="stats">
-  <div class="stat"><span class="sn">1,500+</span><span class="sl">Veneer cases personally placed</span></div>
-  <div class="stat"><span class="sn">42K</span><span class="sl">Instagram community</span></div>
-  <div class="stat"><span class="sn">10+</span><span class="sl">Years cosmetic focus</span></div>
-  <div class="stat"><span class="sn">Founder</span><span class="sl">Exceptional Dental Academy</span></div>
-</div>
 
 <section class="about" id="about">
   <div class="about-img"><img src="headshot.jpg" alt="Dr Aodhan Docherty">
@@ -386,15 +398,6 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
     <p class="bt" style="margin-top:0.85rem">Dr Aodhan Docherty graduated from the University of Sydney with honours and a University Medal, and is the founder of Exceptional Dental Academy, where he trains other dentists across Australia and internationally. He is a university examiner in oral implants and co-author of the dental textbook <em>Practical Procedures in Implant Dentistry</em>. When you sit in his chair, you're with someone other dentists come to learn from.</p>
     <p class="bt">His practice at Circular Quay is built around knowing each patient's case deeply. The dentist who assesses you is the one who treats you, which means nothing gets lost between appointments.</p>
     <p class="bt">His approach to veneers is conservative, focused on a natural result that still looks like you. Veneers are irreversible and not right for everyone, so suitability is always assessed in person, and he'll tell you if a simpler option suits you better.</p>
-    <div class="creds">
-      <div class="cred">Founder of Exceptional Dental Academy, training dentists across Australia and internationally</div>
-      <div class="cred">University of Sydney, honours and University Medal. Examiner in the postgraduate Oral Implant Diploma</div>
-      <div class="cred">Co-author, <em>Practical Procedures in Implant Dentistry</em> (Wiley-Blackwell)</div>
-      <div class="cred">Fellow of the Pierre Fauchard Academy. Alumnus of the Kois Center and Fahl Cosmetic Academy</div>
-      <div class="cred">Followed by 42,000+ on Instagram at @dr.aodhan</div>
-      <div class="cred">Ground Floor, Shop LLC125, 17 Young St, Sydney NSW 2000</div>
-      <div class="cred"><a href="tel:0283192323">(02) 8319 2323</a></div>
-    </div>
   </div>
 </section>
 
@@ -422,21 +425,38 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   .method-h{font-size:3rem}
   .method-sub{font-size:1.02rem}
 }
+/* METHOD BANNER */
+.methodbanner{padding:2.2rem 1.1rem;background:var(--white)}
+.mb-in{display:flex;flex-direction:column;align-items:center;max-width:1040px;margin:0 auto;border-radius:12px;overflow:hidden;text-decoration:none;background:#0c0b0a;padding-bottom:1.5rem}
+.mb-in img{width:100%;height:auto;display:block;margin-bottom:0.9rem}
+.mb-in picture{display:block;width:100%}
+.mb-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--white);color:var(--ink);padding:0.68rem 1.25rem;border-radius:4px;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;transition:background .2s}
+.mb-btn::after{content:'→';color:var(--gold)}
+.mb-in:hover .mb-btn{background:var(--gold);color:var(--ink)}
+.mb-in:hover .mb-btn::after{color:var(--ink)}
+@media(min-width:768px){.methodbanner{padding:3rem 5rem}.mb-in{padding-bottom:2rem}.mb-in img{margin-bottom:1.2rem}.mb-btn{padding:0.85rem 1.6rem;font-size:0.66rem}}
+
+/* WHY DR AODHAN */
+.why{padding:2.75rem 1.1rem;background:var(--white)}
+.why-head{margin-bottom:1.6rem}
+.why-grid{display:grid;grid-template-columns:1fr;gap:0.9rem}
+.wc{background:var(--sand);border:1px solid var(--line);border-radius:7px;padding:1.4rem 1.35rem}
+.wc-n{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:var(--gold);margin-bottom:0.7rem}
+.wc-t{font-family:'Mulish',sans-serif;font-weight:600;font-size:0.95rem;color:var(--ink);margin-bottom:0.5rem;line-height:1.3}
+.wc-d{font-size:0.82rem;color:var(--mid);line-height:1.7;font-weight:300}
+@media(min-width:640px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){
+  .why{padding:5rem}
+  .why-head{margin-bottom:2.2rem}
+  .why-grid{grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .wc{padding:1.9rem 1.7rem;background:var(--white)}
+}
 </style>
-<section class="method" id="method">
-  <div class="method-in">
-    <div class="method-ey">A signature approach</div>
-    <h2 class="method-h">The Aodhan <em>Method</em><sup>&trade;</sup></h2>
-    <p class="method-sub">A considered, preservation-first approach to veneers, guided by the same dentist from your first conversation to your final smile.</p>
-    <div class="method-grid">
-      <div class="mstep"><div class="mstep-n">1</div><div class="mstep-t">Understand</div><p class="mstep-d">It begins with your face, not just your teeth. Dr Aodhan considers your features and what you want your smile to say, so the design suits you rather than a template.</p></div>
-      <div class="mstep"><div class="mstep-n">2</div><div class="mstep-t">Design</div><p class="mstep-d">Using digital and hand design, your proposed smile is planned around your facial proportions, balancing shape, length and harmony as a whole.</p></div>
-      <div class="mstep"><div class="mstep-n">3</div><div class="mstep-t">Preview</div><p class="mstep-d">You see, and can often trial, your proposed smile before any irreversible treatment. Nothing is finalised until you feel confident in the plan.</p></div>
-      <div class="mstep"><div class="mstep-n">4</div><div class="mstep-t">Preserve</div><p class="mstep-d">Teeth are prepared as conservatively as each case allows, protecting as much healthy, natural tooth as possible. This is the heart of the method.</p></div>
-      <div class="mstep"><div class="mstep-n">5</div><div class="mstep-t">Refine</div><p class="mstep-d">Each veneer is hand-characterised by skilled technicians and refined at the fit, so the finished result looks like a natural part of you.</p></div>
-    </div>
-    <p class="method-foot">The Aodhan Method describes Dr Aodhan's personal approach to planning and delivering veneer treatment. It is not a guarantee of any particular result. Suitability, including whether a conservative preparation or a trial preview is appropriate, is assessed at an in-person clinical consultation. Every patient is different and outcomes vary.</p>
-  </div>
+<section class="methodbanner" id="method">
+  <a class="mb-in" href="/the-aodhan-method" aria-label="Learn about The Aodhan Method">
+    <picture><source media="(max-width:767px)" srcset="/the-aodhan-method/method-banner-mobile.png"><img src="/the-aodhan-method/method-banner-slim2.png" alt="The Aodhan Method, a preservation-first path to your smile"></picture>
+    <span class="mb-btn">Learn About the Aodhan Method</span>
+  </a>
 </section>
 
 <section class="svcs" id="services">
@@ -446,39 +466,51 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
     <p class="svcs-note">Suitability is determined at an in-person consultation. Individual results vary and cannot be guaranteed.</p>
   </div>
 
+  <div class="svc-scroll">
   <div class="svc">
-    <div class="svc-n">01</div>
+    <div class="svc-img icon zoom"><img src="/treatment-icons/veneers-icon.png" alt="Porcelain veneers" loading="lazy" onerror="this.style.display='none'"></div>
+    <div class="svc-b">
     <div class="svc-name">Porcelain Veneers</div>
     <p class="svc-desc">A long-lasting, natural-looking option for changing the colour, shape, or alignment of teeth. Dr Docherty takes a conservative approach focused on a result that still looks like you. Porcelain veneers are the primary cosmetic treatment at this practice and where the majority of Dr Docherty's casework sits.</p>
     <a href="/veneers" class="svc-lnk">Learn more</a>
+    </div>
   </div>
 
   <div class="svc">
-    <div class="svc-n">02</div>
+    <div class="svc-img icon"><img src="/treatment-icons/composite-icon.png" alt="Composite bonding" loading="lazy" onerror="this.style.display='none'"></div>
+    <div class="svc-b">
     <div class="svc-name">Composite Bonding</div>
     <p class="svc-desc">A tooth-coloured resin applied and shaped directly on the tooth, with no enamel removal required. A more conservative and reversible option for minor chips, gaps, or colour changes. Often a good starting point before committing to porcelain, or a standalone treatment for the right case.</p>
     <a href="/composite-bonding" class="svc-lnk">Learn more</a>
+    </div>
   </div>
 
   <div class="svc">
-    <div class="svc-n">03</div>
+    <div class="svc-img icon zoom"><img src="/treatment-icons/aligners-icon.png" alt="Clear aligners" loading="lazy" onerror="this.style.display='none'"></div>
+    <div class="svc-b">
     <div class="svc-name">Clear Aligners</div>
     <p class="svc-desc">Clear aligner treatment to gradually move teeth. For many patients, clear aligners are worth considering before veneers. Straightening first often means less intervention overall and a more natural result.</p>
     <a href="/clear-aligners" class="svc-lnk">Learn more</a>
+    </div>
   </div>
 
   <div class="svc">
-    <div class="svc-n">04</div>
+    <div class="svc-img icon"><img src="/treatment-icons/general-icon.png" alt="General dentistry" loading="lazy" onerror="this.style.display='none'"></div>
+    <div class="svc-b">
     <div class="svc-name">General Dentistry</div>
     <p class="svc-desc">Check-ups, hygiene, fillings and crowns, the everyday care that keeps your smile healthy. Prevention first, treating only what needs it, all at the Circular Quay clinic.</p>
     <a href="/book" class="svc-lnk">Book a consultation</a>
+    </div>
   </div>
 
   <div class="svc">
-    <div class="svc-n">05</div>
+    <div class="svc-img icon"><img src="/treatment-icons/implant-icon.png" alt="Dental implants" loading="lazy" onerror="this.style.display='none'"></div>
+    <div class="svc-b">
     <div class="svc-name">Dental Implants</div>
     <p class="svc-desc">Implant and bridge treatment to replace missing teeth using digital planning and 3D technology. Suitability, risks, and alternatives are discussed at an in-person consultation.</p>
     <a href="/dental-implants" class="svc-lnk">Learn more</a>
+    </div>
+  </div>
   </div>
 
 </section>
@@ -487,6 +519,7 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   <div class="tag">Clinical Gallery</div>
   <h2 class="sh">Patient cases, <em>before &amp; after</em></h2>
   <div class="gal-notice"><strong>Important:</strong> All images are of actual patients who have given written consent. Images have not been edited, filtered, or enhanced. <strong>Outcomes shown are relevant only to that individual patient and do not necessarily reflect results others may achieve.</strong></div>
+  <div class="ba-scroll">
   <div class="bac">
     <div class="ba-imgs">
       <div class="ba-side"><img src="veneers-landing/cases/case-01-before.jpg" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
@@ -527,17 +560,6 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
     </div>
     <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">8 upper porcelain veneers · After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
   </div>
-</section>
-
-<section class="process" id="process">
-  <div class="tag">How it works</div>
-  <h2 class="sh">A <em>structured</em> approach</h2>
-  <p class="proc-sub">Every treatment begins with understanding your individual situation. No procedure is recommended before a thorough assessment.</p>
-  <div class="steps">
-    <div class="step"><div class="step-n">01</div><div class="step-t">Free Smile Consultation</div><p class="step-d">Start with a free, no-obligation visit to the Circular Quay clinic. You'll meet Dr Aodhan, talk through what you'd like to change, and get a clear sense of your options.</p></div>
-    <div class="step"><div class="step-n">02</div><div class="step-t">Clinical Assessment</div><p class="step-d">Clinical photographs, digital scans, and a thorough assessment of your teeth, gums, and bite. No treatment is recommended before this is complete.</p></div>
-    <div class="step"><div class="step-n">03</div><div class="step-t">Treatment Planning</div><p class="step-d">Options, realistic outcomes, costs, and alternatives are discussed in full. There is no obligation to proceed.</p></div>
-    <div class="step"><div class="step-n">04</div><div class="step-t">Informed Consent</div><p class="step-d">Risks and alternatives are documented and consented to before any treatment begins.</p></div>
   </div>
 </section>
 
@@ -663,6 +685,37 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   </div>
 </section>
 
+<section class="why" id="why">
+  <div class="why-head">
+    <div class="tag">Why Dr Aodhan</div>
+    <h2 class="sh">Considered, conservative, <em>personally delivered</em></h2>
+  </div>
+  <div class="why-grid">
+    <div class="wc"><div class="wc-n">01</div><div class="wc-t">One dentist, start to finish</div><p class="wc-d">The dentist who assesses your smile is the one who plans and places your veneers. Nothing is handed off between visits.</p></div>
+    <div class="wc"><div class="wc-n">02</div><div class="wc-t">The dentist who teaches dentists</div><p class="wc-d">Founder of Exceptional Dental Academy, training dentists across Australia and internationally, and a published author in implant dentistry.</p></div>
+    <div class="wc"><div class="wc-n">03</div><div class="wc-t">A conservative approach</div><p class="wc-d">Veneers are planned to keep as much of your natural tooth as is clinically possible. Some preparation is still required, and suitability is assessed in person.</p></div>
+    <div class="wc"><div class="wc-n">04</div><div class="wc-t">Preview before it is permanent</div><p class="wc-d">Where suitable, you can see a trial of your new smile before any final veneers are made, so you understand the plan before you commit.</p></div>
+    <div class="wc"><div class="wc-n">05</div><div class="wc-t">1,500+ veneer cases placed</div><p class="wc-d">Porcelain veneer cases personally planned and placed by Dr Aodhan, with a focus on results that look like you.</p></div>
+    <div class="wc"><div class="wc-n">06</div><div class="wc-t">In the heart of Circular Quay</div><p class="wc-d">A calm, unhurried practice in central Sydney, with consultations available in person or by video to suit you.</p></div>
+  </div>
+</section>
+
+
+
+<section class="process" id="process">
+  <div class="tag">How it works</div>
+  <h2 class="sh">A <em>structured</em> approach</h2>
+  <p class="proc-sub">Every treatment begins with understanding your individual situation. No procedure is recommended before a thorough assessment.</p>
+  <div class="steps">
+    <div class="step"><div class="step-n">01</div><div class="step-t">Free Smile Consultation</div><p class="step-d">Start with a free, no-obligation visit to the Circular Quay clinic. You'll meet Dr Aodhan, talk through what you'd like to change, and get a clear sense of your options.</p></div>
+    <div class="step"><div class="step-n">02</div><div class="step-t">Clinical Assessment</div><p class="step-d">Clinical photographs, digital scans, and a thorough assessment of your teeth, gums, and bite. No treatment is recommended before this is complete.</p></div>
+    <div class="step"><div class="step-n">03</div><div class="step-t">Treatment Planning</div><p class="step-d">Options, realistic outcomes, costs, and alternatives are discussed in full. There is no obligation to proceed.</p></div>
+    <div class="step"><div class="step-n">04</div><div class="step-t">Informed Consent</div><p class="step-d">Risks and alternatives are documented and consented to before any treatment begins.</p></div>
+  </div>
+</section>
+
+
+
 <section class="consult" id="consult">
   <div class="tag">Ways to begin</div>
   <h2 class="sh">Start with a <em>free consultation</em></h2>
@@ -674,102 +727,6 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
   </div>
 </section>
 
-<style>
-.book-embed{padding:1.6rem 1.1rem 2.6rem;background:var(--white);scroll-margin-top:60px}
-.book-embed .tag{justify-content:center;display:inline-flex;margin-left:auto;margin-right:auto}
-.book-embed-inner{max-width:760px;margin:0 auto;text-align:center}
-.book-embed-sub{font-size:0.85rem;color:var(--mid);line-height:1.6;margin:0.4rem auto 1.1rem;max-width:520px}
-.embed-bar{display:flex;gap:0;border:1px solid var(--line);border-radius:2px;overflow:hidden;max-width:520px;margin:0 auto 1.1rem}
-.embed-pill{flex:1;padding:0.85rem 0.6rem;font-family:'Mulish',sans-serif;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);background:none;border:none;cursor:pointer;transition:background 0.18s,color 0.18s;line-height:1.3}
-.embed-pill:not(:last-child){border-right:1px solid var(--line)}
-.embed-pill.on{background:var(--ink);color:var(--white)}
-.embed-pill:not(.on):hover{background:var(--sand)}
-.embed-shell{background:var(--sand);border:1px solid var(--line);border-radius:4px;overflow:hidden;min-height:600px;max-width:760px;margin:0 auto}
-.embed-shell iframe{display:block;width:100%;border:0;min-height:600px;background:var(--white)}
-.embed-loading{padding:2.4rem 1rem;text-align:center;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--lite)}
-@media(min-width:760px){.book-embed{padding:2.4rem 2rem 3.6rem}}
-</style>
-
-<section class="book-embed" id="book-embed">
-  <div class="book-embed-inner">
-    <div class="tag">Book in real time</div>
-    <h2 class="sh" style="margin-bottom:0.3rem;">Choose a <em>time</em></h2>
-    <p class="book-embed-sub" id="embedSubText">Comprehensive consultation in person at Circular Quay. Pick a time below to confirm with the clinic.</p>
-    <div class="embed-bar" role="tablist">
-      <button type="button" class="embed-pill on" data-type="inperson" id="embPillIn" role="tab" aria-selected="true">In-Person · Circular Quay</button>
-      <button type="button" class="embed-pill" data-type="virtual" id="embPillVirt" role="tab" aria-selected="false">Online · Zoom</button>
-    </div>
-    <div class="embed-shell">
-      <div class="embed-loading" id="embedLoading">Loading calendar…</div>
-      <iframe id="zavy-online-booking" frameborder="0" scrolling="no" style="display:none;pointer-events:auto;border:none;min-height:600px" title="Book a consultation with Dr Aodhan Docherty"></iframe>
-    </div>
-  </div>
-</section>
-
-<script>
-(function(){
-  var ZAVY = {
-    inperson: 'https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/reasons/481/practitioner/30312/date',
-    virtual:  'https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/reasons/4837/practitioner/30312/date'
-  };
-  var iframe   = document.getElementById('zavy-online-booking');
-  var loading  = document.getElementById('embedLoading');
-  var pillIn   = document.getElementById('embPillIn');
-  var pillVirt = document.getElementById('embPillVirt');
-  var subText  = document.getElementById('embedSubText');
-  var current  = null;
-  var scheduleFired = false;
-  var initiateFired = false;
-  var SCHEDULE_HEIGHT_THRESHOLD = 1400;
-  function setType(type, opts){
-    opts = opts || {};
-    if (current === type && !opts.force) return;
-    current = type;
-    pillIn.classList.toggle('on',   type === 'inperson');
-    pillVirt.classList.toggle('on', type === 'virtual');
-    pillIn.setAttribute('aria-selected',   type === 'inperson');
-    pillVirt.setAttribute('aria-selected', type === 'virtual');
-    subText.textContent = type === 'virtual'
-      ? 'Zoom consultation with Dr Docherty. Pick a time below to receive a video link by email.'
-      : 'Comprehensive consultation in person at Circular Quay. Pick a time below to confirm with the clinic.';
-    loading.style.display = 'block';
-    iframe.style.display  = 'none';
-    iframe.src = ZAVY[type];
-    scheduleFired = false;
-    if (opts.userInitiated && window.fbq && !initiateFired) {
-      initiateFired = true;
-      try { window.fbq('track', 'InitiateCheckout', { content_name: 'Booking' }); } catch(e){}
-    }
-    if (opts.userInitiated && window.fbq) {
-      try { window.fbq('trackCustom', 'BookingTabSelected', { type: type }); } catch(e){}
-    }
-  }
-  iframe.addEventListener('load', function(){
-    loading.style.display = 'none';
-    iframe.style.display  = 'block';
-  });
-  pillIn.addEventListener('click',   function(){ setType('inperson', { userInitiated: true }); });
-  pillVirt.addEventListener('click', function(){ setType('virtual',  { userInitiated: true }); });
-  document.querySelectorAll('a[data-embed-type]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      var t = a.getAttribute('data-embed-type');
-      setType(t === 'virtual' ? 'virtual' : 'inperson', { userInitiated: true });
-      var target = document.getElementById('book-embed');
-      if (target && target.scrollIntoView) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-  window.addEventListener('message', function(e){
-    if (!e.data || e.data.type !== 'zavy-resize' || typeof e.data.height !== 'number') return;
-    iframe.style.height = e.data.height + 'px';
-    if (!scheduleFired && e.data.height >= SCHEDULE_HEIGHT_THRESHOLD && window.fbq) {
-      scheduleFired = true;
-      try { window.fbq('track', 'Schedule', { content_name: current === 'virtual' ? 'Zoom Booking' : 'In-Person Booking' }); } catch(e){}
-    }
-  });
-  setType('inperson');
-})();
-</script>
 
 <section class="payment" id="payment">
   <div>
@@ -823,6 +780,8 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
     <a href="https://www.instagram.com/dr.aodhan" target="_blank">@dr.aodhan</a>
   </div>
 </section>
+
+<div class="comp"><strong>Important:</strong> All dental procedures carry potential risks. Outcomes vary between patients and cannot be guaranteed. An in-person consultation is required to assess suitability for any treatment. <a href="/treatment-information" style="color:var(--gold);text-decoration:underline">Treatment information →</a></div>
 
 <footer>
   <span class="fl">Dr Aodhan Docherty</span>
