@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before &amp; Afters | Dr Aodhan Docherty, Cosmetic Dentist Sydney</title>
+<meta name="description" content="Real patient before and after cases by Dr Aodhan Docherty, cosmetic dentist in Circular Quay, Sydney. Porcelain and composite veneer results, shown with written patient consent.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://draodhan.com.au/before-after/">
+<meta property="og:title" content="Before &amp; Afters | Dr Aodhan Docherty">
+<meta property="og:description" content="Real patient veneer before-and-after cases from Dr Aodhan Docherty, Circular Quay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#18181A;--mid:#4A4A50;--lite:#8A8A92;--sand:#F7F3EE;--sand2:#EDE7DE;--white:#FDFCFA;--gold:#A8864A;--gold2:#C4A46E;--line:#DDD7CF}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Mulish',sans-serif;background:var(--white);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;background:rgba(253,252,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-brand{font-family:'Playfair Display',serif;font-size:0.9rem;letter-spacing:0.02em;color:var(--ink);white-space:nowrap;text-decoration:none}
+.nav-brand b{color:var(--gold);font-weight:400;font-style:italic}
+.nav-r{display:flex;align-items:center;gap:0.7rem}
+.nav-bk{background:var(--ink);color:var(--white);font-family:'Mulish',sans-serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.5rem 0.95rem;border-radius:2px;white-space:nowrap;text-decoration:none;transition:background .2s}
+.nav-bk:hover{background:var(--gold);color:var(--ink)}
+.hbg{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:5px}
+.hbg span{display:block;width:19px;height:1.5px;background:var(--ink);transition:transform .28s,opacity .28s;transform-origin:center}
+.hbg.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0}
+.hbg.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.drawer{position:fixed;top:56px;left:0;right:0;bottom:0;z-index:190;background:var(--white);display:flex;flex-direction:column;padding:1.5rem 1.25rem;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto}
+.drawer.open{transform:translateX(0)}
+.dl{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--line);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);text-decoration:none}
+.dl::after{content:'→';color:var(--gold)}
+.nav-dd{display:flex;flex-direction:column}
+.nav-dd-t{cursor:pointer}
+.nav-dd-t::after{content:''}
+.nav-dd-menu{display:flex;flex-direction:column}
+.dl-s{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0 0.75rem 1rem;border-bottom:1px solid var(--line);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none}
+.dl-s::after{content:'→';color:var(--gold)}
+.d-book{margin-top:1.5rem;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--white);padding:0.95rem;border-radius:2px;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none}
+@media(min-width:768px){
+  .nav{padding:0 2.5rem;height:60px}
+  .hbg{display:none}
+  .nav-r{display:none}
+  .drawer{position:static;transform:none!important;display:flex;flex-direction:row;align-items:center;gap:1.9rem;padding:0;background:transparent;overflow:visible;inset:auto;height:auto;width:auto}
+  .dl{padding:0;border:none;font-size:0.66rem;color:var(--mid)}
+  .dl::after{display:none}
+  .dl:hover{color:var(--ink)}
+  .nav-dd{position:relative;flex-direction:row;align-items:center}
+  .nav-dd::after{content:'';position:absolute;top:100%;left:0;right:0;height:14px}
+  .nav-dd-t::after{content:'▾';color:var(--gold);margin-left:0.32rem;font-size:0.66rem}
+  .nav-dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(10px);background:var(--white);border:1px solid var(--line);border-radius:3px;padding:0.4rem 0;min-width:188px;box-shadow:0 20px 50px -26px rgba(24,24,26,0.45);opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease;z-index:210}
+  .nav-dd:hover .nav-dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(4px)}
+  .dl-s{padding:0.5rem 1.15rem;border:none;font-size:0.63rem;color:var(--mid);white-space:nowrap}
+  .dl-s::after{display:none}
+  .dl-s:hover{color:var(--ink);background:var(--sand)}
+  .d-book{margin:0;padding:0.5rem 1rem;font-size:0.62rem}
+}
+/* HEAD */
+.head{max-width:900px;margin:0 auto;padding:3rem 1.25rem 1.25rem;text-align:center}
+.tag{font-size:0.6rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:0.6rem;margin-bottom:0.9rem}
+.tag::before,.tag::after{content:'';width:1.5rem;height:1px;background:var(--gold)}
+h1{font-family:'Playfair Display',serif;font-weight:400;font-size:2.3rem;line-height:1.15;letter-spacing:-0.01em}
+h1 em{font-style:italic;color:var(--gold)}
+.head p{font-size:0.95rem;color:var(--mid);font-weight:300;max-width:560px;margin:0.9rem auto 0;line-height:1.7}
+.notice{max-width:1000px;margin:1.25rem auto 0;background:var(--sand);border:1px solid var(--line);padding:0.95rem 1.1rem;font-size:0.68rem;color:var(--mid);line-height:1.65;border-radius:3px}
+.notice strong{color:var(--ink);font-weight:600}
+/* GRID */
+.wrap{max-width:1180px;margin:0 auto;padding:1.75rem 1.25rem 3rem}
+.bagrid{display:grid;grid-template-columns:1fr;gap:1.1rem}
+@media(min-width:560px){.bagrid{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){.bagrid{grid-template-columns:repeat(3,1fr);gap:1.5rem}}
+.bac{border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--white)}
+.ba-imgs{display:grid;grid-template-rows:1fr 1fr;aspect-ratio:3/4;position:relative}
+.ba-side{overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:0.45rem}
+.bb{position:absolute;inset:0;background:linear-gradient(160deg,#c0b8ae,#a8a09a)}
+.ab{position:absolute;inset:0;background:linear-gradient(160deg,#e8e0d4,#f0ead8)}
+.ba-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.blbl{position:relative;z-index:1;font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;background:rgba(0,0,0,0.4);color:#fff;padding:0.2rem 0.42rem;border-radius:1px;backdrop-filter:blur(4px)}
+.blbl.a{background:rgba(168,134,74,0.85);color:var(--ink)}
+.ba-sep{position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(253,252,250,0.85);z-index:2}
+.ba-foot{padding:0.8rem 0.95rem;background:var(--sand);border-top:1px solid var(--line)}
+.ba-tx{font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:0.25rem}
+.ba-nt{font-size:0.74rem;color:var(--ink);line-height:1.5;font-weight:500}
+.ba-when{font-size:0.55rem;letter-spacing:0.06em;color:var(--lite);margin-top:0.35rem;font-style:italic;line-height:1.4}
+.ba-di{font-size:0.55rem;color:var(--lite);font-style:italic;margin-top:0.35rem;line-height:1.4}
+/* CTA */
+.cta{background:var(--ink);color:var(--white);padding:3rem 1.25rem;text-align:center}
+.cta h2{font-family:'Playfair Display',serif;font-weight:400;font-size:1.8rem;margin-bottom:0.7rem}
+.cta h2 em{font-style:italic;color:var(--gold2)}
+.cta p{font-size:0.86rem;color:rgba(253,252,250,0.6);font-weight:300;max-width:48ch;margin:0 auto 1.5rem;line-height:1.7}
+.cta-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold);color:var(--ink);padding:0.95rem 2rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:600}
+/* FOOTER */
+footer{background:#111012;padding:2rem 1.25rem;text-align:center}
+.fl{font-family:'Playfair Display',serif;font-size:0.85rem;color:rgba(253,252,250,0.32);display:block;margin-bottom:0.6rem}
+.fl b{color:var(--gold2);font-weight:400}
+.freg{font-size:0.6rem;color:rgba(253,252,250,0.22);line-height:1.7;max-width:70ch;margin:0 auto 0.8rem}
+.flinks{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap}
+.flinks a{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,252,250,0.3)}
+.flinks a:hover{color:var(--gold2)}
+@media(min-width:768px){.head{padding:4rem 1.25rem 1.25rem}h1{font-size:3rem}.cta{padding:4.5rem}.cta h2{font-size:2.4rem}}
+</style>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xbs2v1xyop");</script>
+</head>
+<body>
+<header class="nav">
+  <a href="/" class="nav-brand">Dr <b>Aodhan</b> Docherty</a>
+  <nav class="drawer" id="drawer">
+  <a href="/" class="dl nc">Home</a>
+  <div class="nav-dd">
+    <span class="dl nav-dd-t">Treatments</span>
+    <div class="nav-dd-menu">
+      <a href="/veneers" class="dl-s nc">Veneers</a>
+      <a href="/clear-aligners" class="dl-s nc">Clear Aligners</a>
+      <a href="/composite-bonding" class="dl-s nc">Composite Bonding</a>
+      <a href="/dental-implants" class="dl-s nc">Dental Implants</a>
+    </div>
+  </div>
+  <a href="/before-after/" class="dl nc">Before &amp; Afters</a>
+  <a href="/blog/" class="dl nc">Journal</a>
+  <a href="/book" class="d-book nc">Book</a>
+  </nav>
+  <div class="nav-r">
+    <a href="/book" class="nav-bk">Book</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="head">
+  <div class="tag">Patient cases</div>
+  <h1>Before &amp; <em>afters</em></h1>
+  <p>Real results from patients treated by Dr Aodhan Docherty at Circular Quay, shared with written consent. Every case is personally planned and placed by Dr Aodhan.</p>
+  <div class="notice"><strong>Important:</strong> All images are of actual patients who have given written consent. Images have not been edited, filtered, or enhanced. <strong>Outcomes shown are relevant only to that individual patient and do not necessarily reflect results others may achieve.</strong> All dental procedures carry potential risks; suitability is assessed at an in-person consultation.</div>
+</section>
+
+<div class="wrap">
+  <div class="bagrid">
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-01-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-01-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper porcelain veneers + lower teeth whitening</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-02-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-02-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper porcelain veneers + lower teeth whitening</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-03-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-03-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper porcelain veneers + lower teeth whitening</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-04-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-04-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper and 10 lower porcelain veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-05-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-05-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">8 upper porcelain veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-06-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-06-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">8 upper porcelain veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-07-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-07-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">Clear aligners followed by 10 upper porcelain veneers and 8 lower composite veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-08-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-08-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper and 10 lower porcelain veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-09-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-09-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper and 10 lower porcelain veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-10-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-10-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper porcelain veneers and 6 lower composite veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-11-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-11-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper porcelain veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-12-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-12-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">12 upper and lower porcelain veneers/veneerlays</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-13-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-13-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper composite veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-14-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-14-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">8 upper porcelain veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-15-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-15-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">12 upper and lower porcelain veneers/veneerlays</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-16-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-16-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">8 upper porcelain veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-17-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-17-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper and 10 lower porcelain veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-18-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-18-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">12 upper and lower porcelain veneers/veneerlays</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-19-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-19-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">12 upper and lower porcelain veneers/veneerlays</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  <div class="bac">
+    <div class="ba-imgs">
+      <div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-20-before.jpg" loading="lazy" alt="Before" onerror="this.style.display='none'"><span class="blbl">Before</span></div>
+      <div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-20-after.jpg" loading="lazy" alt="After" onerror="this.style.display='none'"><span class="blbl a">After</span></div>
+      <div class="ba-sep"></div>
+    </div>
+    <div class="ba-foot"><div class="ba-tx">Porcelain Veneers</div><div class="ba-nt">10 upper porcelain veneers</div><div class="ba-when">After image: ~3 weeks post-procedure</div><div class="ba-di">Outcome relevant to this patient only. Individual results vary.</div></div>
+  </div>
+  </div>
+</div>
+
+<section class="cta">
+  <h2>See what's possible <em>for your smile</em></h2>
+  <p>Start with a free, no-obligation smile consultation with Dr Aodhan at Circular Quay.</p>
+  <a href="/book" class="cta-btn">Book a Consultation</a>
+</section>
+
+<footer>
+  <span class="fl">Dr <b>Aodhan</b> Docherty</span>
+  <p class="freg">All procedures carry potential risks. Outcomes vary between individuals and cannot be guaranteed. Individual results depend on clinical circumstances. Registered Dentist, AHPRA DEN0001938737 · About Smiles Circular Quay, Sydney.</p>
+  <div class="flinks">
+    <a href="/">Home</a>
+    <a href="/veneers">Veneers</a>
+    <a href="/book">Book</a>
+    <a href="/blog/">Journal</a>
+  </div>
+</footer>
+<script>
+(function(){var h=document.getElementById('hbg'),d=document.getElementById('drawer');if(!h||!d)return;
+h.addEventListener('click',function(){h.classList.toggle('open');d.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';});
+document.querySelectorAll('.drawer .nc').forEach(function(el){el.addEventListener('click',function(){h.classList.remove('open');d.classList.remove('open');document.body.style.overflow='';});});
+})();
+</script>
+</body>
+</html>
