@@ -106,7 +106,7 @@ a{text-decoration:none;color:inherit}
 .sl{font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--lite);margin-top:0.25rem;display:block}
 
 /* ABOUT */
-.about{padding:2.5rem 1.1rem;background:var(--white)}
+.about{padding:0.4rem 1.1rem 2.5rem;background:var(--white)}
 .about-img{height:54vw;max-height:260px;background:var(--sand2);margin-bottom:1.5rem;border-radius:2px;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .about-img img{object-position:top center}
 .about-img-ph{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(90,86,80,0.28);writing-mode:vertical-rl}
@@ -430,6 +430,7 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
 .methodbanner{padding:2.2rem 1.1rem;background:var(--white)}
 .mb-in{display:flex;flex-direction:column;align-items:center;max-width:1040px;margin:0 auto;border-radius:12px;overflow:hidden;text-decoration:none;background:#0c0b0a;padding-bottom:1.5rem}
 .mb-in img{width:100%;height:auto;display:block;margin-bottom:0.9rem}
+.mb-in picture{display:block;width:100%}
 .mb-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--white);color:var(--ink);padding:0.68rem 1.25rem;border-radius:4px;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;transition:background .2s}
 .mb-btn::after{content:'→';color:var(--gold)}
 .mb-in:hover .mb-btn{background:var(--gold);color:var(--ink)}
@@ -454,7 +455,7 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
 </style>
 <section class="methodbanner" id="method">
   <a class="mb-in" href="/the-aodhan-method" aria-label="Learn about The Aodhan Method">
-    <img src="/the-aodhan-method/method-banner-slim2.png" alt="The Aodhan Method, a preservation-first path to your smile">
+    <picture><source media="(max-width:767px)" srcset="/the-aodhan-method/method-banner-mobile.png"><img src="/the-aodhan-method/method-banner-slim2.png" alt="The Aodhan Method, a preservation-first path to your smile"></picture>
     <span class="mb-btn">Learn About the Aodhan Method</span>
   </a>
 </section>
