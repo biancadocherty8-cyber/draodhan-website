@@ -1,38 +1,37 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Aodhan Method&trade; | Dr Aodhan Docherty, Cosmetic Dentist Sydney</title>
-<meta name="description" content="The Aodhan Method is Dr Aodhan Docherty's preservation-first approach to porcelain veneers in Circular Quay, Sydney: understand, design, preview, preserve and refine, guided by one dentist from start to finish.">
+<title>The Aodhan Method – Dr Aodhan Docherty, Sydney</title>
+<meta name="description" content="The Aodhan Method: Dr Aodhan Docherty's preservation-first approach to planning and placing porcelain veneers in Sydney's Circular Quay.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://draodhan.com.au/the-aodhan-method/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The Aodhan Method | Dr Aodhan Docherty">
-<meta property="og:description" content="A considered, preservation-first path to your smile, guided by the same dentist from your first conversation to your final result.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Mulish:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#18181A;--mid:#4A4A50;--lite:#8A8A92;--sand:#F7F3EE;--sand2:#EDE7DE;--white:#FDFCFA;--gold:#A8864A;--gold2:#C4A46E;--line:#DDD7CF}
-*{margin:0;padding:0;box-sizing:border-box}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{font-family:'Mulish',sans-serif;background:var(--white);color:var(--ink);line-height:1.6}
-a{color:inherit;text-decoration:none}
+body{font-family:'Mulish',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
 img{display:block;width:100%;height:100%;object-fit:cover}
-/* NAV (site-wide) */
-.nav{position:sticky;top:0;z-index:200;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;background:rgba(253,252,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-brand{font-family:'Playfair Display',serif;font-size:0.9rem;letter-spacing:0.02em;color:var(--ink);white-space:nowrap;text-decoration:none}
-.nav-brand b{color:var(--gold);font-weight:400;font-style:italic}
-.nav-r{display:flex;align-items:center;gap:0.7rem}
-.nav-bk{background:var(--ink);color:var(--white);font-family:'Mulish',sans-serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.5rem 0.95rem;border-radius:2px;white-space:nowrap;text-decoration:none;transition:background .2s}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 1.1rem;background:rgba(253,252,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-brand{font-family:'Playfair Display',serif;font-size:0.85rem;letter-spacing:0.02em;color:var(--ink);white-space:nowrap;text-decoration:none}
+.nav-brand b{color:var(--gold);font-weight:400}
+.nav-r{display:flex;align-items:center;gap:0.6rem}
+.nav-bk{background:var(--ink);color:var(--white);font-family:'Mulish',sans-serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.42rem 0.85rem;border-radius:2px;white-space:nowrap;text-decoration:none}
 .nav-bk:hover{background:var(--gold);color:var(--ink)}
 .hbg{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:5px}
 .hbg span{display:block;width:19px;height:1.5px;background:var(--ink);transition:transform .28s,opacity .28s;transform-origin:center}
 .hbg.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
 .hbg.open span:nth-child(2){opacity:0}
 .hbg.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
-.drawer{position:fixed;top:56px;left:0;right:0;bottom:0;z-index:190;background:var(--white);display:flex;flex-direction:column;padding:1.5rem 1.25rem;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto}
+/* DRAWER */
+.drawer{position:fixed;top:52px;left:0;right:0;bottom:0;z-index:190;background:var(--white);display:flex;flex-direction:column;padding:1.5rem 1.25rem;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto}
 .drawer.open{transform:translateX(0)}
 .dl{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--line);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);text-decoration:none}
 .dl::after{content:'→';color:var(--gold)}
@@ -43,74 +42,50 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .dl-s{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0 0.75rem 1rem;border-bottom:1px solid var(--line);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none}
 .dl-s::after{content:'→';color:var(--gold)}
 .d-book{margin-top:1.5rem;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--white);padding:0.95rem;border-radius:2px;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none}
+
+/* UTILS */
+.tag{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.55rem;margin-bottom:0.75rem}
+.tag::before{content:'';width:1.4rem;height:1px;background:var(--gold)}
+
+/* FOOTER */
+footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,255,255,0.04)}
+.fl{font-family:'Playfair Display',serif;font-size:0.82rem;color:rgba(253,252,250,0.28);display:block;margin-bottom:0.75rem}
+.freg{font-size:0.58rem;color:rgba(253,252,250,0.16);line-height:1.6;margin-bottom:0.85rem}
+.flinks{display:flex;gap:1.25rem;flex-wrap:wrap}
+.flinks a{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,252,250,0.22);transition:color 0.2s}
+.flinks a:hover{color:var(--gold2)}
+
+/* sticky mobile book bar */
+.bookbar{position:fixed;left:0;right:0;bottom:0;z-index:300;display:flex;align-items:center;justify-content:space-between;gap:0.8rem;padding:0.6rem 0.9rem;background:rgba(24,24,26,0.97);backdrop-filter:blur(10px);border-top:1px solid rgba(196,164,110,0.3)}
+.bookbar-t{font-size:0.64rem;color:rgba(253,252,250,0.55);line-height:1.3}
+.bookbar-t b{color:var(--white);font-weight:600;display:block;font-size:0.74rem;letter-spacing:0.01em}
+.bookbar-b{flex:0 0 auto;background:var(--gold);color:var(--ink);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:0.7rem 1.15rem;border-radius:2px;white-space:nowrap}
+.bookbar-b:active{background:var(--gold2)}
+@media(min-width:768px){.bookbar{display:none}}
+
 @media(min-width:768px){
-  .nav{padding:0 2.5rem;height:60px}
+  .nav{padding:0 3rem;height:58px}
   .hbg{display:none}
   .nav-r{display:none}
-  .drawer{position:static;transform:none!important;display:flex;flex-direction:row;align-items:center;gap:1.9rem;padding:0;background:transparent;overflow:visible;inset:auto;height:auto;width:auto}
-  .dl{padding:0;border:none;font-size:0.66rem;color:var(--mid)}
+  .drawer{position:static;transform:none!important;display:flex;flex-direction:row;padding:0;gap:2rem;background:transparent;overflow:visible;align-items:center;top:auto;left:auto;right:auto;bottom:auto;height:auto}
+  .dl{padding:0;border:none;font-size:0.68rem;color:var(--mid)}
   .dl::after{display:none}
   .dl:hover{color:var(--ink)}
   .nav-dd{position:relative;flex-direction:row;align-items:center}
   .nav-dd::after{content:'';position:absolute;top:100%;left:0;right:0;height:14px}
-  .nav-dd-t::after{content:'▾';color:var(--gold);margin-left:0.32rem;font-size:0.66rem}
+  .nav-dd > .nav-dd-t::after{content:'▾';color:var(--gold);margin-left:0.32rem;font-size:0.66rem;display:inline}
   .nav-dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(10px);background:var(--white);border:1px solid var(--line);border-radius:3px;padding:0.4rem 0;min-width:188px;box-shadow:0 20px 50px -26px rgba(24,24,26,0.45);opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease;z-index:210}
   .nav-dd:hover .nav-dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(4px)}
-  .dl-s{padding:0.5rem 1.15rem;border:none;font-size:0.63rem;color:var(--mid);white-space:nowrap}
-  .dl-s::after{display:none}
-  .dl-s:hover{color:var(--ink);background:var(--sand)}
-  .d-book{margin:0;padding:0.5rem 1rem;font-size:0.62rem}
-}
-/* HERO */
-.mhero{padding:3rem 1.25rem 2rem;text-align:center;max-width:760px;margin:0 auto}
-.mhero-crumb{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--lite);margin-bottom:1.4rem}
-.mhero-crumb a{color:var(--gold)}
-.mhero-ey{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:0.6rem;margin-bottom:1rem}
-.mhero-ey::before,.mhero-ey::after{content:'';width:1.5rem;height:1px;background:var(--gold)}
-.mhero h1{font-family:'Playfair Display',serif;font-weight:400;font-size:2.3rem;line-height:1.12;letter-spacing:-0.01em}
-.mhero h1 sup{font-size:0.32em;vertical-align:super;color:var(--gold)}
-.mhero p{font-size:0.92rem;color:var(--mid);font-weight:300;line-height:1.8;margin-top:1.1rem}
-/* STEPS */
-.steps{background:#141210;padding:2.75rem 1.25rem;position:relative;overflow:hidden}
-.steps::before{content:'';position:absolute;top:-30%;right:-12%;width:62%;aspect-ratio:1;background:radial-gradient(circle,rgba(168,134,74,0.10),transparent 65%);pointer-events:none}
-.steps-in{position:relative;max-width:1180px;margin:0 auto}
-.steps-grid{display:grid;grid-template-columns:1fr;gap:2.1rem}
-.mstep{display:flex;flex-direction:column}
-.mstep-n{width:2.6rem;height:2.6rem;border-radius:50%;border:1px solid rgba(168,134,74,0.5);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--gold2);margin-bottom:1.1rem}
-.mstep-t{font-family:'Playfair Display',serif;font-weight:400;font-size:1.3rem;color:var(--white);margin-bottom:0.6rem}
-.mstep-d{font-size:0.84rem;line-height:1.8;color:rgba(253,252,250,0.9);font-weight:400}
-.steps-foot{font-size:0.62rem;line-height:1.7;color:rgba(253,252,250,0.32);font-style:italic;margin-top:2.6rem;max-width:84ch;border-top:1px solid rgba(255,255,255,0.08);padding-top:1.3rem}
-@media(min-width:680px){.steps-grid{grid-template-columns:1fr 1fr;gap:2.4rem 3rem}}
-/* CTA */
-.cta{padding:3rem 1.25rem;text-align:center;background:var(--sand)}
-.cta-h{font-family:'Playfair Display',serif;font-weight:400;font-size:1.7rem;line-height:1.2;margin-bottom:0.6rem}
-.cta-h em{font-style:italic;color:var(--gold)}
-.cta-p{font-size:0.86rem;color:var(--mid);font-weight:300;max-width:48ch;margin:0 auto 1.5rem;line-height:1.7}
-.cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--ink);color:var(--white);padding:1rem 2rem;border-radius:3px;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;transition:background .2s}
-.cta-btn::after{content:'→'}
-.cta-btn:hover{background:var(--gold);color:var(--ink)}
-/* FOOTER */
-footer{background:#111012;padding:2rem 1.25rem;text-align:center}
-.fl{font-family:'Playfair Display',serif;font-size:0.85rem;color:rgba(253,252,250,0.32);display:block;margin-bottom:0.6rem}
-.fl b{color:var(--gold2);font-weight:400}
-.freg{font-size:0.6rem;color:rgba(253,252,250,0.22);line-height:1.7;max-width:64ch;margin:0 auto 0.8rem}
-.flinks{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap}
-.flinks a{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,252,250,0.3)}
-.flinks a:hover{color:var(--gold2)}
-@media(min-width:768px){
-  .mhero{padding:4.5rem 1.25rem 2.5rem}
-  .mhero h1{font-size:3rem}
-  .steps{padding:5rem}
-  .steps-grid{grid-template-columns:repeat(5,1fr);gap:2.6rem}
-  .cta{padding:4.5rem}
-  .cta-h{font-size:2.2rem}
+  .nav-dd-menu .dl-s{padding:0.5rem 1.15rem;border:none;font-size:0.63rem;color:var(--mid);white-space:nowrap}
+  .nav-dd-menu .dl-s::after{display:none}
+  .nav-dd-menu .dl-s:hover{color:var(--ink);background:var(--sand)}
+  .d-book{margin:0;padding:0.48rem 1.2rem;font-size:0.67rem;background:var(--ink);color:var(--white);border-radius:2px}
 }
 </style>
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xbs2v1xyop");
-</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xbs2v1xyop");</script>
 </head>
 <body>
+
 <header class="nav">
   <a href="/" class="nav-brand">Dr <b>Aodhan</b> Docherty</a>
   <nav class="drawer" id="drawer">
@@ -133,47 +108,137 @@ footer{background:#111012;padding:2rem 1.25rem;text-align:center}
   </div>
 </header>
 
-<section class="mhero">
-  <div class="mhero-crumb"><a href="/">Home</a> &raquo; The Aodhan Method</div>
-  <div class="mhero-ey">A signature approach</div>
-  <h1>The Aodhan Method<sup>&trade;</sup></h1>
-  <p>A considered, preservation-first approach to veneers, guided by the same dentist from your first conversation to your final smile. It is built around one idea: protect as much of your natural tooth as possible, and design a result that still looks like you.</p>
-</section>
+<style>
+.mp-hero{background:var(--ink);color:var(--white);padding:5.5rem 1.1rem 3rem;position:relative;overflow:hidden}
+.mp-hero::before{content:'';position:absolute;top:-30%;right:-15%;width:55%;height:120%;background:radial-gradient(circle,rgba(196,164,110,0.14),transparent 70%);pointer-events:none}
+.mp-hero-in{position:relative;max-width:760px}
+.mp-ey{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold2);margin-bottom:1.1rem}
+.mp-h1{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:400;line-height:1.08;margin-bottom:1.1rem}
+.mp-h1 em{font-style:italic;color:var(--gold2)}
+.mp-h1 sup{font-size:0.36em;color:var(--gold2);font-style:normal;top:-1.4em;margin-left:0.12em}
+.mp-lead{font-size:0.92rem;color:rgba(253,252,250,0.72);line-height:1.85;font-weight:300}
+.mp-hero-img{margin-top:2rem;border-radius:4px;overflow:hidden;background:linear-gradient(155deg,#2a2825,#16140f);aspect-ratio:16/10;position:relative}
+.mp-hero-img image-slot{display:block;position:absolute;inset:0;width:100%;height:100%}
+.mp-band{background:var(--ink);padding:0}
+.mp-band-img{aspect-ratio:16/7;background:linear-gradient(155deg,#2a2825,#16140f);position:relative;overflow:hidden}
+.mp-band-img image-slot{display:block;position:absolute;inset:0;width:100%;height:100%}
+.mp-why-img{margin:1.6rem 0 0;border-radius:4px;overflow:hidden;background:linear-gradient(155deg,#d8cdbb,#c4b69d);aspect-ratio:4/3;position:relative}
+.mp-why-img image-slot{display:block;position:absolute;inset:0;width:100%;height:100%}
+.mp-stages{background:var(--white);padding:2.75rem 1.1rem}
+.mp-stage{display:grid;grid-template-columns:auto 1fr;gap:1.1rem 1.2rem;padding:2rem 0;border-bottom:1px solid var(--line);align-items:start}
+.mp-stage:last-child{border-bottom:none}
+.mp-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-style:italic;color:var(--gold);line-height:0.8;grid-row:span 2}
+.mp-verb{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;color:var(--ink);align-self:center}
+.mp-desc{grid-column:2;font-size:0.85rem;color:var(--mid);line-height:1.85;font-weight:300}
+.mp-why{background:var(--sand);padding:2.75rem 1.1rem}
+.mp-why .tag{margin-bottom:1rem}
+.mp-why h2{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:1rem}
+.mp-why h2 em{font-style:italic;color:var(--gold)}
+.mp-why p{font-size:0.85rem;color:var(--mid);line-height:1.85;font-weight:300;max-width:62ch;margin-bottom:0.9rem}
+.mp-foot{font-size:0.66rem;color:var(--lite);line-height:1.65;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--line);max-width:62ch}
+.mp-cta{background:var(--ink);color:var(--white);padding:3rem 1.1rem;text-align:center}
+.mp-cta h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:400;margin-bottom:0.8rem}
+.mp-cta h2 em{font-style:italic;color:var(--gold2)}
+.mp-cta p{font-size:0.82rem;color:rgba(253,252,250,0.6);line-height:1.7;font-weight:300;margin-bottom:1.6rem;max-width:46ch;margin-left:auto;margin-right:auto}
+.mp-cta-btn{display:inline-block;background:var(--gold);color:var(--ink);padding:0.95rem 2rem;border-radius:2px;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:500}
+@media(min-width:768px){
+  .mp-hero{padding:7.5rem 5rem 4.5rem}
+  .mp-h1{font-size:4rem}
+  .mp-lead{font-size:1.05rem;max-width:60ch}
+  .mp-hero-img{max-width:760px;margin-top:2.75rem;aspect-ratio:16/8}
+  .mp-band-img{aspect-ratio:16/6}
+  .mp-why-in{max-width:920px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:3.5rem;align-items:start}
+  .mp-why-img{margin:0;aspect-ratio:3/4}
+  .mp-stages{padding:5rem;max-width:920px;margin:0 auto}
+  .mp-stage{grid-template-columns:auto 1fr;gap:1.5rem 2rem;padding:2.75rem 0}
+  .mp-num{font-size:3rem}
+  .mp-verb{font-size:1.9rem}
+  .mp-desc{font-size:0.92rem}
+  .mp-why{padding:5rem}
+  .mp-why h2{font-size:2.2rem}
+  .mp-cta{padding:5rem}
+  .mp-cta h2{font-size:2.6rem}
+}
+</style>
 
-<section class="steps">
-  <div class="steps-in">
-    <div class="steps-grid">
-      <div class="mstep"><div class="mstep-n">1</div><div class="mstep-t">Understand</div><p class="mstep-d">It begins with your face, not just your teeth. Dr Aodhan considers your features and what you want your smile to say, so the design suits you rather than a template.</p></div>
-      <div class="mstep"><div class="mstep-n">2</div><div class="mstep-t">Design</div><p class="mstep-d">Using digital and hand design, your proposed smile is planned around your facial proportions, balancing shape, length and harmony as a whole.</p></div>
-      <div class="mstep"><div class="mstep-n">3</div><div class="mstep-t">Preview</div><p class="mstep-d">You see, and can often trial, your proposed smile before any irreversible treatment. Nothing is finalised until you feel confident in the plan.</p></div>
-      <div class="mstep"><div class="mstep-n">4</div><div class="mstep-t">Preserve</div><p class="mstep-d">Teeth are prepared as conservatively as each case allows, protecting as much healthy, natural tooth as possible. This is the heart of the method.</p></div>
-      <div class="mstep"><div class="mstep-n">5</div><div class="mstep-t">Refine</div><p class="mstep-d">Each veneer is hand-characterised by skilled technicians and refined at the fit, so the finished result looks like a natural part of you.</p></div>
-    </div>
-    <p class="steps-foot">The Aodhan Method describes Dr Aodhan's personal approach to planning and delivering veneer treatment. It is not a guarantee of any particular result. Suitability, including whether a conservative preparation or a trial preview is appropriate, is assessed at an in-person clinical consultation. Every patient is different and outcomes vary.</p>
+<section class="mp-hero">
+  <div class="mp-hero-in">
+    <div class="mp-ey">A signature approach</div>
+    <h1 class="mp-h1">The Aodhan <em>Method</em><sup>™</sup></h1>
+    <p class="mp-lead">A considered, preservation-first way of planning and placing porcelain veneers — guided by the same dentist from your very first conversation to your final smile. It is less a product and more a philosophy: design around your face, preserve healthy tooth, and never finalise anything until you feel confident.</p>
+    <div class="mp-hero-img"><image-slot id="method-hero" shape="rect" placeholder="Dr Aodhan at work — portrait or chairside"></image-slot></div>
   </div>
 </section>
 
-<section class="cta">
-  <h2 class="cta-h">See whether it's <em>right for you</em></h2>
-  <p class="cta-p">The method starts with a conversation. Book a free, no-obligation smile consultation with Dr Aodhan at Circular Quay.</p>
-  <a href="/book" class="cta-btn">Book a Consultation</a>
+<section class="mp-stages">
+  <div class="mp-stage">
+    <div class="mp-num">1</div>
+    <div class="mp-verb">Understand</div>
+    <p class="mp-desc">It begins with your face, not just your teeth. Dr Aodhan listens to what you want your smile to say, and studies your features — lip line, proportions, the way you speak and smile — so the design is built around you rather than dropped onto a template.</p>
+  </div>
+  <div class="mp-stage">
+    <div class="mp-num">2</div>
+    <div class="mp-verb">Design</div>
+    <p class="mp-desc">Using a blend of digital planning and hand design, your proposed smile is shaped around your facial proportions — balancing tooth shape, length, width and harmony as a whole, not tooth by tooth. This is where artistry and dentistry meet.</p>
+  </div>
+  <div class="mp-stage">
+    <div class="mp-num">3</div>
+    <div class="mp-verb">Preview</div>
+    <p class="mp-desc">You see, and can often trial, your proposed smile before any irreversible treatment begins. It is a chance to live with the design, refine it, and only move forward once it genuinely feels like you. Nothing is finalised until you are confident in the plan.</p>
+  </div>
+  <div class="mp-stage">
+    <div class="mp-num">4</div>
+    <div class="mp-verb">Preserve</div>
+    <p class="mp-desc">Teeth are prepared as conservatively as each individual case allows, protecting as much healthy, natural tooth structure as possible. This is the heart of the method — because what is removed cannot be put back, restraint is treated as a skill, not a shortcut.</p>
+  </div>
+  <div class="mp-stage">
+    <div class="mp-num">5</div>
+    <div class="mp-verb">Refine</div>
+    <p class="mp-desc">Each veneer is hand-characterised by skilled ceramic technicians and refined at the fit appointment, adjusting shade, texture and edge until the finished result reads as a natural part of you — not as dental work.</p>
+  </div>
+</section>
+
+<section class="mp-band">
+  <div class="mp-band-img"><image-slot id="method-band" shape="rect" placeholder="Wide image — trial smile, lab work, or finished case"></image-slot></div>
+</section>
+
+<section class="mp-why">
+  <div class="mp-why-in">
+  <div>
+  <div class="tag">Why it matters</div>
+  <h2>Built to keep your smile <em>feeling like yours</em></h2>
+  <p>Many smiles can be transformed quickly. The harder, more valuable goal is a result that still looks and feels natural in five, ten, twenty years — and that depends on how much healthy tooth is preserved and how carefully the design suits your face.</p>
+  <p>The Aodhan Method exists to make that the default, not the exception. Every stage is designed to slow the irreversible decisions down, keep you in control of the plan, and protect the foundation your smile is built on.</p>
+  <p class="mp-foot">The Aodhan Method describes Dr Aodhan's personal approach to planning veneer treatment. It is not a brand of product, a trademark of any outcome, or a guarantee of any result. All dental procedures carry potential risks. Suitability is assessed at an in-person consultation, and outcomes vary between individuals.</p>
+  </div>
+  <div class="mp-why-img"><image-slot id="method-why" shape="rect" placeholder="Detail shot — hands, veneers, or clinic"></image-slot></div>
+  </div>
+</section>
+
+<section class="mp-cta">
+  <h2>See how it would work <em>for you.</em></h2>
+  <p>The method starts with a conversation. Book an in-person consultation with Dr Aodhan — no obligation.</p>
+  <a href="/book" class="mp-cta-btn">Book a Consultation</a>
 </section>
 
 <footer>
-  <span class="fl">Dr <b>Aodhan</b> Docherty</span>
-  <p class="freg">Registered Dentist, AHPRA DEN0001938737 · About Smiles Circular Quay, Sydney. Information on this page is general only and not a substitute for personal advice. Any dental procedure carries risk and individual results vary. Suitability is confirmed by an in-person clinical examination.</p>
+  <span class="fl">Dr Aodhan Docherty</span>
+  <p class="freg">All procedures carry potential risks. Outcomes vary and cannot be guaranteed. <a href="/treatment-information" style="color:rgba(253,252,250,0.3);text-decoration:underline">Treatment information →</a></p>
   <div class="flinks">
-    <a href="/">Home</a>
-    <a href="/veneers">Veneers</a>
+    <a href="https://www.instagram.com/dr.aodhan" target="_blank">Instagram</a>
     <a href="/book">Book</a>
-    <a href="/blog/">Journal</a>
+    <a href="https://draodhan.com.au/doctors-portal">Dentist Portal</a>
   </div>
 </footer>
+
+<div class="bookbar">
+  <div class="bookbar-t"><b>Book a Consultation</b>One dentist · no obligation</div>
+  <a href="/book" class="bookbar-b">Book now</a>
+</div>
 <script>
-(function(){var h=document.getElementById('hbg'),d=document.getElementById('drawer');if(!h||!d)return;
-h.addEventListener('click',function(){h.classList.toggle('open');d.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';});
-document.querySelectorAll('.drawer .nc').forEach(function(el){el.addEventListener('click',function(){h.classList.remove('open');d.classList.remove('open');document.body.style.overflow='';});});
-})();
+const hbg=document.getElementById('hbg'),drawer=document.getElementById('drawer');
+hbg.addEventListener('click',()=>{hbg.classList.toggle('open');drawer.classList.toggle('open');document.body.style.overflow=drawer.classList.contains('open')?'hidden':''});
+document.querySelectorAll('.nc').forEach(el=>el.addEventListener('click',()=>{hbg.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow=''}));
 </script>
 </body>
 </html>
