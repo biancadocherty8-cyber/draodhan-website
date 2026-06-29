@@ -101,6 +101,30 @@ h1 em{font-style:italic;color:var(--gold)}
 .btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--gold);color:var(--ink);padding:0.9rem 1.6rem;border-radius:2px;font-size:0.74rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700}
 .btn-gold:hover{background:var(--gold2)}
 .or-online{text-align:center;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin:1.9rem auto 0}
+/* appointment type cards */
+.types{max-width:1040px;margin:2rem auto 0;padding:0 1.2rem;display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:860px){.types{grid-template-columns:repeat(3,1fr);gap:1.1rem}}
+.tcard{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:1.5rem 1.35rem;display:flex;flex-direction:column}
+.tcard.free{border-color:var(--gold);background:var(--sand)}
+.tcard-type{font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+.tcard-name{font-family:'Playfair Display',serif;font-size:1.25rem;line-height:1.2;color:var(--ink);margin-bottom:0.3rem}
+.tcard-meta{font-size:0.72rem;color:var(--lite);margin-bottom:0.9rem}
+.tcard-desc{font-size:0.83rem;color:var(--mid);line-height:1.6;margin-bottom:0.95rem}
+.tcard-dets{list-style:none;margin:0 0 1.1rem;padding:0;display:flex;flex-direction:column;gap:0.5rem}
+.tcard-dets li{font-size:0.8rem;color:var(--ink);padding-left:1.05rem;position:relative;line-height:1.45}
+.tcard-dets li::before{content:'';position:absolute;left:0;top:0.52rem;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.tcard-price{font-size:0.73rem;color:var(--mid);margin-bottom:1.1rem;line-height:1.45}
+.tcard-cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:0.82rem 1rem;border-radius:2px;font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;border:1px solid var(--ink);color:var(--ink);background:transparent;transition:background .18s,color .18s}
+.tcard-cta:hover{background:var(--ink);color:var(--white)}
+.tcard.free .tcard-cta{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.tcard.free .tcard-cta:hover{background:var(--gold2)}
+/* embedded calendars */
+.embeds{max-width:760px;margin:2.6rem auto 0;padding:0 1.2rem}
+.embed-block{margin-bottom:2.6rem;scroll-margin-top:80px}
+.embed-block-h{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--ink);margin-bottom:0.2rem;text-align:center}
+.embed-block-h em{font-style:italic;color:var(--gold)}
+.embed-block-sub{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--lite);text-align:center;margin-bottom:1rem}
+.zavy-frame{display:block;width:100%;border:0;min-height:600px;background:var(--white);border:1px solid var(--line);border-radius:6px}
 </style>
 </head>
 <body>
@@ -131,36 +155,73 @@ h1 em{font-style:italic;color:var(--gold)}
 <section class="hero">
   <div class="tag">Book a consultation</div>
   <h1>Book your <em>consultation</em></h1>
-  <p class="sub">60 minutes with Dr Docherty at Circular Quay. Full clinical assessment, treatment plan, exact costs, and payment-plan options. No obligation to proceed.</p>
+  <p class="sub">Choose the consultation that suits you. Start with a free smile consultation, or book a comprehensive appointment with Dr Aodhan in person or by Zoom. Compare them below, then book your time.</p>
 </section>
 
-<section class="freecall">
-  <div class="freecall-in">
-    <div class="freecall-h">Free <em>Smile Consultation</em></div>
-    <p class="freecall-p">Book your complimentary, no-obligation smile consultation at our Circular Quay practice. Quick to book online, and no payment required.</p>
-    <a href="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/reasons/5893/practitioner/30312/date" target="_blank" rel="noopener" class="btn-gold">Book your free consultation</a>
+<section class="types">
+  <div class="tcard free">
+    <div class="tcard-type">Complimentary · No obligation</div>
+    <div class="tcard-name">Free Smile Consultation</div>
+    <div class="tcard-meta">Circular Quay · About 30 min</div>
+    <p class="tcard-desc">A relaxed, no-obligation chat with our treatment coordinator at our Circular Quay practice, where you'll also meet Dr Aodhan, who joins every consultation in person.</p>
+    <ul class="tcard-dets">
+      <li>Talk through what you'd like to change</li>
+      <li>See your options, from veneers to whitening and more</li>
+      <li>Photos taken for reference</li>
+      <li>An indicative plan and next steps to take away</li>
+    </ul>
+    <div class="tcard-price">Free · no payment required</div>
+    <a href="#book-free" class="tcard-cta">Book free consultation</a>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-type">With Dr Aodhan · One on one</div>
+    <div class="tcard-name">Comprehensive Consultation</div>
+    <div class="tcard-meta">In person · About 60 min</div>
+    <p class="tcard-desc">A full appointment with Dr Aodhan Docherty for patients ready to plan treatment in detail.</p>
+    <ul class="tcard-dets">
+      <li>Full clinical assessment</li>
+      <li>Intra-oral photos and digital scan</li>
+      <li>A written, personalised treatment plan to take home</li>
+      <li>Your questions answered, one on one with Dr Aodhan</li>
+    </ul>
+    <div class="tcard-price">A consultation fee applies, confirmed at booking</div>
+    <a href="#book-inperson" class="tcard-cta">Book in person</a>
+  </div>
+
+  <div class="tcard">
+    <div class="tcard-type">Online · With Dr Aodhan</div>
+    <div class="tcard-name">Comprehensive Consultation by Zoom</div>
+    <div class="tcard-meta">Online · About 60 min</div>
+    <p class="tcard-desc">A video call with Dr Aodhan to talk through your goals, with a follow-up in-person visit for scans included at no extra cost. Ideal if you're outside Sydney.</p>
+    <ul class="tcard-dets">
+      <li>One-on-one video call with Dr Aodhan</li>
+      <li>Discuss your goals and options</li>
+      <li>Follow-up in-person scan visit included</li>
+      <li>A written treatment plan to follow</li>
+    </ul>
+    <div class="tcard-price">A consultation fee applies, confirmed at booking</div>
+    <a href="#book-zoom" class="tcard-cta">Book by Zoom</a>
   </div>
 </section>
 
-<p class="or-online">Or book a comprehensive consultation online</p>
-
-<div class="tabs-wrap">
-  <div class="tabs" role="tablist">
-    <button class="tab on" id="tab-inperson" role="tab" aria-selected="true" aria-controls="embed-frame">
-      In-Person · Circular Quay
-      <small>Clinical photos &amp; digital scans included</small>
-    </button>
-    <button class="tab" id="tab-virtual" role="tab" aria-selected="false" aria-controls="embed-frame">
-      Online · Zoom
-      <small>Follow-up in-person scan included</small>
-    </button>
+<div class="embeds">
+  <div class="embed-block" id="book-free">
+    <div class="embed-block-h">Free <em>Smile Consultation</em></div>
+    <div class="embed-block-sub">Complimentary · About 30 min · Circular Quay</div>
+    <iframe class="zavy-frame" src="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/reasons/5893/practitioner/30312/date" frameborder="0" scrolling="no" title="Book a free smile consultation"></iframe>
   </div>
-</div>
 
-<div class="embed-wrap">
-  <div class="embed-frame" id="embed-frame" role="tabpanel">
-    <div class="embed-loading" id="embed-loading">Loading calendar…</div>
-    <iframe id="zavy-online-booking" frameborder="0" scrolling="no" style="pointer-events:auto;border:none;min-height:600px;display:none" title="Book a consultation with Dr Aodhan Docherty"></iframe>
+  <div class="embed-block" id="book-inperson">
+    <div class="embed-block-h">Comprehensive Consultation · <em>In Person</em></div>
+    <div class="embed-block-sub">With Dr Aodhan · About 60 min · Circular Quay</div>
+    <iframe class="zavy-frame" src="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/reasons/481/practitioner/30312/date" frameborder="0" scrolling="no" title="Book a comprehensive in-person consultation"></iframe>
+  </div>
+
+  <div class="embed-block" id="book-zoom">
+    <div class="embed-block-h">Comprehensive Consultation · <em>by Zoom</em></div>
+    <div class="embed-block-sub">With Dr Aodhan · About 60 min · Online</div>
+    <iframe class="zavy-frame" src="https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/reasons/4837/practitioner/30312/date" frameborder="0" scrolling="no" title="Book a comprehensive Zoom consultation"></iframe>
   </div>
 </div>
 
@@ -181,64 +242,13 @@ h1 em{font-style:italic;color:var(--gold)}
 
 <script>
 (function(){
-  var ZAVY = {
-    inperson: 'https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/reasons/481/practitioner/30312/date',
-    virtual:  'https://bookings.zavy360.com/booking/caredentistry/locations/c96bfca6-f0a6-49d3-9ef2-f40e3a4d87d1/reasons/4837/practitioner/30312/date'
-  };
-  var iframe   = document.getElementById('zavy-online-booking');
-  var loading  = document.getElementById('embed-loading');
-  var tabIn    = document.getElementById('tab-inperson');
-  var tabVirt  = document.getElementById('tab-virtual');
-  var current  = null;
-  var scheduleFired = false;
-  var SCHEDULE_HEIGHT_THRESHOLD = 1400;
-
-  function urlType(){
-    var q = (window.location.search || '').toLowerCase();
-    var h = (window.location.hash   || '').toLowerCase();
-    if (q.indexOf('type=virtual') !== -1 || q.indexOf('type=zoom') !== -1) return 'virtual';
-    if (h.indexOf('virtual') !== -1 || h.indexOf('zoom') !== -1) return 'virtual';
-    return 'inperson';
-  }
-
-  function setActiveTab(type){
-    if (current === type) return;
-    current = type;
-    tabIn.classList.toggle('on',   type === 'inperson');
-    tabVirt.classList.toggle('on', type === 'virtual');
-    tabIn.setAttribute('aria-selected',   type === 'inperson');
-    tabVirt.setAttribute('aria-selected', type === 'virtual');
-    loading.style.display = 'block';
-    iframe.style.display = 'none';
-    iframe.src = ZAVY[type];
-    scheduleFired = false;
-    if (window.fbq) {
-      try { window.fbq('trackCustom', 'BookingTabSelected', { type: type }); } catch(e){}
-    }
-  }
-
-  iframe.addEventListener('load', function(){
-    loading.style.display = 'none';
-    iframe.style.display = 'block';
-  });
-
-  tabIn.addEventListener('click',   function(){ setActiveTab('inperson'); });
-  tabVirt.addEventListener('click', function(){ setActiveTab('virtual'); });
-
   window.addEventListener('message', function(e){
     if (!e.data || e.data.type !== 'zavy-resize' || typeof e.data.height !== 'number') return;
-    iframe.style.height = e.data.height + 'px';
-    if (!scheduleFired && e.data.height >= SCHEDULE_HEIGHT_THRESHOLD && window.fbq) {
-      scheduleFired = true;
-      try { window.fbq('track', 'Schedule', { content_name: current === 'virtual' ? 'Zoom Consultation' : 'In-Person Consultation', content_category: 'consultation_booking' }); } catch(e){}
+    var frames = document.querySelectorAll('iframe.zavy-frame');
+    for (var i=0;i<frames.length;i++){
+      if (frames[i].contentWindow === e.source){ frames[i].style.height = e.data.height + 'px'; break; }
     }
   });
-
-  setActiveTab(urlType());
-
-  if (window.fbq) {
-    try { window.fbq('track', 'InitiateCheckout', { content_name: 'Consultation Booking', content_category: 'booking_funnel' }); } catch(e){}
-  }
 })();
 </script>
 
