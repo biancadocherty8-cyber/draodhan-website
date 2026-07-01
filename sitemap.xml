@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://draodhan.com.au/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://draodhan.com.au/veneers</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://draodhan.com.au/invisalign</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://draodhan.com.au/dental-crowns</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://draodhan.com.au/treatment-information</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://draodhan.com.au/cosmetic-dentist-sydney</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://draodhan.com.au/</loc><lastmod>2026-06-30</lastmod><priority>1.0</priority></url>
+  <url><loc>https://draodhan.com.au/book</loc><lastmod>2026-06-30</lastmod><priority>0.9</priority></url>
+  <url><loc>https://draodhan.com.au/cosmetic-treatments/</loc><lastmod>2026-06-30</lastmod><priority>0.9</priority></url>
+  <url><loc>https://draodhan.com.au/veneers</loc><lastmod>2026-06-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://draodhan.com.au/veneers-landing/</loc><lastmod>2026-06-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://draodhan.com.au/clear-aligners/</loc><lastmod>2026-06-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://draodhan.com.au/composite-bonding/</loc><lastmod>2026-06-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://draodhan.com.au/dental-implants/</loc><lastmod>2026-06-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://draodhan.com.au/the-aodhan-method/</loc><lastmod>2026-06-30</lastmod><priority>0.7</priority></url>
+  <url><loc>https://draodhan.com.au/before-after/</loc><lastmod>2026-06-30</lastmod><priority>0.7</priority></url>
+  <url><loc>https://draodhan.com.au/blog/</loc><lastmod>2026-06-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://draodhan.com.au/blog/will-veneers-ruin-your-natural-teeth/</loc><lastmod>2026-06-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://draodhan.com.au/blog/veneers-bonding-or-clear-aligners/</loc><lastmod>2026-06-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://draodhan.com.au/blog/nervous-about-the-dentist/</loc><lastmod>2026-06-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://draodhan.com.au/treatment-information</loc><lastmod>2026-06-30</lastmod><priority>0.4</priority></url>
+  <url><loc>https://draodhan.com.au/complimentary-consultation-terms/</loc><lastmod>2026-06-30</lastmod><priority>0.4</priority></url>
 </urlset>
