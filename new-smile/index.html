@@ -74,14 +74,33 @@ em{font-style:italic}
 .plist .c{color:var(--gold);font-weight:700;flex:none}
 .plist.dark div{color:var(--ink)}
 .plist.mut div{color:var(--mid)}
-/* before after */
-.ba-list{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-top:6px}
-.ba-card{flex:none;width:264px;scroll-snap-align:start;background:var(--sand);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.ba-imgs{display:grid;grid-template-rows:1fr 1fr;height:230px}
-.ba-half{position:relative;overflow:hidden}
-.ba-half img{width:100%;height:100%;object-fit:cover}
-.ba-half span{position:absolute;left:8px;bottom:6px;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:#fff;padding:2px 6px;border-radius:2px}
-.ba-cap{padding:10px 14px 12px;font-size:12px;color:var(--lite)}
+/* before after gallery (scrolling cases) */
+.gal-notice{background:var(--white);border:1px solid var(--line);padding:0.85rem 1rem;margin:14px 0 0;font-size:11.5px;color:var(--mid);line-height:1.6;border-radius:4px}
+.gal-notice strong{color:var(--ink);font-weight:600}
+.gal-controls{display:flex;justify-content:space-between;align-items:center;margin:18px 0 14px;gap:1rem;flex-wrap:wrap}
+.gal-count{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.55rem}
+.gal-count::before{content:'';width:1rem;height:1px;background:var(--gold)}
+.gallery-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.gallery-grid::-webkit-scrollbar{height:6px}
+.gallery-grid::-webkit-scrollbar-track{background:transparent}
+.gallery-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.bac{flex:0 0 74%;scroll-snap-align:start;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--white)}
+.ba-imgs{display:grid;grid-template-rows:1fr 1fr;aspect-ratio:3/4;position:relative}
+.ba-side{overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:8px}
+.bb{position:absolute;inset:0;background:linear-gradient(160deg,#c0b8ae,#a8a09a)}
+.ab{position:absolute;inset:0;background:linear-gradient(160deg,#e8e0d4,#f0ead8)}
+.ba-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.blbl{position:relative;z-index:1;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;background:rgba(0,0,0,0.4);color:#fff;padding:3px 7px;border-radius:2px}
+.blbl.a{background:rgba(168,134,74,0.85);color:var(--ink)}
+.ba-sep{position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(253,252,250,0.85);z-index:2}
+.ba-foot{padding:12px 14px;background:var(--sand);border-top:1px solid var(--line)}
+.ba-nt{font-size:12.5px;color:var(--ink);line-height:1.5;font-weight:500}
+.ba-when{font-size:10px;letter-spacing:0.06em;color:var(--lite);margin-top:6px;font-style:italic;line-height:1.4}
+.gal-swipe{display:flex;gap:0.5rem;margin-top:8px;color:var(--lite);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;align-items:center}
+/* hero case caption */
+.hero-cap{margin-top:12px}
+.hero-cap-t{font-size:13.5px;color:var(--ink);font-weight:600;line-height:1.4}
+.hero-cap-w{font-size:11px;color:var(--lite);font-style:italic;margin-top:4px}
 /* steps */
 .steps{display:flex;flex-direction:column;gap:20px;margin-bottom:18px}
 .step{display:flex;gap:14px;align-items:flex-start}
@@ -142,8 +161,7 @@ em{font-style:italic}
   .hero-cta .btn--outline{flex:none}
   .plist div{font-size:15px}
   .ig-grid{grid-template-columns:repeat(6,1fr)}
-  .ba-list{flex-wrap:wrap;overflow:visible}
-  .ba-card{width:calc(50% - 7px)}
+  .bac{flex:0 0 44%}
 }
 /* ===== DESKTOP ===== */
 @media(min-width:960px){
@@ -164,7 +182,7 @@ em{font-style:italic}
   .two h2{margin-top:0}
   .media-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
   .media-row .media-img{margin-bottom:0;height:420px}
-  .ba-card{width:calc(25% - 11px)}
+  .bac{flex:0 0 29%}
   .steps{flex-direction:row;gap:28px}
   .steps .step{flex-direction:column}
   .ig-grid{gap:12px}
@@ -209,7 +227,11 @@ em{font-style:italic}
     <div class="hero-media">
       <div class="hero-ba">
         <div class="hero-ba-half"><img src="/veneers-landing/cases/case-01-before.jpg?v=2" alt="Smile before porcelain veneers"><span class="hero-ba-lbl" style="background:rgba(24,24,26,0.62)">Before</span></div>
-        <div class="hero-ba-half"><img src="/veneers-landing/cases/case-01-after.jpg?v=2" alt="Smile after porcelain veneers"><span class="hero-ba-lbl" style="background:rgba(168,134,74,0.9)">After</span><span class="hero-ba-cap">Porcelain veneers · Dr Aodhan</span></div>
+        <div class="hero-ba-half"><img src="/veneers-landing/cases/case-01-after.jpg?v=2" alt="Smile after porcelain veneers"><span class="hero-ba-lbl" style="background:rgba(168,134,74,0.9)">After</span></div>
+      </div>
+      <div class="hero-cap">
+        <div class="hero-cap-t">10 upper porcelain veneers + lower teeth whitening</div>
+        <div class="hero-cap-w">After image: ~3 weeks post-procedure. Treated by Dr Aodhan. Individual results vary.</div>
       </div>
     </div>
   </div>
@@ -220,13 +242,10 @@ em{font-style:italic}
   <div class="container">
     <div class="kicker">Real patients of Dr Aodhan</div>
     <h2>Before &amp; <em>after</em></h2>
-    <div class="ba-list">
-      <div class="ba-card"><div class="ba-imgs"><div class="ba-half"><img src="/veneers-landing/cases/case-01-before.jpg?v=2" alt="Before"><span style="background:rgba(24,24,26,0.62)">Before</span></div><div class="ba-half"><img src="/veneers-landing/cases/case-01-after.jpg?v=2" alt="After"><span style="background:rgba(168,134,74,0.9)">After</span></div></div><div class="ba-cap">Case 01 · Porcelain veneers</div></div>
-      <div class="ba-card"><div class="ba-imgs"><div class="ba-half"><img src="/veneers-landing/cases/case-02-before.jpg?v=2" alt="Before"><span style="background:rgba(24,24,26,0.62)">Before</span></div><div class="ba-half"><img src="/veneers-landing/cases/case-02-after.jpg?v=2" alt="After"><span style="background:rgba(168,134,74,0.9)">After</span></div></div><div class="ba-cap">Case 02 · Porcelain veneers</div></div>
-      <div class="ba-card"><div class="ba-imgs"><div class="ba-half"><img src="/veneers-landing/cases/case-03-before.jpg?v=2" alt="Before"><span style="background:rgba(24,24,26,0.62)">Before</span></div><div class="ba-half"><img src="/veneers-landing/cases/case-03-after.jpg?v=2" alt="After"><span style="background:rgba(168,134,74,0.9)">After</span></div></div><div class="ba-cap">Case 03 · Composite bonding</div></div>
-      <div class="ba-card"><div class="ba-imgs"><div class="ba-half"><img src="/veneers-landing/cases/case-04-before.jpg?v=2" alt="Before"><span style="background:rgba(24,24,26,0.62)">Before</span></div><div class="ba-half"><img src="/veneers-landing/cases/case-04-after.jpg?v=2" alt="After"><span style="background:rgba(168,134,74,0.9)">After</span></div></div><div class="ba-cap">Case 04 · Porcelain veneers</div></div>
-    </div>
-    <p class="disc" style="margin-top:14px">Every case shown was treated personally by Dr Aodhan and published with the patient's consent. Photos are unedited. They are individual results and not a guarantee of your own outcome.</p>
+    <div class="gal-notice"><strong>About these photos.</strong> Every case shown was treated personally by Dr Aodhan and published with the patient's consent. They are individual results and are not a guarantee of your own outcome. Your options are discussed at your consultation.</div>
+    <div class="gal-controls"><span class="gal-count" id="gal-count">Cases shown</span></div>
+    <div class="gallery-grid" id="ba-grid"></div>
+    <div class="gal-swipe"><span>← Swipe to see more cases →</span></div>
   </div>
 </section>
 
@@ -479,6 +498,58 @@ em{font-style:italic}
     btn.addEventListener('click',function(){ var o=panel.style.display==='block'; panel.style.display=o?'none':'block'; btn.querySelector('span:last-child').textContent=o?'+':'−'; });
     wrap.appendChild(btn); wrap.appendChild(panel); fw.appendChild(wrap);
   });
+})();
+</script>
+
+<script>
+/* Before/after gallery - real patient cases (case 1 is featured in the hero) */
+(function(){
+  var grid=document.getElementById('ba-grid'), countEl=document.getElementById('gal-count');
+  if(!grid) return;
+  var cases=[
+    {n:2,label:'10 upper porcelain veneers + lower teeth whitening'},
+    {n:3,label:'10 upper porcelain veneers + lower teeth whitening'},
+    {n:4,label:'10 upper and 10 lower porcelain veneers'},
+    {n:5,label:'8 upper porcelain veneers'},
+    {n:6,label:'8 upper porcelain veneers'},
+    {n:7,label:'Clear aligners followed by 10 upper porcelain veneers and 8 lower composite veneers'},
+    {n:8,label:'10 upper and 10 lower porcelain veneers'},
+    {n:9,label:'10 upper and 10 lower porcelain veneers'},
+    {n:10,label:'10 upper porcelain veneers and 6 lower composite veneers'},
+    {n:11,label:'10 upper porcelain veneers'},
+    {n:12,label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:13,label:'10 upper composite veneers'},
+    {n:14,label:'8 upper porcelain veneers'},
+    {n:15,label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:16,label:'8 upper porcelain veneers'},
+    {n:17,label:'10 upper and 10 lower porcelain veneers'},
+    {n:18,label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:19,label:'12 upper and lower porcelain veneers/veneerlays'},
+    {n:20,label:'10 upper porcelain veneers'}
+  ];
+  function makeCard(c){
+    var nn=String(c.n).padStart(2,'0'), card=document.createElement('div');
+    card.className='bac';
+    card.innerHTML='<div class="ba-imgs">'
+      +'<div class="ba-side"><div class="bb"></div><img src="/veneers-landing/cases/case-'+nn+'-before.jpg?v=2" loading="lazy" alt="Case '+nn+' before" onerror="this.style.display=\'none\'"><span class="blbl">Before</span></div>'
+      +'<div class="ba-side"><div class="ab"></div><img src="/veneers-landing/cases/case-'+nn+'-after.jpg?v=2" loading="lazy" alt="Case '+nn+' after" onerror="this.style.display=\'none\'"><span class="blbl a">After</span></div>'
+      +'<div class="ba-sep"></div></div>'
+      +'<div class="ba-foot"><div class="ba-nt">'+c.label+'</div><div class="ba-when">After image: ~3 weeks post-procedure</div></div>';
+    return card;
+  }
+  cases.forEach(function(c){ grid.appendChild(makeCard(c)); });
+  if(countEl) countEl.textContent=cases.length+' cases shown';
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    cases.forEach(function(c){ grid.appendChild(makeCard(c)); });
+    grid.style.scrollSnapType='none';
+    var paused=false;
+    function half(){ return grid.scrollWidth/2; }
+    function tick(){ if(!paused){ grid.scrollLeft+=0.55; if(grid.scrollLeft>=half()){ grid.scrollLeft-=half(); } } requestAnimationFrame(tick); }
+    ['mouseenter','touchstart','pointerdown'].forEach(function(ev){ grid.addEventListener(ev,function(){ paused=true; },{passive:true}); });
+    ['mouseleave','touchend','pointerup'].forEach(function(ev){ grid.addEventListener(ev,function(){ paused=false; },{passive:true}); });
+    requestAnimationFrame(tick);
+  }
 })();
 </script>
 </body>
