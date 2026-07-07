@@ -153,7 +153,12 @@ em{font-style:italic}
   .hero .container{padding-top:60px;padding-bottom:60px}
   .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center}
   .hero-media{display:block}
-  .hero-media img{width:100%;height:520px;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line)}
+  .hero-media>img{width:100%;height:520px;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line)}
+  .hero-ba{display:grid;grid-template-rows:1fr 1fr;height:520px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+  .hero-ba-half{position:relative;overflow:hidden}
+  .hero-ba-half img{width:100%;height:100%;object-fit:cover}
+  .hero-ba-lbl{position:absolute;left:12px;bottom:11px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#fff;padding:3px 9px;border-radius:3px}
+  .hero-ba-cap{position:absolute;right:12px;bottom:11px;font-size:11px;color:#fff;background:rgba(24,24,26,0.5);padding:3px 9px;border-radius:3px;letter-spacing:0.03em}
   .trust{margin:26px 0 0;border:1px solid var(--line);border-radius:10px}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
   .two h2{margin-top:0}
@@ -201,7 +206,12 @@ em{font-style:italic}
         <div class="disc" style="margin-top:10px">General information only. Individual results vary. Suitability is confirmed at an in-person examination.</div>
       </div>
     </div>
-    <div class="hero-media"><img src="https://draodhan.com.au/headshot.jpg" alt="Dr Aodhan Docherty, cosmetic dentist in Sydney"></div>
+    <div class="hero-media">
+      <div class="hero-ba">
+        <div class="hero-ba-half"><img src="/veneers-landing/cases/case-01-before.jpg?v=2" alt="Smile before porcelain veneers"><span class="hero-ba-lbl" style="background:rgba(24,24,26,0.62)">Before</span></div>
+        <div class="hero-ba-half"><img src="/veneers-landing/cases/case-01-after.jpg?v=2" alt="Smile after porcelain veneers"><span class="hero-ba-lbl" style="background:rgba(168,134,74,0.9)">After</span><span class="hero-ba-cap">Porcelain veneers · Dr Aodhan</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
