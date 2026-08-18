@@ -193,6 +193,13 @@ em{font-style:italic}
   .sheet-head{padding:22px 24px 0}
   .s-body{padding:12px 24px 26px}
 }
+/* inline hero assessment */
+.hero-assess{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 22px 55px -28px rgba(24,24,26,0.45);margin-top:26px}
+.ha-top{display:flex;align-items:center;justify-content:space-between;min-height:28px;margin-bottom:10px}
+.ha-badge{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)}
+#hero-assess-body{display:flex;flex-direction:column}
+#s-backdrop,#sheet{display:none}
+@media(min-width:960px){.hero-assess{margin-top:0}}
 </style>
 </head>
 <body>
@@ -212,9 +219,7 @@ em{font-style:italic}
       <h1 class="h1">See what veneers could do for <em>your smile.</em></h1>
       <p class="lead">Answer a few quick questions and Dr Aodhan's team will send you a clear picture of your options. Free, no obligation.</p>
       <div class="hero-cta">
-        <button class="btn btn--gold btn--full js-start">Start my free smile assessment</button>
-        <div class="micro">Takes 2 minutes · Free · No obligation</div>
-        <a href="https://draodhan.com.au/book" class="btn btn--outline btn--full">Book a Complimentary Smile Discussion</a>
+        <a href="https://draodhan.com.au/book" class="btn btn--outline btn--full">Or book a Complimentary Smile Discussion</a>
       </div>
       <div class="trust">
         <div class="trust-row">
@@ -224,15 +229,14 @@ em{font-style:italic}
         <div class="disc" style="margin-top:10px">General information only. Individual results vary. Suitability is confirmed at an in-person examination.</div>
       </div>
     </div>
-    <div class="hero-media">
-      <div class="hero-ba">
-        <div class="hero-ba-half"><img src="/veneers-landing/cases/case-01-before.jpg?v=2" alt="Smile before porcelain veneers"><span class="hero-ba-lbl" style="background:rgba(24,24,26,0.62)">Before</span></div>
-        <div class="hero-ba-half"><img src="/veneers-landing/cases/case-01-after.jpg?v=2" alt="Smile after porcelain veneers"><span class="hero-ba-lbl" style="background:rgba(168,134,74,0.9)">After</span></div>
+    <div class="hero-assess" id="hero-assess">
+      <div class="ha-top">
+        <button class="s-back" id="hero-assess-back">‹ Back</button>
+        <span class="ha-badge">Free · 2 min · No obligation</span>
       </div>
-      <div class="hero-cap">
-        <div class="hero-cap-t">10 upper porcelain veneers + lower teeth whitening</div>
-        <div class="hero-cap-w">After image: ~3 weeks post-procedure. Treated by Dr Aodhan. Individual results vary.</div>
-      </div>
+      <div class="s-bar"><div id="hero-assess-prog"></div></div>
+      <div class="s-label" id="hero-assess-label">Question 1 of 4</div>
+      <div id="hero-assess-body" style="margin-top:14px"></div>
     </div>
   </div>
 </section>
@@ -422,11 +426,9 @@ em{font-style:italic}
   };
   var JF='https://api.jotform.com/form/261458624229058/submissions?apiKey=4ceb50c2ad2f4830f1c9b1da27552e4b';
   var nQ=4, totalSteps=5, step=0, answers=[];
-  var sheet=document.getElementById('sheet'), bd=document.getElementById('s-backdrop'), body=document.getElementById('s-body'),
-      prog=document.getElementById('s-prog'), label=document.getElementById('s-label'), backBtn=document.getElementById('s-back');
+  var body=document.getElementById('hero-assess-body'),
+      prog=document.getElementById('hero-assess-prog'), label=document.getElementById('hero-assess-label'), backBtn=document.getElementById('hero-assess-back');
 
-  function open(){ step=0; answers=[]; render(); bd.classList.add('open'); sheet.classList.add('open'); sheet.setAttribute('aria-hidden','false'); document.documentElement.style.overflow='hidden'; }
-  function close(){ bd.classList.remove('open'); sheet.classList.remove('open'); sheet.setAttribute('aria-hidden','true'); document.documentElement.style.overflow=''; }
   function goBack(){ if(step>0 && step<=nQ){ step--; render(); } }
 
   function render(){
@@ -475,10 +477,10 @@ em{font-style:italic}
     step=totalSteps; render();
   }
 
-  document.querySelectorAll('.js-start').forEach(function(b){ b.addEventListener('click',open); });
-  document.getElementById('s-close').addEventListener('click',close);
-  bd.addEventListener('click',close);
-  backBtn.addEventListener('click',goBack);
+  var heroEl=document.getElementById('hero-assess');
+  document.querySelectorAll('.js-start').forEach(function(b){ b.addEventListener('click',function(){ if(heroEl) heroEl.scrollIntoView({behavior:'smooth',block:'center'}); }); });
+  if(backBtn) backBtn.addEventListener('click',goBack);
+  render();
 
   var faqData=[
     ['Will my veneers look fake?','They should not. Dr Aodhan designs each smile to suit your face, your features and your natural colouring, so it looks like you rather than obviously "done". You see and approve the design as a trial smile before anything is permanent.'],
