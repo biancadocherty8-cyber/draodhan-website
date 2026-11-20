@@ -429,6 +429,8 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
     <p class="bt" style="margin-top:0.85rem">Dr Aodhan Docherty graduated from the University of Sydney with honours and a University Medal, and is the founder of Exceptional Dental Academy, where he trains other dentists across Australia and internationally. He is a university examiner in oral implants and co-author of the dental textbook <em>Practical Procedures in Implant Dentistry</em>. When you sit in his chair, you're with someone other dentists come to learn from.</p>
     <p class="bt">His practice at Circular Quay is built around knowing each patient's case deeply. The dentist who assesses you is the one who treats you, which means nothing gets lost between appointments.</p>
     <p class="bt">His approach to veneers is conservative, focused on a natural result that still looks like you. Veneers are irreversible and not right for everyone, so suitability is always assessed in person, and he'll tell you if a simpler option suits you better.</p>
+    <p class="bt">Explore Dr Aodhan Docherty’s qualifications, clinical approach and role in educating other dentists. His practice at Circular Quay is centred on continuity of care, with treatment assessed, planned and delivered by the same dentist.</p>
+    <p class="bt" style="margin-top:0.9rem"><a href="/about/" style="color:var(--gold);font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:0.15rem">About Dr Aodhan &rarr;</a></p>
   </div>
 </section>
 
@@ -511,7 +513,7 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
     <div class="svc-img icon"><img src="/treatment-icons/composite-icon.png" alt="Composite bonding" loading="lazy" onerror="this.style.display='none'"></div>
     <div class="svc-b">
     <div class="svc-name">Composite Bonding</div>
-    <p class="svc-desc">A tooth-coloured resin applied and shaped directly on the tooth, with no enamel removal required. A more conservative and reversible option for minor chips, gaps, or colour changes. Often a good starting point before committing to porcelain, or a standalone treatment for the right case.</p>
+    <p class="svc-desc">A tooth-coloured resin applied and shaped directly on the tooth. It often involves little or no preparation in suitable cases; suitability and reversibility depend on the individual tooth and treatment. An option for minor chips, gaps, or colour changes. Often a good starting point before committing to porcelain, or a standalone treatment for the right case.</p>
     <a href="/composite-bonding" class="svc-lnk">Learn more</a>
     </div>
   </div>
@@ -780,6 +782,25 @@ footer{background:#111012;padding:1.5rem 1.1rem;border-top:1px solid rgba(255,25
     <p class="an">Curious first? The <a href="#assessment" style="color:var(--gold)">smile assessment</a> gives a general overview of your options before committing to an appointment.</p>
   </div>
 </section>
+
+<section class="journal-home" id="journal" style="padding:2.5rem 1.1rem;background:var(--sand);border-top:1px solid var(--line)">
+  <div style="max-width:1240px;margin:0 auto">
+    <div class="tag">From the Journal</div>
+    <p class="bt" style="max-width:60ch;margin-top:0.6rem">Questions about veneers, aligners or restorative treatment? Explore Dr Aodhan’s articles on treatment planning, risks and alternatives.</p>
+    <div id="jh-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0.6rem;margin-top:1.3rem"></div>
+    <a href="/blog/" style="display:inline-block;margin-top:1.1rem;color:var(--gold);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:0.15rem">All Journal articles &rarr;</a>
+  </div>
+</section>
+<script>
+(function(){var box=document.getElementById('jh-list');if(!box||!window.fetch||!window.DOMParser)return;
+fetch('/blog/').then(function(r){return r.text()}).then(function(t){
+var d=new DOMParser().parseFromString(t,'text/html');var cards=[].slice.call(d.querySelectorAll('a.card')).slice(0,3);
+cards.forEach(function(c){var h=c.querySelector('.card-h');var dt=c.querySelector('time');if(!h)return;
+var a=document.createElement('a');a.href=c.getAttribute('href');a.style.cssText='display:block;background:var(--white);border:1px solid var(--line);border-radius:2px;padding:1rem 1.1rem';
+var tt=document.createElement('div');tt.textContent=h.textContent;tt.style.cssText="font-family:'Playfair Display',serif;font-size:1.02rem;color:var(--ink);line-height:1.3";a.appendChild(tt);
+if(dt){var m=document.createElement('div');m.textContent=dt.textContent;m.style.cssText='font-size:0.62rem;color:var(--lite);margin-top:0.4rem';a.appendChild(m);}
+box.appendChild(a);});}).catch(function(){});})();
+</script>
 
 <section class="insta">
   <div class="insta-hd">
