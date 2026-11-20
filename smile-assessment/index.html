@@ -242,6 +242,15 @@ footer{background:#111012;padding:1.5rem 1.1rem}
 }
 
 /* CONTENT PAGES */
+.s2{max-width:1180px;margin:0 auto}
+.s2 .prose{max-width:none}
+@media(min-width:900px){
+  .sec.s2sec{padding:4.5rem 5rem}
+  .s2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4.5rem;align-items:start}
+  .s2-h{position:sticky;top:90px}
+  .s2 .prose > p:first-child,.s2 .prose > h3:first-child{margin-top:0}
+  .s2 .prose > p:first-child{margin-top:0.2rem}
+}
 .prose{max-width:66ch}
 .prose p{font-size:0.85rem;color:var(--mid);line-height:1.8;font-weight:300;margin-top:0.85rem}
 .prose p.lead{font-family:'Playfair Display',serif;font-size:1.08rem;color:var(--ink);font-style:italic;font-weight:400;line-height:1.5;margin-top:1rem}
@@ -471,24 +480,30 @@ footer{background:#111012;padding:1.5rem 1.1rem}
     </form>
   </div>
 </section>
-<section class="sec white" id="how-it-works">
-  <div class="prose">
-    <h2 class="sh">How it <em>works</em></h2>
+<section class="sec white s2sec" id="how-it-works">
+  <div class="s2">
+    <div class="s2-h"><h2 class="sh">How it <em>works</em></h2></div>
+    <div class="prose">
     <p>Complete the five-question assessment, with optional photographs, and follow the on-screen guidance. Photographs and answers cannot establish a diagnosis or guarantee treatment suitability.</p>
+    </div>
   </div>
 </section>
 
-<section class="sec sand" id="what-happens-next">
-  <div class="prose">
-    <h2 class="sh">What happens <em>next?</em></h2>
+<section class="sec sand s2sec" id="what-happens-next">
+  <div class="s2">
+    <div class="s2-h"><h2 class="sh">What happens <em>next?</em></h2></div>
+    <div class="prose">
     <p>Depending on your enquiry, you can arrange a Smile Discussion or a comprehensive consultation in person or by Zoom. An in-person examination is required before a definitive treatment recommendation.</p>
+    </div>
   </div>
 </section>
 
-<section class="sec white" id="your-photographs-and-privacy">
-  <div class="prose">
-    <h2 class="sh">Your photographs and <em>privacy</em></h2>
+<section class="sec white s2sec" id="your-photographs-and-privacy">
+  <div class="s2">
+    <div class="s2-h"><h2 class="sh">Your photographs and <em>privacy</em></h2></div>
+    <div class="prose">
     <p>Only submit photographs through the practice's secure assessment form. Health information is handled according to the <a href="/privacy/">privacy policy</a>.</p>
+    </div>
   </div>
 </section>
 

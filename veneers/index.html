@@ -224,6 +224,37 @@ footer{background:#111012;padding:1.5rem 1.1rem}
   .fl{margin-bottom:0}
   .freg{margin-bottom:0;max-width:44ch;text-align:center}
 }
+
+/* CONTENT PAGES */
+.s2{max-width:1180px;margin:0 auto}
+.s2 .prose{max-width:none}
+@media(min-width:900px){
+  .sec.s2sec{padding:4.5rem 5rem}
+  .s2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4.5rem;align-items:start}
+  .s2-h{position:sticky;top:90px}
+  .s2 .prose > p:first-child,.s2 .prose > h3:first-child{margin-top:0}
+  .s2 .prose > p:first-child{margin-top:0.2rem}
+}
+.prose{max-width:66ch}
+.prose p{font-size:0.85rem;color:var(--mid);line-height:1.8;font-weight:300;margin-top:0.85rem}
+.prose p.lead{font-family:'Playfair Display',serif;font-size:1.08rem;color:var(--ink);font-style:italic;font-weight:400;line-height:1.5;margin-top:1rem}
+.prose p strong{color:var(--ink);font-weight:500}
+.prose a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+.prose h3{font-family:'Playfair Display',serif;font-size:1.08rem;font-weight:400;color:var(--ink);margin-top:1.6rem;line-height:1.3}
+.prose h3 + p{margin-top:0.45rem}
+.prose ul{list-style:none;margin-top:0.9rem;display:flex;flex-direction:column;gap:0.55rem}
+.prose li{font-size:0.82rem;color:var(--mid);line-height:1.65;font-weight:300;padding-left:1.1rem;position:relative}
+.prose li::before{content:'';position:absolute;left:0;top:0.62rem;width:7px;height:1px;background:var(--gold)}
+.prose li strong{color:var(--ink);font-weight:500}
+.rel{display:inline-flex;align-items:center;gap:0.6rem;margin-top:1.1rem;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:0.2rem}
+.rel span{color:var(--lite)}
+.hero-strong{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--ink);line-height:1.45;margin-bottom:0.85rem}
+.risk-b{font-weight:300}
+.more{display:grid;grid-template-columns:1fr;gap:0.5rem;margin-top:1.5rem}
+.more a{border:1px solid var(--line);background:var(--white);padding:1rem 1.1rem;font-family:'Playfair Display',serif;font-size:0.98rem;color:var(--ink);display:flex;justify-content:space-between;align-items:center;border-radius:2px;transition:border-color .2s}
+.more a::after{content:'\2192';color:var(--gold);font-family:'Mulish',sans-serif}
+.more a:hover{border-color:var(--gold)}
+@media(min-width:768px){.more{grid-template-columns:repeat(3,1fr)}}
 </style>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xbs2v1xyop");</script>
@@ -448,25 +479,36 @@ footer{background:#111012;padding:1.5rem 1.1rem}
 </section>
 
 <!-- FAQ -->
-<section class="sec white" id="preparation">
-  <div class="tag">Tooth preparation</div>
-  <h2 class="sh">How much tooth preparation is <em>involved?</em></h2>
-  <p class="sec-lead">The amount of tooth structure altered for porcelain veneers varies by tooth. Existing alignment, colour, fillings, bite and the proposed restoration all influence preparation. Dr Aodhan assesses these factors during the planning process and aims to preserve natural tooth structure where clinically appropriate.</p>
-  <p class="sec-lead"><a href="/conservative-veneers/" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px">Conservative veneers</a></p>
+<section class="sec white s2sec" id="preparation">
+  <div class="s2">
+    <div class="s2-h"><div class="tag">Tooth preparation</div><h2 class="sh">How much tooth preparation is <em>involved?</em></h2></div>
+    <div class="prose">
+      <p>The amount of tooth structure altered for porcelain veneers varies by tooth. Existing alignment, colour, fillings, bite and the proposed restoration all influence preparation. Dr Aodhan assesses these factors during the planning process and aims to preserve natural tooth structure where clinically appropriate.</p>
+      <a class="rel" href="/conservative-veneers/"><span>Related</span>Conservative veneers</a><br>
+    </div>
+  </div>
 </section>
 
-<section class="sec sand" id="cost">
-  <div class="tag">Costs</div>
-  <h2 class="sh">What affects the cost of <em>veneers?</em></h2>
-  <p class="sec-lead">The cost depends on the number of teeth, the complexity of the treatment plan, laboratory work and any additional procedures. A written quote is provided following assessment.</p>
-  <p class="sec-lead"><a href="/veneer-cost/" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px">Veneer costs</a></p>
+<section class="sec sand s2sec" id="cost">
+  <div class="s2">
+    <div class="s2-h"><div class="tag">Costs</div><h2 class="sh">What affects the cost of <em>veneers?</em></h2></div>
+    <div class="prose">
+      <p>The cost depends on the number of teeth, the complexity of the treatment plan, laboratory work and any additional procedures. A written quote is provided following assessment.</p>
+      <a class="rel" href="/veneer-cost/"><span>Related</span>Veneer costs</a><br>
+    </div>
+  </div>
 </section>
 
-<section class="sec white" id="reading">
-  <div class="tag">Related reading</div>
-  <h2 class="sh">From the <em>Journal</em></h2>
-  
-  <p class="sec-lead"><a href="/blog/will-veneers-ruin-your-natural-teeth/" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px">Will veneers ruin your natural teeth?</a> · <a href="/blog/veneers-bonding-or-clear-aligners/" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px">Veneers, bonding or clear aligners?</a> · <a href="/blog/how-much-tooth-is-removed-for-veneers/" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px">How much tooth is removed for veneers?</a></p>
+<section class="sec white s2sec" id="reading">
+  <div class="s2">
+    <div class="s2-h"><div class="tag">Related reading</div><h2 class="sh">From the <em>Journal</em></h2></div>
+    <div class="prose">
+      
+      <a class="rel" href="/blog/will-veneers-ruin-your-natural-teeth/"><span>Read</span>Will veneers ruin your natural teeth?</a><br>
+      <a class="rel" href="/blog/veneers-bonding-or-clear-aligners/"><span>Read</span>Veneers, bonding or clear aligners?</a><br>
+      <a class="rel" href="/blog/how-much-tooth-is-removed-for-veneers/"><span>Read</span>How much tooth is removed for veneers?</a><br>
+    </div>
+  </div>
 </section>
 
 <section class="sec sand" id="faq" data-screen-label="06 FAQ">

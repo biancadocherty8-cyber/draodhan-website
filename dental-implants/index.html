@@ -242,6 +242,15 @@ footer{background:#111012;padding:1.5rem 1.1rem}
 }
 
 /* CONTENT PAGES */
+.s2{max-width:1180px;margin:0 auto}
+.s2 .prose{max-width:none}
+@media(min-width:900px){
+  .sec.s2sec{padding:4.5rem 5rem}
+  .s2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4.5rem;align-items:start}
+  .s2-h{position:sticky;top:90px}
+  .s2 .prose > p:first-child,.s2 .prose > h3:first-child{margin-top:0}
+  .s2 .prose > p:first-child{margin-top:0.2rem}
+}
 .prose{max-width:66ch}
 .prose p{font-size:0.85rem;color:var(--mid);line-height:1.8;font-weight:300;margin-top:0.85rem}
 .prose p.lead{font-family:'Playfair Display',serif;font-size:1.08rem;color:var(--ink);font-style:italic;font-weight:400;line-height:1.5;margin-top:1rem}
@@ -420,25 +429,27 @@ footer{background:#111012;padding:1.5rem 1.1rem}
 </section>
 
 <!-- COST -->
-<section class="sec white" id="cost">
-  <div class="tag">Implant costs</div>
-  <div class="prose">
-    <h2 class="sh">What a dental implant costs, <em>and why it varies</em></h2>
+<section class="sec white s2sec" id="cost">
+  <div class="s2">
+    <div class="s2-h"><div class="tag">Implant costs</div><h2 class="sh">What a dental implant costs, <em>and why it varies</em></h2></div>
+    <div class="prose">
     <p>An implant quote may include consultation, 3D imaging, the surgical implant, abutment, crown and reviews. Bone grafting, temporary tooth replacement, the number of implants and the type of restoration can change the cost. A written plan follows examination and imaging.</p>
     <h3>Long-term costs</h3>
     <p>Implants and bridges both require cleaning, review and potential repair or replacement. Compare the clinical options and ongoing requirements, not only the initial quote.</p>
     <h3>Medicare and health funds</h3>
     <p>Cosmetic dental treatment is not covered by Medicare; private health fund rebates depend on policy and treatment item.</p>
+    </div>
   </div>
 </section>
 
 <!-- FRONT TOOTH -->
-<section class="sec sand" id="front-tooth">
-  <div class="tag">Front teeth</div>
-  <div class="prose">
-    <h2 class="sh">Replacing a <em>front tooth</em></h2>
+<section class="sec sand s2sec" id="front-tooth">
+  <div class="s2">
+    <div class="s2-h"><div class="tag">Front teeth</div><h2 class="sh">Replacing a <em>front tooth</em></h2></div>
+    <div class="prose">
     <p>A missing front tooth requires consideration of the bone, gum contour, neighbouring teeth and the proposed crown. Depending on the site, temporary replacement and additional procedures may be needed. Dr Aodhan considers the implant position and final restoration together.</p>
     <a class="rel" href="/front-tooth-implant/"><span>Related treatment</span>Front tooth implant</a>
+    </div>
   </div>
 </section>
 

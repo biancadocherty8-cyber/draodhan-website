@@ -242,6 +242,15 @@ footer{background:#111012;padding:1.5rem 1.1rem}
 }
 
 /* CONTENT PAGES */
+.s2{max-width:1180px;margin:0 auto}
+.s2 .prose{max-width:none}
+@media(min-width:900px){
+  .sec.s2sec{padding:4.5rem 5rem}
+  .s2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4.5rem;align-items:start}
+  .s2-h{position:sticky;top:90px}
+  .s2 .prose > p:first-child,.s2 .prose > h3:first-child{margin-top:0}
+  .s2 .prose > p:first-child{margin-top:0.2rem}
+}
 .prose{max-width:66ch}
 .prose p{font-size:0.85rem;color:var(--mid);line-height:1.8;font-weight:300;margin-top:0.85rem}
 .prose p.lead{font-family:'Playfair Display',serif;font-size:1.08rem;color:var(--ink);font-style:italic;font-weight:400;line-height:1.5;margin-top:1rem}
@@ -314,24 +323,30 @@ footer{background:#111012;padding:1.5rem 1.1rem}
   <div class="hero-img"><img src="/cosmetic-treatments/opera-house.jpg" alt="Sydney Opera House at Circular Quay" style="object-position:center" onerror="this.style.display='none'"></div>
 </section>
 <div class="comp"><strong>Important.</strong> The information on this page is general only and is not a substitute for an in-person clinical assessment. All dental procedures carry risks, and outcomes vary between individuals and cannot be guaranteed.</div>
-<section class="sec white" id="start-by-zoom">
-  <div class="prose">
-    <h2 class="sh">Start by <em>Zoom</em></h2>
+<section class="sec white s2sec" id="start-by-zoom">
+  <div class="s2">
+    <div class="s2-h"><h2 class="sh">Start by <em>Zoom</em></h2></div>
+    <div class="prose">
     <p>Dr Aodhan offers an approximately 60-minute one-on-one comprehensive Zoom consultation. A consultation fee applies, confirmed at booking. A follow-up in-person scan visit is included at no extra cost, and a written treatment plan follows.</p>
+    </div>
   </div>
 </section>
 
-<section class="sec sand" id="planning-your-sydney-visits">
-  <div class="prose">
-    <h2 class="sh">Planning your Sydney <em>visits</em></h2>
+<section class="sec sand s2sec" id="planning-your-sydney-visits">
+  <div class="s2">
+    <div class="s2-h"><h2 class="sh">Planning your Sydney <em>visits</em></h2></div>
+    <div class="prose">
     <p>Veneer treatment may involve clinical assessment, preparation, a temporary trial smile and final fitting. In suitable cases, the trial smile is worn for approximately three weeks. This means travel plans must be based on an individual schedule rather than assuming one short visit.</p>
+    </div>
   </div>
 </section>
 
-<section class="sec white" id="aftercare-away-from-sydney">
-  <div class="prose">
-    <h2 class="sh">Aftercare away from <em>Sydney</em></h2>
+<section class="sec white s2sec" id="aftercare-away-from-sydney">
+  <div class="s2">
+    <div class="s2-h"><h2 class="sh">Aftercare away from <em>Sydney</em></h2></div>
+    <div class="prose">
     <p>Regular reviews and access to local dental care are important. Complications may require an in-person examination or a return visit.</p>
+    </div>
   </div>
 </section>
 

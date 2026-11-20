@@ -242,6 +242,15 @@ footer{background:#111012;padding:1.5rem 1.1rem}
 }
 
 /* CONTENT PAGES */
+.s2{max-width:1180px;margin:0 auto}
+.s2 .prose{max-width:none}
+@media(min-width:900px){
+  .sec.s2sec{padding:4.5rem 5rem}
+  .s2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4.5rem;align-items:start}
+  .s2-h{position:sticky;top:90px}
+  .s2 .prose > p:first-child,.s2 .prose > h3:first-child{margin-top:0}
+  .s2 .prose > p:first-child{margin-top:0.2rem}
+}
 .prose{max-width:66ch}
 .prose p{font-size:0.85rem;color:var(--mid);line-height:1.8;font-weight:300;margin-top:0.85rem}
 .prose p.lead{font-family:'Playfair Display',serif;font-size:1.08rem;color:var(--ink);font-style:italic;font-weight:400;line-height:1.5;margin-top:1rem}
@@ -314,31 +323,39 @@ footer{background:#111012;padding:1.5rem 1.1rem}
   <div class="hero-img"><img src="/the-aodhan-method/method-hero-2.jpg" alt="Restorations on a dental model" style="object-position:center" onerror="this.style.display='none'"></div>
 </section>
 <div class="comp"><strong>Important.</strong> The information on this page is general only and is not a substitute for an in-person clinical assessment. All dental procedures carry risks, and outcomes vary between individuals and cannot be guaranteed.</div>
-<section class="sec white" id="understanding-the-cause">
-  <div class="prose">
-    <h2 class="sh">Understanding the <em>cause</em></h2>
+<section class="sec white s2sec" id="understanding-the-cause">
+  <div class="s2">
+    <div class="s2-h"><h2 class="sh">Understanding the <em>cause</em></h2></div>
+    <div class="prose">
     <p>An examination may consider tooth wear, gum health, existing restorations, jaw function and bite forces. Identifying contributing factors is important before rebuilding teeth.</p>
+    </div>
   </div>
 </section>
 
-<section class="sec sand" id="planning-treatment">
-  <div class="prose">
-    <h2 class="sh">Planning treatment</h2>
+<section class="sec sand s2sec" id="planning-treatment">
+  <div class="s2">
+    <div class="s2-h"><h2 class="sh">Planning treatment</h2></div>
+    <div class="prose">
     <p>Clinical photographs, scans and bite assessment can inform the proposed design. A diagnostic mock-up or provisional restorations may be used in appropriate cases.</p>
+    </div>
   </div>
 </section>
 
-<section class="sec white" id="treatment-options">
-  <div class="prose">
-    <h2 class="sh">Treatment options</h2>
+<section class="sec white s2sec" id="treatment-options">
+  <div class="s2">
+    <div class="s2-h"><h2 class="sh">Treatment options</h2></div>
+    <div class="prose">
     <p>Composite resin, porcelain restorations, crowns and protective splints may be considered, depending on the condition of individual teeth. Full-mouth rehabilitation does not automatically mean treating every tooth.</p>
+    </div>
   </div>
 </section>
 
-<section class="sec sand" id="timing-and-costs">
-  <div class="prose">
-    <h2 class="sh">Timing and <em>costs</em></h2>
+<section class="sec sand s2sec" id="timing-and-costs">
+  <div class="s2">
+    <div class="s2-h"><h2 class="sh">Timing and <em>costs</em></h2></div>
+    <div class="prose">
     <p>The number of appointments and cost depend on the number of teeth and procedures required. A written plan follows clinical assessment.</p>
+    </div>
   </div>
 </section>
 
